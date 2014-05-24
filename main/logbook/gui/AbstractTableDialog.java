@@ -93,28 +93,28 @@ public abstract class AbstractTableDialog extends Dialog {
         this.table.setHeaderVisible(true);
         // メニューバーのメニュー
         MenuItem fileroot = new MenuItem(this.menubar, SWT.CASCADE);
-        fileroot.setText("ファイル");
+        fileroot.setText("&File");
         this.filemenu = new Menu(fileroot);
         fileroot.setMenu(this.filemenu);
 
         MenuItem savecsv = new MenuItem(this.filemenu, SWT.NONE);
-        savecsv.setText("CSVファイルに保存(&S)\tCtrl+S");
+        savecsv.setText("&Save to CSV\tCtrl+S");
         savecsv.setAccelerator(SWT.CTRL + 'S');
         savecsv.addSelectionListener(new TableToCsvSaveAdapter(this.shell, this.getTitle(), this.getTableHeader(),
                 this.table));
 
         MenuItem operoot = new MenuItem(this.menubar, SWT.CASCADE);
-        operoot.setText("操作");
+        operoot.setText("&Action");
         this.opemenu = new Menu(operoot);
         operoot.setMenu(this.opemenu);
 
         MenuItem reload = new MenuItem(this.opemenu, SWT.NONE);
-        reload.setText("再読み込み(&R)\tF5");
+        reload.setText("Refresh\tF5");
         reload.setAccelerator(SWT.F5);
         reload.addSelectionListener(new TableReloadAdapter());
 
         MenuItem selectVisible = new MenuItem(this.opemenu, SWT.NONE);
-        selectVisible.setText("列の表示・非表示(&V)");
+        selectVisible.setText("&Select Columns...");
         selectVisible.addSelectionListener(new SelectVisibleColumnAdapter());
 
         // テーブル右クリックメニュー
@@ -122,9 +122,9 @@ public abstract class AbstractTableDialog extends Dialog {
         this.table.setMenu(this.tablemenu);
         MenuItem sendclipbord = new MenuItem(this.tablemenu, SWT.NONE);
         sendclipbord.addSelectionListener(new TableToClipboardAdapter(this.header, this.table));
-        sendclipbord.setText("クリップボードにコピー(&C)");
+        sendclipbord.setText("Copy (&C)");
         MenuItem reloadtable = new MenuItem(this.tablemenu, SWT.NONE);
-        reloadtable.setText("再読み込み(&R)");
+        reloadtable.setText("Refresh (&R)");
         reloadtable.addSelectionListener(new TableReloadAdapter());
         // テーブルにヘッダーをセット
         this.setTableHeader();

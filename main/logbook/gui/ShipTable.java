@@ -50,11 +50,11 @@ public final class ShipTable extends AbstractTableDialog {
         // フィルターメニュー
         SelectionListener groupListener = new GroupFilterSelectionAdapter(this);
         MenuItem groupCascade = new MenuItem(this.opemenu, SWT.CASCADE);
-        groupCascade.setText("グループフィルター(&G)");
+        groupCascade.setText("&Group Filter");
         Menu groupMenu = new Menu(groupCascade);
         groupCascade.setMenu(groupMenu);
         MenuItem nullGroupItem = new MenuItem(groupMenu, SWT.RADIO);
-        nullGroupItem.setText("選択なし\tF6");
+        nullGroupItem.setText("Select None\tF6");
         nullGroupItem.setAccelerator(SWT.F6);
         nullGroupItem.setSelection(true);
         nullGroupItem.addSelectionListener(groupListener);
@@ -71,7 +71,7 @@ public final class ShipTable extends AbstractTableDialog {
             groupItem.addSelectionListener(groupListener);
         }
         final MenuItem filter = new MenuItem(this.opemenu, SWT.PUSH);
-        filter.setText("フィルター(&F)\tCtrl+F");
+        filter.setText("&Filter\tCtrl+F");
         filter.setAccelerator(SWT.CTRL + 'F');
         filter.addSelectionListener(new SelectionAdapter() {
             @Override
@@ -83,7 +83,7 @@ public final class ShipTable extends AbstractTableDialog {
         new MenuItem(this.opemenu, SWT.SEPARATOR);
         // 成長の余地を表示メニュー
         final MenuItem switchdiff = new MenuItem(this.opemenu, SWT.CHECK);
-        switchdiff.setText("成長の余地を表示");
+        switchdiff.setText("Show stats potential");
         switchdiff.setSelection(this.specdiff);
         switchdiff.addSelectionListener(new SelectionAdapter() {
             @Override
@@ -94,7 +94,7 @@ public final class ShipTable extends AbstractTableDialog {
         });
         // 右クリックメニューに追加する
         final MenuItem filtertable = new MenuItem(this.tablemenu, SWT.NONE);
-        filtertable.setText("フィルター(&F)");
+        filtertable.setText("&Filter");
         filtertable.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent e) {
@@ -106,7 +106,7 @@ public final class ShipTable extends AbstractTableDialog {
 
     @Override
     protected String getTitle() {
-        return "所有艦娘一覧";
+        return "Ship List";
     }
 
     @Override

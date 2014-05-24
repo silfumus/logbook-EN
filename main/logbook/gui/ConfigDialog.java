@@ -52,7 +52,7 @@ public final class ConfigDialog extends Dialog {
      */
     public ConfigDialog(Shell parent) {
         super(parent, SWT.CLOSE | SWT.TITLE | SWT.MIN | SWT.RESIZE);
-        this.setText("設定");
+        this.setText("Settings");
     }
 
     /**
@@ -86,19 +86,19 @@ public final class ConfigDialog extends Dialog {
         Tree tree = new Tree(sashForm, SWT.BORDER);
         tree.addSelectionListener(new TreeSelectionAdapter(this));
         TreeItem systemroot = new TreeItem(tree, SWT.NONE);
-        systemroot.setText("一般");
+        systemroot.setText("System");
         systemroot.setData("system");
         TreeItem fleettab = new TreeItem(systemroot, SWT.NONE);
-        fleettab.setText("艦隊タブ");
+        fleettab.setText("Fleets");
         fleettab.setData("fleettab");
         TreeItem capture = new TreeItem(systemroot, SWT.NONE);
-        capture.setText("キャプチャ");
+        capture.setText("Capture");
         capture.setData("capture");
         TreeItem proxy = new TreeItem(systemroot, SWT.NONE);
-        proxy.setText("プロキシ");
+        proxy.setText("Proxy");
         proxy.setData("proxy");
         TreeItem development = new TreeItem(tree, SWT.NONE);
-        development.setText("Development");
+        development.setText("Developer");
         development.setData("development");
 
         systemroot.setExpanded(true);
@@ -118,7 +118,7 @@ public final class ConfigDialog extends Dialog {
 
         Label label = new Label(compositeSystem, SWT.NONE);
         label.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
-        label.setText("ポート番号*");
+        label.setText("Port*");
 
         final Text listenport = new Text(compositeSystem, SWT.BORDER);
         GridData gdListenport = new GridData(SWT.FILL, SWT.CENTER, false, false, 1, 1);
@@ -129,7 +129,7 @@ public final class ConfigDialog extends Dialog {
 
         Label label3 = new Label(compositeSystem, SWT.NONE);
         label3.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
-        label3.setText("音量(%)");
+        label3.setText("Volume (%)");
 
         final Text soundlevel = new Text(compositeSystem, SWT.BORDER);
         GridData gdSoundlevel = new GridData(SWT.FILL, SWT.CENTER, false, false, 1, 1);
@@ -140,7 +140,7 @@ public final class ConfigDialog extends Dialog {
 
         Label label7 = new Label(compositeSystem, SWT.NONE);
         label7.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
-        label7.setText("透明度*");
+        label7.setText("Transparency*");
 
         final Text alpha = new Text(compositeSystem, SWT.BORDER);
         GridData gdAlpha = new GridData(SWT.FILL, SWT.CENTER, false, false, 1, 1);
@@ -151,7 +151,7 @@ public final class ConfigDialog extends Dialog {
 
         Label label8 = new Label(compositeSystem, SWT.NONE);
         label8.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
-        label8.setText("報告書の保存先");
+        label8.setText("Save report to");
 
         final Text reportDir = new Text(compositeSystem, SWT.BORDER);
         GridData gdReportDir = new GridData(SWT.FILL, SWT.CENTER, false, false, 1, 1);
@@ -165,18 +165,18 @@ public final class ConfigDialog extends Dialog {
             @Override
             public void widgetSelected(SelectionEvent e) {
                 DirectoryDialog dialog = new DirectoryDialog(ConfigDialog.this.shell);
-                dialog.setMessage("保存先を指定して下さい");
+                dialog.setMessage("Please specify a location");
                 String path = dialog.open();
                 if (path != null) {
                     reportDir.setText(path);
                 }
             }
         });
-        reportSavedirBtn.setText("選択...");
+        reportSavedirBtn.setText("Select");
 
         Label materialintervallabel = new Label(compositeSystem, SWT.NONE);
         materialintervallabel.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
-        materialintervallabel.setText("資材ログ保存間隔(秒)");
+        materialintervallabel.setText("Material Log Interval (Seconds)");
 
         final Spinner materialintervalSpinner = new Spinner(compositeSystem, SWT.BORDER);
         materialintervalSpinner.setMaximum(60 * 60 * 24);
@@ -190,12 +190,12 @@ public final class ConfigDialog extends Dialog {
 
         final Button remind = new Button(compositeSystem, SWT.CHECK);
         remind.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false, 3, 1));
-        remind.setText("遠征の通知をリマインドする");
+        remind.setText("Expedition return reminder notification");
         remind.setSelection(AppConfig.get().isMissionRemind());
 
         Label intervallabel = new Label(compositeSystem, SWT.NONE);
         intervallabel.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
-        intervallabel.setText("間隔(秒)");
+        intervallabel.setText("Interval (Seconds)");
 
         final Spinner intervalSpinner = new Spinner(compositeSystem, SWT.BORDER);
         intervalSpinner.setMaximum(60 * 60);
@@ -209,27 +209,27 @@ public final class ConfigDialog extends Dialog {
 
         final Button balloon = new Button(compositeSystem, SWT.CHECK);
         balloon.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false, 3, 1));
-        balloon.setText("遠征・入渠をバルーンで通知する");
+        balloon.setText("Notify when an expedition returns");
         balloon.setSelection(AppConfig.get().isUseBalloon());
 
         final Button hidewindow = new Button(compositeSystem, SWT.CHECK);
         hidewindow.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false, 3, 1));
-        hidewindow.setText("最小化時にタスクトレイに格納");
+        hidewindow.setText("Minimize to tray");
         hidewindow.setSelection(AppConfig.get().isHideWindow());
 
         final Button ontop = new Button(compositeSystem, SWT.CHECK);
         ontop.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false, 3, 1));
-        ontop.setText("最前面に表示する*");
+        ontop.setText("Always on top*");
         ontop.setSelection(AppConfig.get().isOnTop());
 
         final Button checkUpdate = new Button(compositeSystem, SWT.CHECK);
         checkUpdate.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false, 3, 1));
-        checkUpdate.setText("起動時にアップデートチェック*");
+        checkUpdate.setText("Check for updates*");
         checkUpdate.setSelection(AppConfig.get().isCheckUpdate());
 
         final Button checkDoit = new Button(compositeSystem, SWT.CHECK);
         checkDoit.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false, 3, 1));
-        checkDoit.setText("終了時に確認する");
+        checkDoit.setText("Confirm on exit");
         checkDoit.setSelection(AppConfig.get().isCheckDoit());
 
         // 艦隊タブ タブ
@@ -238,16 +238,16 @@ public final class ConfigDialog extends Dialog {
         compositeFleetTab.setLayout(new GridLayout(1, false));
 
         Group leveling = new Group(compositeFleetTab, SWT.NONE);
-        leveling.setText("レベリング");
+        leveling.setText("Leveling");
         leveling.setLayout(new RowLayout());
         leveling.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 
         final Button displaycount = new Button(leveling, SWT.CHECK);
-        displaycount.setText("回数を表示");
+        displaycount.setText("Show finish count");
         displaycount.setSelection(AppConfig.get().isDisplayCount());
 
         Label label9 = new Label(leveling, SWT.NONE);
-        label9.setText("海域");
+        label9.setText("Sea");
         final Combo seacombo = new Combo(leveling, SWT.READ_ONLY);
         int count = 0;
         for (Entry<String, Integer> entry : SeaExp.get().entrySet()) {
@@ -258,7 +258,7 @@ public final class ConfigDialog extends Dialog {
             count++;
         }
         Label label10 = new Label(leveling, SWT.NONE);
-        label10.setText("評価");
+        label10.setText("Evaluation");
         final Combo evalcombo = new Combo(leveling, SWT.READ_ONLY);
         count = 0;
         for (Entry<String, Double> entry : EvaluateExp.get().entrySet()) {
@@ -271,37 +271,37 @@ public final class ConfigDialog extends Dialog {
 
         final Button warnByNeedSupply = new Button(compositeFleetTab, SWT.CHECK);
         warnByNeedSupply.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false, 1, 1));
-        warnByNeedSupply.setText("補給不足で警告アイコン表示");
+        warnByNeedSupply.setText("Insufficient supplies");
         warnByNeedSupply.setSelection(AppConfig.get().isWarnByNeedSupply());
 
         final Button warnByCondState = new Button(compositeFleetTab, SWT.CHECK);
         warnByCondState.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false, 1, 1));
-        warnByCondState.setText("疲労状態で警告アイコン表示");
+        warnByCondState.setText("Low morale");
         warnByCondState.setSelection(AppConfig.get().isWarnByCondState());
 
         final Button warnByHalfDamage = new Button(compositeFleetTab, SWT.CHECK);
         warnByHalfDamage.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false, 1, 1));
-        warnByHalfDamage.setText("中破で警告アイコン表示");
+        warnByHalfDamage.setText("Moderately damaged");
         warnByHalfDamage.setSelection(AppConfig.get().isWarnByHalfDamage());
 
         final Button fatalBybadlyDamage = new Button(compositeFleetTab, SWT.CHECK);
         fatalBybadlyDamage.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false, 1, 1));
-        fatalBybadlyDamage.setText("大破で致命的アイコン表示");
+        fatalBybadlyDamage.setText("Severely damaged");
         fatalBybadlyDamage.setSelection(AppConfig.get().isFatalBybadlyDamage());
 
         final Button balloonBybadlyDamage = new Button(compositeFleetTab, SWT.CHECK);
         balloonBybadlyDamage.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false, 1, 1));
-        balloonBybadlyDamage.setText("大破でバルーンツールチップを表示");
+        balloonBybadlyDamage.setText("Show notification for badly damaged ships");
         balloonBybadlyDamage.setSelection(AppConfig.get().isBalloonBybadlyDamage());
 
         final Button visibleOnReturnMission = new Button(compositeFleetTab, SWT.CHECK);
         visibleOnReturnMission.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false, 1, 1));
-        visibleOnReturnMission.setText("遠征からの帰還時に母港タブを表示");
+        visibleOnReturnMission.setText("Switch to HQ tab if expedition is completed");
         visibleOnReturnMission.setSelection(AppConfig.get().isVisibleOnReturnMission());
 
         final Button visibleOnReturnBathwater = new Button(compositeFleetTab, SWT.CHECK);
         visibleOnReturnBathwater.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false, 1, 1));
-        visibleOnReturnBathwater.setText("お風呂から上がる時に母港タブを表示");
+        visibleOnReturnBathwater.setText("Switch to HQ tab if repair is completed");
         visibleOnReturnBathwater.setSelection(AppConfig.get().isVisibleOnReturnBathwater());
 
         // キャプチャ タブ
@@ -311,7 +311,7 @@ public final class ConfigDialog extends Dialog {
 
         Label label4 = new Label(compositeCapture, SWT.NONE);
         label4.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
-        label4.setText("保存先");
+        label4.setText("Destination");
 
         final Text captureDir = new Text(compositeCapture, SWT.BORDER);
         GridData gdCaptureDir = new GridData(SWT.FILL, SWT.CENTER, false, false, 1, 1);
@@ -325,18 +325,18 @@ public final class ConfigDialog extends Dialog {
             @Override
             public void widgetSelected(SelectionEvent e) {
                 DirectoryDialog dialog = new DirectoryDialog(ConfigDialog.this.shell);
-                dialog.setMessage("保存先を指定して下さい");
+                dialog.setMessage("Please specify a location");
                 String path = dialog.open();
                 if (path != null) {
                     captureDir.setText(path);
                 }
             }
         });
-        savedirBtn.setText("選択...");
+        savedirBtn.setText("Select");
 
         Label label5 = new Label(compositeCapture, SWT.NONE);
         label5.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
-        label5.setText("フォーマット");
+        label5.setText("Format");
 
         final Combo imageformatCombo = new Combo(compositeCapture, SWT.READ_ONLY);
         imageformatCombo.setItems(new String[] { "jpg", "png" });
@@ -356,12 +356,12 @@ public final class ConfigDialog extends Dialog {
 
         final Button useProxyButton = new Button(compositeProxy, SWT.CHECK);
         useProxyButton.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false, 4, 1));
-        useProxyButton.setText("接続にプロキシを使用する*");
+        useProxyButton.setText("To use a proxy to connect*");
         useProxyButton.setSelection(AppConfig.get().isUseProxy());
 
         Label proxyHostLabel = new Label(compositeProxy, SWT.NONE);
         proxyHostLabel.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
-        proxyHostLabel.setText("ホスト:");
+        proxyHostLabel.setText("Host:");
 
         final Text proxyHostText = new Text(compositeProxy, SWT.BORDER);
         GridData gdProxyHostText = new GridData(SWT.LEFT, SWT.CENTER, false, false, 1, 1);
@@ -371,7 +371,7 @@ public final class ConfigDialog extends Dialog {
 
         Label proxyPortLabel = new Label(compositeProxy, SWT.NONE);
         proxyPortLabel.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
-        proxyPortLabel.setText("ポート:");
+        proxyPortLabel.setText("Port:");
 
         final Spinner proxyPortSpinner = new Spinner(compositeProxy, SWT.BORDER);
         proxyPortSpinner.setMaximum(65535);
@@ -389,12 +389,12 @@ public final class ConfigDialog extends Dialog {
         new Label(compositeDevelopment, SWT.NONE);
         final Button btnJson = new Button(compositeDevelopment, SWT.CHECK);
         btnJson.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false, 1, 1));
-        btnJson.setText("JSONを保存する");
+        btnJson.setText("Save JSON to file");
         btnJson.setSelection(AppConfig.get().isStoreJson());
 
         Label lblJson = new Label(compositeDevelopment, SWT.NONE);
         lblJson.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
-        lblJson.setText("JSON保存先");
+        lblJson.setText("Destination");
 
         final Text jsonpath = new Text(compositeDevelopment, SWT.BORDER);
         GridData gdJsonpath = new GridData(SWT.LEFT, SWT.CENTER, false, false, 1, 1);
@@ -421,7 +421,7 @@ public final class ConfigDialog extends Dialog {
         commandLeft.setLayout(glCommandLeft);
 
         Label attentionLabel = new Label(commandLeft, SWT.NONE);
-        attentionLabel.setText("*再起動後に有効になります");
+        attentionLabel.setText("*Requires a restart");
 
         Composite commandRight = new Composite(commandComposite, SWT.NONE);
         RowLayout rlCommandRight = new RowLayout(SWT.HORIZONTAL);
@@ -494,7 +494,7 @@ public final class ConfigDialog extends Dialog {
 
         Button cancelBtn = new Button(commandRight, SWT.NONE);
         cancelBtn.setLayoutData(new RowData(100, SWT.DEFAULT));
-        cancelBtn.setText("キャンセル");
+        cancelBtn.setText("Cancel");
         cancelBtn.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent e) {

@@ -38,7 +38,7 @@ public final class VersionDialog extends Dialog {
      */
     public VersionDialog(Shell parent) {
         super(parent, SWT.CLOSE | SWT.TITLE | SWT.MIN | SWT.RESIZE);
-        this.setText("バージョン情報");
+        this.setText("About logbook");
     }
 
     /**
@@ -66,23 +66,23 @@ public final class VersionDialog extends Dialog {
 
         // バージョン
         Group versionGroup = new Group(this.shell, SWT.NONE);
-        versionGroup.setText("バージョン");
+        versionGroup.setText("Version");
         versionGroup.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
         versionGroup.setLayout(new GridLayout(2, true));
 
-        label("航海日誌", versionGroup);
+        label("logbook", versionGroup);
         label(AppConstants.VERSION, versionGroup);
 
         Link gowebsite = new Link(versionGroup, SWT.NONE);
         gowebsite.setLayoutData(new GridData(GridData.FILL_HORIZONTAL, SWT.CENTER, false, false, 2, 1));
-        gowebsite.setText("<a>クリックするとウェブサイトに移動します</a>");
+        gowebsite.setText("<a>Original developer website</a>");
         gowebsite.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent event) {
                 try {
                     Desktop.getDesktop().browse(AppConstants.HOME_PAGE_URI);
                 } catch (Exception e) {
-                    LOG.warn("ウェブサイトに移動が失敗しました", e);
+                    LOG.warn("Failed to open the link", e);
                 }
             }
         });

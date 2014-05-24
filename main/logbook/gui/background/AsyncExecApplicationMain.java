@@ -74,7 +74,7 @@ public final class AsyncExecApplicationMain extends Thread {
                 Thread.sleep(ONE_SECONDS_FORMILIS);
             }
         } catch (Exception e) {
-            LOG.fatal("スレッドが異常終了しました", e);
+            LOG.fatal("Thread is aborted", e);
             throw new RuntimeException(e);
         }
     }
@@ -107,7 +107,7 @@ public final class AsyncExecApplicationMain extends Thread {
         @Override
         public void run() {
             Button itemList = this.main.getItemList();
-            String setText = "所有装備(" + GlobalContext.getItemMap().size() + "/"
+            String setText = "Equip(" + GlobalContext.getItemMap().size() + "/"
                     + GlobalContext.maxSlotitem() + ")";
             if (!setText.equals(itemList.getText())) {
                 itemList.setText(setText);
@@ -133,7 +133,7 @@ public final class AsyncExecApplicationMain extends Thread {
         @Override
         public void run() {
             Button shipList = this.main.getShipList();
-            String setText = "所有艦娘(" + GlobalContext.getShipMap().size() + "/" + GlobalContext.maxChara()
+            String setText = "Ships(" + GlobalContext.getShipMap().size() + "/" + GlobalContext.maxChara()
                     + ")";
             if (!setText.equals(shipList.getText())) {
                 shipList.setText(setText);
@@ -184,7 +184,7 @@ public final class AsyncExecApplicationMain extends Thread {
                     if (notice.size() > 0) {
                         ToolTip tip = new ToolTip(this.main.getShell(), SWT.BALLOON
                                 | SWT.ICON_INFORMATION);
-                        tip.setText("遠征・入渠");
+                        tip.setText("Notification");
                         tip.setMessage(StringUtils.join(notice, "\r\n"));
                         this.main.getTrayItem().setToolTip(tip);
                         if (visibleHome) {
@@ -193,7 +193,7 @@ public final class AsyncExecApplicationMain extends Thread {
                         tip.setVisible(true);
                     }
                 } catch (Exception e) {
-                    LOG.warn("お知らせの表示に失敗しました", e);
+                    LOG.warn("Failed to display the notification", e);
                 }
             }
         }
@@ -236,13 +236,13 @@ public final class AsyncExecApplicationMain extends Thread {
                         }
                         if (this.main.getDeckNotice().getSelection()) {
                             if ((rest <= ONE_MINUTES) && !FLAG_NOTICE_DECK[i]) {
-                                notice.add(dispname + " がまもなく帰投します");
+                                notice.add(dispname + " has returned from " + deckMissions[i].getMission());
                                 noticeflg = true;
                                 FLAG_NOTICE_DECK[i] = true;
                             } else if (AppConfig.get().isMissionRemind() && (rest < -1)
                                     && ((rest % AppConfig.get().getRemindInterbal()) == 0)) {
                                 // 3分毎にリマインドする
-                                notice.add(dispname + " がまもなく帰投します");
+                                notice.add(dispname + "  will arrive soon.");
                                 noticeflg = true;
                             } else if (rest > ONE_MINUTES) {
                                 FLAG_NOTICE_DECK[i] = false;
@@ -252,7 +252,7 @@ public final class AsyncExecApplicationMain extends Thread {
                         }
                         time = TimeLogic.toDateRestString(rest);
                         if (time == null) {
-                            time = "まもなく帰投します";
+                            time = "Done";
                         }
                     }
                 } else {
@@ -309,7 +309,7 @@ public final class AsyncExecApplicationMain extends Thread {
                         if (this.main.getNdockNotice().getSelection()) {
 
                             if ((rest <= ONE_MINUTES) && !FLAG_NOTICE_NDOCK[i]) {
-                                notice.add(name + " がまもなくお風呂からあがります");
+                                notice.add("Repair Dock has finished repairing " + name);
                                 noticeflg = true;
                                 FLAG_NOTICE_NDOCK[i] = true;
                             } else if (rest > ONE_MINUTES) {
@@ -320,7 +320,7 @@ public final class AsyncExecApplicationMain extends Thread {
                         }
                         time = TimeLogic.toDateRestString(rest);
                         if (time == null) {
-                            time = "まもなくお風呂からあがります";
+                            time = "Done";
                         }
                     }
                 } else {
@@ -356,9 +356,9 @@ public final class AsyncExecApplicationMain extends Thread {
             // タブを更新する
             CTabItem maintab = this.main.getTabFolder().getItem(0);
             maintab.setToolTipText(
-                    "装備:" + GlobalContext.getItemMap().size() + "/"
+                    "Equip:" + GlobalContext.getItemMap().size() + "/"
                             + GlobalContext.maxSlotitem()
-                            + " 艦娘:" + GlobalContext.getShipMap().size() + "/"
+                            + " Ships:" + GlobalContext.getShipMap().size() + "/"
                             + GlobalContext.maxChara());
 
             for (int i = 0; i < 4; i++) {

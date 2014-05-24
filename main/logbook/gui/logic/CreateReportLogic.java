@@ -289,7 +289,7 @@ public final class CreateReportLogic {
 
         for (int i = 0; i < items.size(); i++) {
             CreateItemDto item = items.get(i);
-            String name = "失敗";
+            String name = "Penguin";
             String type = "";
             if (item.isCreateFlag()) {
                 name = item.getName();
@@ -685,77 +685,77 @@ public final class CreateReportLogic {
         }
         // 艦種でフィルタ
         if (!filter.destroyer) {
-            if ("駆逐艦".equals(ship.getType())) {
+            if ("DD".equals(ship.getType())) {
                 return false;
             }
         }
         if (!filter.lightCruiser) {
-            if ("軽巡洋艦".equals(ship.getType())) {
+            if ("CL".equals(ship.getType())) {
                 return false;
             }
         }
         if (!filter.torpedoCruiser) {
-            if ("重雷装巡洋艦".equals(ship.getType())) {
+            if ("CLT".equals(ship.getType())) {
                 return false;
             }
         }
         if (!filter.heavyCruiser) {
-            if ("重巡洋艦".equals(ship.getType())) {
+            if ("CA".equals(ship.getType())) {
                 return false;
             }
         }
         if (!filter.flyingDeckCruiser) {
-            if ("航空巡洋艦".equals(ship.getType())) {
+            if ("CAV".equals(ship.getType())) {
                 return false;
             }
         }
         if (!filter.seaplaneTender) {
-            if ("水上機母艦".equals(ship.getType())) {
+            if ("AV".equals(ship.getType())) {
                 return false;
             }
         }
         if (!filter.escortCarrier) {
-            if ("軽空母".equals(ship.getType())) {
+            if ("CVL".equals(ship.getType())) {
                 return false;
             }
         }
         if (!filter.carrier) {
-            if ("正規空母".equals(ship.getType())) {
+            if ("CV".equals(ship.getType())) {
                 return false;
             }
         }
         if (!filter.battleship) {
-            if ("戦艦".equals(ship.getType())) {
+            if ("BB".equals(ship.getType())) {
                 return false;
             }
         }
         if (!filter.flyingDeckBattleship) {
-            if ("航空戦艦".equals(ship.getType())) {
+            if ("BBV".equals(ship.getType())) {
                 return false;
             }
         }
         if (!filter.submarine) {
-            if ("潜水艦".equals(ship.getType())) {
+            if ("SS".equals(ship.getType())) {
                 return false;
             }
         }
         if (!filter.carrierSubmarine) {
-            if ("潜水空母".equals(ship.getType())) {
+            if ("SSV".equals(ship.getType())) {
                 return false;
             }
         }
         if (!filter.landingship) {
-            if ("揚陸艦".equals(ship.getType())) {
+            if ("LHA".equals(ship.getType())) {
                 return false;
             }
         }
         if (!filter.armoredcarrier) {
-            if ("装甲空母".equals(ship.getType())) {
+            if ("CVB".equals(ship.getType())) {
                 return false;
             }
         }
         if (!filter.repairship) {
-            if ("工作艦".equals(ship.getType())) {
+            if ("AR".equals(ship.getType())) {
                 return false;
             }
         }
@@ -817,13 +817,13 @@ public final class CreateReportLogic {
         try {
             List<BattleResultDto> dtoList = Collections.singletonList(dto);
 
-            File report = getStoreFile("海戦・ドロップ報告書.csv", "海戦・ドロップ報告書_alternativefile.csv");
+            File report = getStoreFile("Drop Log.csv", "Drop Log2.csv");
 
             CreateReportLogic.writeCsvStripFirstColumn(report,
                     CreateReportLogic.getBattleResultStoreHeader(),
                     CreateReportLogic.getBattleResultStoreBody(dtoList), true);
         } catch (IOException e) {
-            LOG.warn("報告書の保存に失敗しました", e);
+            LOG.warn("Write error", e);
         }
     }
 
@@ -836,13 +836,13 @@ public final class CreateReportLogic {
         try {
             List<GetShipDto> dtoList = Collections.singletonList(dto);
 
-            File report = getStoreFile("建造報告書.csv", "建造報告書_alternativefile.csv");
+            File report = getStoreFile("Build Log.csv", "Build Log2.csv");
 
             CreateReportLogic.writeCsvStripFirstColumn(report,
                     CreateReportLogic.getCreateShipHeader(),
                     CreateReportLogic.getCreateShipBody(dtoList), true);
         } catch (IOException e) {
-            LOG.warn("報告書の保存に失敗しました", e);
+            LOG.warn("Write error", e);
         }
     }
 
@@ -855,13 +855,13 @@ public final class CreateReportLogic {
         try {
             List<CreateItemDto> dtoList = Collections.singletonList(dto);
 
-            File report = getStoreFile("開発報告書.csv", "開発報告書_alternativefile.csv");
+            File report = getStoreFile("Craft Log.csv", "Craft Log2.csv");
 
             CreateReportLogic.writeCsvStripFirstColumn(report,
                     CreateReportLogic.getCreateItemHeader(),
                     CreateReportLogic.getCreateItemBody(dtoList), true);
         } catch (IOException e) {
-            LOG.warn("報告書の保存に失敗しました", e);
+            LOG.warn("Write error", e);
         }
     }
 
@@ -874,13 +874,13 @@ public final class CreateReportLogic {
         try {
             List<MissionResultDto> dtoList = Collections.singletonList(dto);
 
-            File report = getStoreFile("遠征報告書.csv", "遠征報告書_alternativefile.csv");
+            File report = getStoreFile("Expedition Log.csv", "Expedition Log2.csv");
 
             CreateReportLogic.writeCsvStripFirstColumn(report,
                     CreateReportLogic.getCreateMissionResultHeader(),
                     CreateReportLogic.getMissionResultBody(dtoList), true);
         } catch (IOException e) {
-            LOG.warn("報告書の保存に失敗しました", e);
+            LOG.warn("Write error", e);
         }
     }
 
@@ -893,13 +893,13 @@ public final class CreateReportLogic {
         try {
             List<MaterialDto> dtoList = Collections.singletonList(material);
 
-            File report = getStoreFile("資材ログ.csv", "資材ログ_alternativefile.csv");
+            File report = getStoreFile("Material Log.csv", "Material Log2.csv");
 
             CreateReportLogic.writeCsvStripFirstColumn(report,
                     CreateReportLogic.getMaterialHeader(),
                     CreateReportLogic.getMaterialStoreBody(dtoList), true);
         } catch (IOException e) {
-            LOG.warn("報告書の保存に失敗しました", e);
+            LOG.warn("Failed to save material report", e);
         }
     }
 

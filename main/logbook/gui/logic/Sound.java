@@ -93,9 +93,9 @@ public final class Sound {
                 audioInputStream.close();
             }
         } catch (UnsupportedAudioFileException e) {
-            LOG.warn("サポートされていないサウンドファイル形式です", file);
+            LOG.warn("Audio format not supported", file);
         } catch (Exception e) {
-            LOG.warn("サウンドの再生に失敗しました", e);
+            LOG.warn("Failed to play sound", e);
         }
     }
 
@@ -210,7 +210,7 @@ public final class Sound {
                     Thread.sleep(500);
                 }
             } catch (Exception e) {
-                LOG.fatal("スレッドが異常終了しました", e);
+                LOG.fatal("Thread is aborted", e);
                 throw new RuntimeException(e);
             }
         }

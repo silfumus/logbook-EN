@@ -173,7 +173,7 @@ public class FleetComposite extends Composite {
 
             Label namelabel = new Label(nameComposite, SWT.NONE);
             namelabel.setFont(this.large);
-            namelabel.setText("名前");
+            namelabel.setText("Name");
 
             Label lvlabel = new Label(nameComposite, SWT.NONE);
             lvlabel.setFont(this.small);
@@ -194,7 +194,7 @@ public class FleetComposite extends Composite {
             hp.setFont(this.small);
             Label hpgauge = new Label(hpComposite, SWT.NONE);
             Label hpmsg = new Label(hpComposite, SWT.NONE);
-            hpmsg.setText("健在");
+            hpmsg.setText("Good");
 
             // ステータス
             new Label(this.fleetGroup, SWT.NONE);
@@ -210,11 +210,11 @@ public class FleetComposite extends Composite {
             stateComposite.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 
             Label condst = new Label(stateComposite, SWT.NONE);
-            condst.setText("疲");
+            condst.setText("Morale ");
             Label fuelst = new Label(stateComposite, SWT.NONE);
-            fuelst.setText("燃");
+            fuelst.setText("Fuel ");
             Label bullst = new Label(stateComposite, SWT.NONE);
-            bullst.setText("弾");
+            bullst.setText("Ammo");
             Label dmgcsty = new Label(stateComposite, SWT.NONE);
             dmgcsty.setText("ダ");
             Label dmgcstm = new Label(stateComposite, SWT.NONE);
@@ -326,7 +326,7 @@ public class FleetComposite extends Composite {
                 }
                 // 大破している艦娘がいる場合メッセージを表示
                 this.badlyDamage = true;
-                this.hpmsgLabels[i].setText("大破");
+                this.hpmsgLabels[i].setText("High");
                 this.hpmsgLabels[i].setBackground(SWTResourceManager.getColor(AppConstants.COND_RED_COLOR));
                 this.hpmsgLabels[i].setForeground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
             } else if (ship.isHalfDamage()) {
@@ -336,29 +336,29 @@ public class FleetComposite extends Composite {
                     shipstatus.set(WARN);
                 }
 
-                this.hpmsgLabels[i].setText("中破");
+                this.hpmsgLabels[i].setText("Med");
                 this.hpmsgLabels[i].setBackground(SWTResourceManager.getColor(AppConstants.COND_ORANGE_COLOR));
                 this.hpmsgLabels[i].setForeground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
             } else if (ship.isSlightDamage()) {
-                this.hpmsgLabels[i].setText("小破");
+                this.hpmsgLabels[i].setText("Low");
                 this.hpmsgLabels[i].setBackground(null);
                 this.hpmsgLabels[i].setForeground(null);
             } else {
-                this.hpmsgLabels[i].setText("健在");
+                this.hpmsgLabels[i].setText("Good");
                 this.hpmsgLabels[i].setBackground(null);
                 this.hpmsgLabels[i].setForeground(null);
             }
 
             // ステータス
             // ステータス.疲労
-            this.condstLabels[i].setText("疲");
+            this.condstLabels[i].setText("Morale ");
             if (cond >= 49) {
                 this.condstLabels[i].setEnabled(false);
             } else {
                 this.condstLabels[i].setEnabled(true);
             }
             // ステータス.燃料
-            this.fuelstLabels[i].setText("燃");
+            this.fuelstLabels[i].setText("Fuel ");
             if (fuelraito >= 1f) {
                 this.fuelstLabels[i].setEnabled(false);
                 this.fuelstLabels[i].setForeground(null);
@@ -378,7 +378,7 @@ public class FleetComposite extends Composite {
                 }
             }
             // ステータス.弾
-            this.bullstLabels[i].setText("弾");
+            this.bullstLabels[i].setText("Ammo");
             if (bullraito >= 1f) {
                 this.bullstLabels[i].setEnabled(false);
                 this.bullstLabels[i].setBackground(null);
@@ -433,7 +433,7 @@ public class FleetComposite extends Composite {
             if (AppConfig.get().isDisplayCount()) {
                 Integer nextcount = this.getNextCount(ship, i == 0);
                 if (nextcount != null) {
-                    this.nextLabels[i].setText(MessageFormat.format("あと{0}回", nextcount));
+                    this.nextLabels[i].setText(MessageFormat.format("{0} remaining", nextcount));
                 } else {
                     this.nextLabels[i].setText("");
                 }
@@ -592,7 +592,7 @@ public class FleetComposite extends Composite {
                 }
                 ToolTip tip = new ToolTip(this.getShell(), SWT.BALLOON
                         | SWT.ICON_ERROR);
-                tip.setText("大破警告");
+                tip.setText("Warning");
                 tip.setMessage(sb.toString());
 
                 this.main.getTrayItem().setToolTip(tip);

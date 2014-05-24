@@ -44,18 +44,18 @@ public final class AsyncExecUpdateCheck extends Thread {
 
                         MessageBox box = new MessageBox(AsyncExecUpdateCheck.this.shell, SWT.YES | SWT.NO
                                 | SWT.ICON_QUESTION);
-                        box.setText("新しいバージョン");
-                        box.setMessage("新しいバージョンがあります。ホームページを開きますか？\r\n"
-                                + "現在のバージョン:" + AppConstants.VERSION + "\r\n"
-                                + "新しいバージョン:" + newversion + "\r\n"
-                                + "※自動アップデートチェックは[ヘルプ]-[設定]からOFFに出来ます");
+                        box.setText("Update");
+                        box.setMessage("There is a new version available. Update?\r\n"
+                                + "Current: " + AppConstants.VERSION + "\r\n"
+                                + "Latest: " + newversion + "\r\n"
+                                + "※You can turn off this notification in the Settings menu");
 
                         // OKを押されたらホームページへ移動する
                         if (box.open() == SWT.YES) {
                             try {
-                                Desktop.getDesktop().browse(AppConstants.HOME_PAGE_URI);
+                                Desktop.getDesktop().browse(AppConstants.GITHUB_PAGE_URI);
                             } catch (Exception e) {
-                                LOG.warn("ウェブサイトに移動が失敗しました", e);
+                                LOG.warn("Failed to open the website", e);
                             }
                         }
                     }
@@ -63,7 +63,7 @@ public final class AsyncExecUpdateCheck extends Thread {
             }
         } catch (Exception e) {
             // アップデートチェック失敗はクラス名のみ
-            LOG.info(e.getClass().getName() + "が原因でアップデートチェックに失敗しました");
+            LOG.info(e.getClass().getName() + " failed to do an update check");
         }
     }
 }
