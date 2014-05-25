@@ -510,7 +510,7 @@ public final class CreateReportLogic {
      * @return
      */
     public static String[] getCreateQuestHeader() {
-        return new String[] { "", "Condition", "Title", "Content", "Fuel", "Ammo", "Steel", "Bauxite" };
+        return new String[] { "", "Status", "Title", "Details", "Fuel", "Ammo", "Steel", "Bauxite" };
     }
 
     /**
@@ -527,10 +527,10 @@ public final class CreateReportLogic {
             String state = "";
             switch (quest.getState()) {
             case 2:
-                state = "遂行中";
+                state = "On Progress";
                 break;
             case 3:
-                state = "達成";
+                state = "Complete";
                 break;
             default:
                 continue;

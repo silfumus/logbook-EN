@@ -1,5 +1,7 @@
 package logbook.dto;
 
+import logbook.internal.QuestTranslated;
+
 /**
  * 任務を表します
  *
@@ -111,7 +113,7 @@ public final class QuestDto extends AbstractDto {
      * @return api_title
      */
     public String getTitle() {
-        return this.title;
+        return QuestTranslated.gettitle(this.title);
     }
 
     /**
@@ -127,7 +129,7 @@ public final class QuestDto extends AbstractDto {
      * @return api_detail
      */
     public String getDetail() {
-        return this.detail;
+        return QuestTranslated.getdetail(this.detail);
     }
 
     /**
