@@ -145,7 +145,7 @@ public final class CreateReportLogic {
      * @return ヘッダー
      */
     public static String[] getBattleResultHeader() {
-        return new String[] { "", "日付", "海域", "マス", "ランク", "敵艦隊", "ドロップ艦種", "ドロップ艦娘" };
+        return new String[] { "", "Time", "Map", "Node", "Rank", "Enemy Fleet", "Drop Type", "Ship Name" };
     }
 
     /**
@@ -171,19 +171,19 @@ public final class CreateReportLogic {
      * @return ヘッダー
      */
     public static String[] getBattleResultStoreHeader() {
-        return new String[] { "", "日付", "海域", "マス", "ランク", "敵艦隊", "ドロップ艦種", "ドロップ艦娘",
-                "味方艦1", "味方艦1HP",
-                "味方艦2", "味方艦2HP",
-                "味方艦3", "味方艦3HP",
-                "味方艦4", "味方艦4HP",
-                "味方艦5", "味方艦5HP",
-                "味方艦6", "味方艦6HP",
-                "敵艦1", "敵艦1HP",
-                "敵艦2", "敵艦2HP",
-                "敵艦3", "敵艦3HP",
-                "敵艦4", "敵艦4HP",
-                "敵艦5", "敵艦5HP",
-                "敵艦6", "敵艦6HP" };
+        return new String[] { "", "Date", "Map", "Node", "Rank", "Enemy Fleet", "Drop Type", "Ship Name",
+                "Ship1", "Ship1HP",
+                "Ship2", "Ship2HP",
+                "Ship3", "Ship3HP",
+                "Ship4", "Ship4HP",
+                "Ship5", "Ship5HP",
+                "Ship6", "Ship6HP",
+                "Enemy1", "Enemy1 HP",
+                "Enemy2", "Enemy2 HP",
+                "Enemy3", "Enemy3 HP",
+                "Enemy4", "Enemy4 HP",
+                "Enemy5", "Enemy5 HP",
+                "Enemy6", "Enemy6 HP" };
     }
 
     /**
@@ -250,7 +250,7 @@ public final class CreateReportLogic {
      * @return ヘッダー
      */
     public static String[] getCreateShipHeader() {
-        return new String[] { "", "日付", "種類", "名前", "艦種", "燃料", "弾薬", "鋼材", "ボーキ", "開発資材", "空きドック", "秘書艦", "司令部Lv" };
+        return new String[] { "", "Time", "Craft Type", "Name", "Type", "Fuel", "Ammo", "Steel", "Bauxite", "DevMat", "Empty Dock", "Secretary", "HQ Lv" };
     }
 
     /**
@@ -276,7 +276,7 @@ public final class CreateReportLogic {
      * @return ヘッダー
      */
     public static String[] getCreateItemHeader() {
-        return new String[] { "", "日付", "開発装備", "種別", "燃料", "弾薬", "鋼材", "ボーキ", "秘書艦", "司令部Lv" };
+        return new String[] { "", "Time", "Name", "Type", "Fuel", "Ammo", "Steel", "Bauxite", "Secretary", "HQ Lv" };
     }
 
     /**
@@ -309,7 +309,7 @@ public final class CreateReportLogic {
      * @return ヘッダー
      */
     public static String[] getItemListHeader() {
-        return new String[] { "", "名称", "種別", "個数", "火力", "命中", "射程", "運", "爆装", "雷装", "索敵", "対潜", "対空" };
+        return new String[] { "", "Name", "Type", "Qty", "Firepower", "Accuracy", "Range", "Luck", "Bomber", "Torpedo", "LOS", "ASW", "AA" };
     }
 
     /**
@@ -346,7 +346,7 @@ public final class CreateReportLogic {
         for (Entry<ItemDto, Integer> entry : countitems) {
             ItemDto item = entry.getKey();
             count++;
-            body.add(new Object[] { count, item.getName(), item.getType(), entry.getValue(), item.getHoug(),
+            body.add(new Object[] { count, item.getTranslated(), item.getType(), entry.getValue(), item.getHoug(),
                     item.getHoum(), item.getLeng(), item.getLuck(), item.getBaku(), item.getRaig(),
                     item.getSaku(), item.getTais(), item.getTyku()
             });
@@ -360,8 +360,8 @@ public final class CreateReportLogic {
      * @return ヘッダー
      */
     public static String[] getShipListHeader() {
-        return new String[] { "", "ID", "艦隊", "名前", "艦種", "疲労", "回復", "Lv", "Next", "経験値", "制空", "装備1", "装備2",
-                "装備3", "装備4", "HP", "火力", "雷装", "対空", "装甲", "回避", "対潜", "索敵", "運" };
+        return new String[] { "", "ID", "Fleet", "Name", "Type", "Morale", "Recovery", "Lv", "Next", "Exp", "Air Superiority", "Equipment 1", "Equipment 2",
+                "Equipment 3", "Equipment 4", "HP", "Firepower", "Torpedo", "AA", "Armor", "Evasion", "ASW", "LOS", "Luck" };
     }
 
     /**
@@ -476,7 +476,7 @@ public final class CreateReportLogic {
      * @return ヘッダー
      */
     public static String[] getCreateMissionResultHeader() {
-        return new String[] { "", "日付", "結果", "遠征", "燃料", "弾薬", "鋼材", "ボーキ" };
+        return new String[] { "", "Time", "Result", "Name", "Fuel", "Ammo", "Steel", "Bauxite" };
     }
 
     /**
@@ -510,7 +510,7 @@ public final class CreateReportLogic {
      * @return
      */
     public static String[] getCreateQuestHeader() {
-        return new String[] { "", "状態", "タイトル", "内容", "燃料", "弾薬", "鋼材", "ボーキ" };
+        return new String[] { "", "Condition", "Title", "Content", "Fuel", "Ammo", "Steel", "Bauxite" };
     }
 
     /**
@@ -556,7 +556,7 @@ public final class CreateReportLogic {
      * @return ヘッダー
      */
     public static String[] getMaterialHeader() {
-        return new String[] { "", "日付", "燃料", "弾薬", "鋼材", "ボーキ", "高速修復材", "高速建造材", "開発資材" };
+        return new String[] { "", "Date", "Fuel", "Ammo", "Steel", "Bauxite", "Instant Repair", "Instant Build", "DevMat" };
     }
 
     /**

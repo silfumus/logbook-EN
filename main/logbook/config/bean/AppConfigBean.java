@@ -112,7 +112,7 @@ public final class AppConfigBean {
     private String defaultSea = "3-2";
 
     /** デフォルト評価 */
-    private String defaultEvaluate = "S勝利";
+    private String defaultEvaluate = "Perfect S";
 
     /** 開発者オプション-JSONを保存する */
     private boolean storeJson;
