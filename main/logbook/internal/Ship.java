@@ -174,7 +174,7 @@ public class Ship {
             this.put("154", ShipInfoDto.EMPTY);
             this.put("155", new ShipInfoDto("I-401", "SSV", "I-401", 35, 15, 20));
             this.put("156", new ShipInfoDto("Taihou Kai", "CVB", "Taihou", 0, 75, 90));
-            this.put("157", ShipInfoDto.EMPTY);
+            this.put("157", new ShipInfoDto("Ryuujou Kai2", "CVL", "Ryuujou Kai2", 0, 45, 40));
             this.put("158", ShipInfoDto.EMPTY);
             this.put("159", new ShipInfoDto("Jintsuu Kai 2", "CL", "Jintsuu", 0, 35, 25));
             this.put("160", new ShipInfoDto("Naka Kai2", "CL", "Naka", 0, 35, 25));
@@ -185,7 +185,7 @@ public class Ship {
             this.put("165", new ShipInfoDto("Uzuki", "DD", "Uzuki", 25, 15, 15));
             this.put("166", new ShipInfoDto("Akitsu Maru Kai", "LHA", "Akitsu Maru", 0, 25, 45));
             this.put("167", ShipInfoDto.EMPTY);
-            this.put("168", ShipInfoDto.EMPTY);
+            this.put("168", new ShipInfoDto("Urakaze", "DD", "Urakaze", 35, 20, 15));
             this.put("169", new ShipInfoDto("Tanikaze", "DD", "Tanikaze", 20, 20, 15));
             this.put("170", new ShipInfoDto("Hamakaze", "DD", "Hamakaze", 30, 20, 15));
             this.put("171", new ShipInfoDto("Bismarck", "BB", "Bismarck", 30, 110, 90));
@@ -211,7 +211,7 @@ public class Ship {
             this.put("191", new ShipInfoDto("I-19", "SS", "I-19", 50, 20, 10));
             this.put("192", ShipInfoDto.EMPTY);
             this.put("193", ShipInfoDto.EMPTY);
-            this.put("194", ShipInfoDto.EMPTY);
+            this.put("194", new ShipInfoDto("Haguro Kai2", "CA", "Haguro", 0, 75, 45));
             this.put("195", ShipInfoDto.EMPTY);
             this.put("196", ShipInfoDto.EMPTY);
             this.put("197", ShipInfoDto.EMPTY);
@@ -334,7 +334,7 @@ public class Ship {
             this.put("314", new ShipInfoDto("Sakawa Kai", "DD", "Sakawa", 0, 40, 30));
             this.put("315", ShipInfoDto.EMPTY);
             this.put("316", new ShipInfoDto("Amatsukaze Kai", "DD", "Amatsukaze", 0, 20, 20));
-            this.put("317", ShipInfoDto.EMPTY);
+            this.put("317", new ShipInfoDto("Urakaze Kai", "DD", "Urakaze", 0, 20, 15));
             this.put("318", ShipInfoDto.EMPTY);
             this.put("319", ShipInfoDto.EMPTY);
             this.put("320", ShipInfoDto.EMPTY);
