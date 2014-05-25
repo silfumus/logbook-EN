@@ -18,7 +18,7 @@ public final class ItemTranslated {
             this.put("12.7cm連装砲", "12.7cm Twin Cannon");
             this.put("10cm連装高角砲", "10cm Twin High-Angle Cannon");
             this.put("14cm単装砲", "14cm Single Cannon");
-            this.put("15.5cm三連装砲(主砲)", "15.5cm Three-Barrelled Gun (Main)");
+            this.put("15.5cm三連装砲", "15.5cm Triple Gun Mount");
             this.put("20.3cm連装砲", "20.3cm Twin Cannon");
             this.put("35.6cm連装砲", "35.6cm Twin Cannon");
             this.put("41cm連装砲", "41cm Twin Cannon");

@@ -40,6 +40,13 @@ public final class QuestTranslated {
     private static final Map<String, String> QUESTDETAIL = new ConcurrentHashMap<String, String>() {
         {
             this.put("2隻以上の艦で編成される「艦隊」を編成せよ！", "Have 2 ships in your main fleet."); //A1
+			this.put("艦隊を出撃させ、敵艦隊「主力」を捕捉！これを撃滅せよ！", "Defeat the flagship of an enemy fleet."); //Bd2
+			this.put("艦隊全力出撃！遊弋する敵艦隊を10回邀撃せよ！", "Defeat 10 enemy fleets."); //Bd3
+			this.put("艦隊の脅威となる敵空母群。これを捕捉撃滅し、3隻轟沈せよ！", "Sink 3 enemy aircraft carriers."); //Bd4
+			this.put("艦隊を出撃させ、敵補給艦を捕捉、これを撃滅せよ！", "Sink 3 enemy transport ships."); //Bd5
+			this.put("敵の輸送船5隻以上を撃沈し、敵の補給路を寸断せよ！", "Sink 5 enemy transport ships."); //Bd6
+			this.put("艦隊を南西諸島海域に全力出撃させ、多数の敵艦隊「主力」群を捕捉、撃滅せよ！", "Defeat 5 bosses in World 2."); //Bd7
+			this.put("対潜能力の充実した艦隊で出撃、敵潜水艦狩りを実施せよ！", "Sink 6 enemy submarines."); //Bd8
 			this.put("1週間の全力出撃を行い、可能な限り多くの敵艦隊を捕捉、これを迎撃せよ！", "Deploy your fleet 36 times, encounter 24 bosses, defeat 12 bosses and get 6 Perfect S RATING victories."); //Bw1
 			this.put("有力な母艦航空隊で1週間の全力出撃を行い、可能な限り多くの敵空母を撃滅せよ！", "Sink 20 aircraft carriers.");
 			this.put("1週間で敵輸送船を20隻以上撃沈せよ！", "Sink 20 transport ships.");

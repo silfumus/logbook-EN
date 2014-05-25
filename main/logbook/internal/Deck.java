@@ -128,6 +128,52 @@ public final class Deck {
     };
 
     /**
+     * 遠征プリセット値
+     */
+    private static final Map<String, String> EXPEDITIONNAME = new ConcurrentHashMap<String, String>() {
+        {
+            this.put("練習航海", "Exp 01");
+            this.put("長距離練習航海", "Exp 02");
+            this.put("警備任務", "Exp 03");
+            this.put("対潜警戒任務", "Exp 04");
+            this.put("海上護衛任務", "Exp 05");
+            this.put("防空射撃演習", "Exp 06");
+            this.put("観艦式予行", "Exp 07");
+            this.put("観艦式", "Exp 08");
+            this.put("タンカー護衛任務", "Exp 09");
+            this.put("強行偵察任務", "Exp 10");
+            this.put("ボーキサイト輸送任務", "Exp 11");
+            this.put("資源輸送任務", "Exp 12");
+            this.put("鼠輸送作戦", "Exp 13");
+            this.put("包囲陸戦隊撤収作戦", "Exp 14");
+            this.put("囮機動部隊支援作戦", "Exp 15");
+            this.put("艦隊決戦援護作戦", "Exp 16");
+            this.put("敵地偵察作戦", "Exp 17");
+            this.put("航空機輸送作戦", "Exp 18");
+            this.put("北号作戦", "Exp 19");
+            this.put("潜水艦哨戒任務", "Exp 20");
+            this.put("北方鼠輸送作戦", "Exp 21");
+            this.put("艦隊演習", "Exp 22");
+            this.put("航空戦艦運用演習", "Exp 23");
+            this.put("通商破壊作戦", "Exp 25");
+            this.put("敵母港空襲作戦", "Exp 26");
+            this.put("潜水艦通商破壊作戦", "Exp 27");
+            this.put("西方海域封鎖作戦", "Exp 28");
+            this.put("潜水艦派遣演習", "Exp 29");
+            this.put("潜水艦派遣作戦", "Exp 30");
+            this.put("海外艦との接触", "Exp 31");
+            this.put("前衛支援任務", "Vanguard Support");
+            this.put("艦隊決戦支援任務", "Decisive Battle Support");
+            this.put("ＭＯ作戦", "Exp 35");
+            this.put("水上機基地建設", "Exp 36");
+            this.put("東京急行", "Exp 37");
+            this.put("東京急行(弐)", "Exp 38");
+            this.put("前衛支援任務", "Vanguard Support");
+            this.put("艦隊決戦支援任務", "Decisive Battle Support");
+        }
+    };
+
+    /**
      * 遠征を取得します
      * 
      * @param id ID
@@ -135,5 +181,15 @@ public final class Deck {
      */
     public static String get(String id) {
         return DECK.get(id);
+    }
+
+    /**
+     * Retrieve the expedition name
+     * 
+     * @param jpname Japanese name of the expedition
+     * @return Translated Name
+     */
+    public static String getname(String jpname) {
+        return EXPEDITIONNAME.containsKey(jpname) ? EXPEDITIONNAME.get(jpname) : jpname;
     }
 }
