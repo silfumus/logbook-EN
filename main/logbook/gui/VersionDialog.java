@@ -86,41 +86,58 @@ public final class VersionDialog extends Dialog {
                 }
             }
         });
+        Link gogithub = new Link(versionGroup, SWT.NONE);
+        gogithub.setLayoutData(new GridData(GridData.FILL_HORIZONTAL, SWT.CENTER, false, false, 2, 1));
+        gogithub.setText("<a>logbook-EN project page</a>");
+        gogithub.addSelectionListener(new SelectionAdapter() {
+            @Override
+            public void widgetSelected(SelectionEvent event) {
+                try {
+                    Desktop.getDesktop().browse(AppConstants.GITHUB_PAGE_URI);
+                } catch (Exception e) {
+                    LOG.warn("Failed to open the link", e);
+                }
+            }
+        });
+        Label labelcomment = new Label(versionGroup, SWT.NONE);
+        Label labelcomment2 = new Label(versionGroup, SWT.NONE);
+        labelcomment.setText("Translated by\nsilfumus and Zharay");
+        labelcomment2.setText("with the help of /jp/sies.");
 
         // 設定
         Group appGroup = new Group(this.shell, SWT.NONE);
-        appGroup.setText("設定");
+        appGroup.setText("Setting");
         appGroup.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
         appGroup.setLayout(new GridLayout(2, true));
 
-        label("鎮守府サーバー", appGroup);
-        label(StringUtils.defaultString(Filter.getServerName(), "未設定"), appGroup);
+        label("Server", appGroup);
+        label(StringUtils.defaultString(Filter.getServerName(), "Not set"), appGroup);
 
         // 設定
         Group javaGroup = new Group(this.shell, SWT.NONE);
-        javaGroup.setText("環境");
+        javaGroup.setText("Operating Environment");
         javaGroup.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
         javaGroup.setLayout(new GridLayout(2, true));
 
         double totalMemory = ((double) Runtime.getRuntime().totalMemory()) / 1024 / 1024;
         double freeMemory = ((double) Runtime.getRuntime().freeMemory()) / 1024 / 1024;
 
-        label("利用可能メモリサイズ", javaGroup);
+        label("Available Memory", javaGroup);
         label(Long.toString(Math.round(totalMemory)) + " MB", javaGroup);
 
-        label("利用中メモリサイズ", javaGroup);
+        label("Used", javaGroup);
         label(Long.toString(Math.round(totalMemory - freeMemory)) + " MB", javaGroup);
 
-        label("os.name", javaGroup);
+        label("Operating System", javaGroup);
         label(SystemUtils.OS_NAME, javaGroup);
 
-        label("os.version", javaGroup);
+        label("OS Version", javaGroup);
         label(SystemUtils.OS_VERSION, javaGroup);
 
-        label("java.vendor", javaGroup);
+        label("Java Vendor", javaGroup);
         label(SystemUtils.JAVA_VENDOR, javaGroup);
 
-        label("java.version", javaGroup);
+        label("Java Version", javaGroup);
         label(SystemUtils.JAVA_VERSION, javaGroup);
 
         this.shell.pack();

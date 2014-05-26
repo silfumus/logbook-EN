@@ -315,7 +315,7 @@ public final class ItemDto extends AbstractDto {
      * @return name
      */
     public String getName() {
-        return this.name;
+        return ItemTranslated.get(this.name);
     }
 
     /**

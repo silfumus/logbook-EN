@@ -336,11 +336,11 @@ public class FleetComposite extends Composite {
                     shipstatus.set(WARN);
                 }
 
-                this.hpmsgLabels[i].setText("Med");
+                this.hpmsgLabels[i].setText(" Med");
                 this.hpmsgLabels[i].setBackground(SWTResourceManager.getColor(AppConstants.COND_ORANGE_COLOR));
                 this.hpmsgLabels[i].setForeground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
             } else if (ship.isSlightDamage()) {
-                this.hpmsgLabels[i].setText("Low");
+                this.hpmsgLabels[i].setText(" Low");
                 this.hpmsgLabels[i].setBackground(null);
                 this.hpmsgLabels[i].setForeground(null);
             } else {

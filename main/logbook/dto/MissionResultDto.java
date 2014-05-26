@@ -1,7 +1,9 @@
-package logbook.dto;
+﻿package logbook.dto;
 
 import java.util.Calendar;
 import java.util.Date;
+
+import logbook.internal.Deck;
 
 /**
  * 遠征の結果を表します
@@ -76,7 +78,7 @@ public final class MissionResultDto extends AbstractDto {
      * @return 遠征名
      */
     public String getQuestName() {
-        return this.questName;
+        return Deck.getname(this.questName);
     }
 
     /**

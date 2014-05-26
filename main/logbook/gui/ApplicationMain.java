@@ -170,9 +170,9 @@ public final class ApplicationMain {
             ApplicationMain window = new ApplicationMain();
             window.open();
         } catch (Error e) {
-            LOG.fatal("メインスレッドが異常終了しました", e);
+            LOG.fatal("Main thread is aborted", e);
         } catch (Exception e) {
-            LOG.fatal("メインスレッドが異常終了しました", e);
+            LOG.fatal("Main thread is aborted", e);
         }
         // 
         new Thread(new ShutdownHookThread()).start();
@@ -307,7 +307,7 @@ public final class ApplicationMain {
         new MenuItem(cmdmenu, SWT.SEPARATOR);
         // コマンド-任務一覧
         MenuItem questlist = new MenuItem(cmdmenu, SWT.NONE);
-        questlist.setText("Mission &List\tCtrl+L");
+        questlist.setText("Quest &List\tCtrl+L");
         questlist.setAccelerator(SWT.CTRL + 'L');
         questlist.addSelectionListener(new SelectionAdapter() {
             @Override

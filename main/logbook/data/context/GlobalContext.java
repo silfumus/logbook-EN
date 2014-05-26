@@ -957,7 +957,7 @@ public final class GlobalContext {
      */
     private static void setSecretary(ShipDto ship) {
         if ((secretary == null) || (ship.getId() != secretary.getId())) {
-            addConsole(ship.getName() + "(Lv" + ship.getLv() + ")" + " が秘書艦に任命されました");
+            addConsole(ship.getName() + "(Lv" + ship.getLv() + ")" + " has been appointed as the secretary");
         }
         // 秘書艦を設定
         secretary = ship;
@@ -1233,9 +1233,9 @@ public final class GlobalContext {
                     questMap.put(quest.getNo(), quest);
                 }
             }
-            addConsole("Missions updated");
+            addConsole("Quest list updated");
         } catch (Exception e) {
-            LOG.warn("Failed to update missions!", e);
+            LOG.warn("Failed to update quest data", e);
             LOG.warn(data);
         }
     }
@@ -1275,9 +1275,9 @@ public final class GlobalContext {
 
             mapCellNo = obj.getJsonNumber("api_no").intValue();
 
-            addConsole("出撃を更新しました");
+            addConsole("Sortie data updated");
         } catch (Exception e) {
-            LOG.warn("出撃を更新しますに失敗しました", e);
+            LOG.warn("Failed to update sortie data", e);
             LOG.warn(data);
         }
     }
@@ -1293,9 +1293,9 @@ public final class GlobalContext {
 
             mapCellNo = obj.getJsonNumber("api_no").intValue();
 
-            addConsole("進撃を更新しました");
+            addConsole("Sortie data updated");
         } catch (Exception e) {
-            LOG.warn("進撃を更新しますに失敗しました", e);
+            LOG.warn("Failed to update sortie data", e);
             LOG.warn(data);
         }
     }
