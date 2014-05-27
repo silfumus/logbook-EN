@@ -228,7 +228,7 @@ public final class ResourceChartDialog extends Dialog {
                     if (file.exists()) {
                         MessageBox messageBox = new MessageBox(this.shell, SWT.YES | SWT.NO);
                         messageBox.setText("Confirmation");
-                        messageBox.setMessage("filename + " already exists.\nDo you want to overwrite it?"");
+                        messageBox.setMessage(filename + " already exists.\nDo you want to overwrite it?");
                         if (messageBox.open() == SWT.NO) {
                             return;
                         }

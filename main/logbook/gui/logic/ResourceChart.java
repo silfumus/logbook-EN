@@ -102,7 +102,7 @@ public class ResourceChart {
             int y = jh - (labelHeight / 2);
             gc.drawString(label, x, y);
         }
-        SimpleDateFormat format = new SimpleDateFormat("M月d日 HH:mm");
+        SimpleDateFormat format = new SimpleDateFormat("M/d HH:mm");
         // 縦軸を描く
         for (int i = 0; i < 5; i++) {
             //ラベルを設定
