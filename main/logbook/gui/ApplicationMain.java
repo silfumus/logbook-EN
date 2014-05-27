@@ -1,4 +1,4 @@
-package logbook.gui;
+﻿package logbook.gui;
 
 import logbook.config.AppConfig;
 import logbook.config.ItemConfig;
@@ -346,6 +346,15 @@ public final class ApplicationMain {
             @Override
             public void widgetSelected(SelectionEvent e) {
                 new ShipFilterGroupDialog(ApplicationMain.this.shell).open();
+            }
+        });
+        // その他-資材ログチャート
+        MenuItem resourceChart = new MenuItem(etcmenu, SWT.NONE);
+        resourceChart.setText("Resource Chart");
+        resourceChart.addSelectionListener(new SelectionAdapter() {
+            @Override
+            public void widgetSelected(SelectionEvent e) {
+                new ResourceChartDialog(ApplicationMain.this.shell).open();
             }
         });
         // その他-自動プロキシ構成スクリプトファイル生成

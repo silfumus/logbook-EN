@@ -13,7 +13,7 @@ import org.eclipse.swt.graphics.RGB;
 public class AppConstants {
 
     /** バージョン */
-    public static final String VERSION = "0.5.19";
+    public static final String VERSION = "0.6.0";
 
     /** ホームページ */
     public static final URI HOME_PAGE_URI = URI.create("http://kancolle.sanaechan.net/");
@@ -331,6 +331,9 @@ public class AppConstants {
 
     /** メッセージ 大破している艦娘がいます */
     public static final String MESSAGE_STOP_SORTIE = "There are severely damaged ships. Stop the sortie! ";
+
+    /** メッセージ  索敵値計:{0} */
+    public static final String MESSAGE_SAKUTEKI = "LoS:{0}. ";
 
     /** メッセージ 制空値:{0} */
     public static final String MESSAGE_SEIKU = "\nAir Superiority: {0}. ";
