@@ -333,11 +333,14 @@ public class AppConstants {
     public static final String MESSAGE_STOP_SORTIE = "There are severely damaged ships. Stop the sortie! ";
 
     /** メッセージ  索敵値計:{0} */
-    public static final String MESSAGE_SAKUTEKI = "LoS:{0}. ";
+    public static final String MESSAGE_SAKUTEKI = "\nLoS: {0} ";
+
+    /** Information display for Effective LoS:{0} */
+    public static final String MESSAGE_EFFSAKUTEKI = "Effective LoS: {0}";
 
     /** メッセージ 制空値:{0} */
-    public static final String MESSAGE_SEIKU = "\nAir Superiority: {0}. ";
+    public static final String MESSAGE_SEIKU = "\nAir Superiority: {0}";
 
     /** メッセージ  艦隊合計Lv:{0} */
-    public static final String MESSAGE_TOTAL_LV = "Total Level:{0}. ";
+    public static final String MESSAGE_TOTAL_LV = "\nTotal Level: {0}";
 }

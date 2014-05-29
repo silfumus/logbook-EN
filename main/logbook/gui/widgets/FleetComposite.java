@@ -285,6 +285,8 @@ public class FleetComposite extends Composite {
         int totallv = 0;
         // 索敵値計
         int totalSakuteki = 0;
+        int equipmentSakuteki = 0;
+        int effectiveSakuteki = 0;
 
         for (int i = 0; i < ships.size(); i++) {
             ShipDto ship = ships.get(i);
@@ -314,6 +316,8 @@ public class FleetComposite extends Composite {
             totallv += ship.getLv();
             // 索敵値計
             totalSakuteki += ship.getSakuteki();
+            equipmentSakuteki += ship.getEquipmentSakuteki();
+            effectiveSakuteki = (int) (equipmentSakuteki + Math.sqrt(totalSakuteki - equipmentSakuteki));
 
             // 疲労している艦娘がいる場合メッセージを表示
             if (this.cond > cond) {
@@ -547,6 +551,8 @@ public class FleetComposite extends Composite {
         this.addStyledText(this.message, MessageFormat.format(AppConstants.MESSAGE_SEIKU, seiku), null);
         // 索敵
         this.addStyledText(this.message, MessageFormat.format(AppConstants.MESSAGE_SAKUTEKI, totalSakuteki), null);
+        this.addStyledText(this.message, MessageFormat.format(AppConstants.MESSAGE_EFFSAKUTEKI, effectiveSakuteki),
+                null);
         // 合計Lv
         this.addStyledText(this.message, MessageFormat.format(AppConstants.MESSAGE_TOTAL_LV, totallv), null);
 
