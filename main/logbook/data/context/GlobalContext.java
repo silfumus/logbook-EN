@@ -129,7 +129,7 @@ public final class GlobalContext {
     private static MaterialDto material = null;
 
     /** 最後に資源ログに追加した時間 */
-    private static Date materialLogLastUpdate = null;
+    volatile private static Date materialLogLastUpdate = null;
 
     /**
      * @return 装備Map
@@ -736,14 +736,16 @@ public final class GlobalContext {
             String dock = data.getField("api_kdock_id");
 
             // 艦娘の装備を追加します
-            JsonArray slotitem = apidata.getJsonArray("api_slotitem");
-            for (int i = 0; i < slotitem.size(); i++) {
-                JsonObject object = (JsonObject) slotitem.get(i);
-                String typeid = object.getJsonNumber("api_slotitem_id").toString();
-                Long id = object.getJsonNumber("api_id").longValue();
-                ItemDto item = Item.get(typeid);
-                if (item != null) {
-                    itemMap.put(id, item);
+            if (!apidata.isNull("api_slotitem")) {
+                JsonArray slotitem = apidata.getJsonArray("api_slotitem");
+                for (int i = 0; i < slotitem.size(); i++) {
+                    JsonObject object = (JsonObject) slotitem.get(i);
+                    String typeid = object.getJsonNumber("api_slotitem_id").toString();
+                    Long id = object.getJsonNumber("api_id").longValue();
+                    ItemDto item = Item.get(typeid);
+                    if (item != null) {
+                        itemMap.put(id, item);
+                    }
                 }
             }
             // 艦娘を追加します
@@ -1210,27 +1212,29 @@ public final class GlobalContext {
     private static void doQuest(Data data) {
         try {
             JsonObject apidata = data.getJsonObject().getJsonObject("api_data");
-            JsonArray apilist = apidata.getJsonArray("api_list");
-            for (JsonValue value : apilist) {
-                if (value instanceof JsonObject) {
-                    JsonObject questobject = (JsonObject) value;
-                    // 任務を作成
-                    QuestDto quest = new QuestDto();
-                    quest.setNo(questobject.getInt("api_no"));
-                    quest.setCategory(questobject.getInt("api_category"));
-                    quest.setType(questobject.getInt("api_type"));
-                    quest.setState(questobject.getInt("api_state"));
-                    quest.setTitle(questobject.getString("api_title"));
-                    quest.setDetail(questobject.getString("api_detail"));
-                    JsonArray material = questobject.getJsonArray("api_get_material");
-                    quest.setFuel(material.getJsonNumber(0).toString());
-                    quest.setAmmo(material.getJsonNumber(1).toString());
-                    quest.setMetal(material.getJsonNumber(2).toString());
-                    quest.setBauxite(material.getJsonNumber(3).toString());
-                    quest.setBonusFlag(questobject.getInt("api_bonus_flag"));
-                    quest.setProgressFlag(questobject.getInt("api_progress_flag"));
+            if (!apidata.isNull("api_list")) {
+                JsonArray apilist = apidata.getJsonArray("api_list");
+                for (JsonValue value : apilist) {
+                    if (value instanceof JsonObject) {
+                        JsonObject questobject = (JsonObject) value;
+                        // 任務を作成
+                        QuestDto quest = new QuestDto();
+                        quest.setNo(questobject.getInt("api_no"));
+                        quest.setCategory(questobject.getInt("api_category"));
+                        quest.setType(questobject.getInt("api_type"));
+                        quest.setState(questobject.getInt("api_state"));
+                        quest.setTitle(questobject.getString("api_title"));
+                        quest.setDetail(questobject.getString("api_detail"));
+                        JsonArray material = questobject.getJsonArray("api_get_material");
+                        quest.setFuel(material.getJsonNumber(0).toString());
+                        quest.setAmmo(material.getJsonNumber(1).toString());
+                        quest.setMetal(material.getJsonNumber(2).toString());
+                        quest.setBauxite(material.getJsonNumber(3).toString());
+                        quest.setBonusFlag(questobject.getInt("api_bonus_flag"));
+                        quest.setProgressFlag(questobject.getInt("api_progress_flag"));
 
-                    questMap.put(quest.getNo(), quest);
+                        questMap.put(quest.getNo(), quest);
+                    }
                 }
             }
             addConsole("Quest list updated");

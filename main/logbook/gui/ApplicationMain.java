@@ -1,4 +1,4 @@
-﻿package logbook.gui;
+package logbook.gui;
 
 import logbook.config.AppConfig;
 import logbook.config.ItemConfig;
@@ -348,7 +348,7 @@ public final class ApplicationMain {
                 new ShipFilterGroupDialog(ApplicationMain.this.shell).open();
             }
         });
-        // その他-資材ログチャート
+        // その他-資材チャート
         MenuItem resourceChart = new MenuItem(etcmenu, SWT.NONE);
         resourceChart.setText("Resource Chart");
         resourceChart.addSelectionListener(new SelectionAdapter() {
