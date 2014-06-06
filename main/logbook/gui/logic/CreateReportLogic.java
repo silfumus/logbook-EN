@@ -763,6 +763,13 @@ public final class CreateReportLogic {
             if ("AR".equals(ship.getType())) {
                 return false;
             }
+
+        }
+        if (!filter.submarinetender) {
+            if ("AS".equals(ship.getType())) {
+                return false;
+            }
+
         }
         // グループでフィルタ
         if (filter.group != null) {

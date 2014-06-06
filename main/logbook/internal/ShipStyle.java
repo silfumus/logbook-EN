@@ -33,6 +33,7 @@ public class ShipStyle {
             this.put("17", "LHA");
             this.put("18", "CVB");
             this.put("19", "AR");
+            this.put("20", "AS");
         }
     };
 
