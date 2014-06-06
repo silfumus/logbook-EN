@@ -105,12 +105,12 @@ public final class ItemTranslated {
             this.put("21号対空電探改", "Type 21 Air RADAR Kai");
             this.put("20.3cm(2号)連装砲", "20.3cm(no.2) Twin Gun Mount");
             this.put("12.7cm連装高角砲(後期型)", "12.7cm Twin High-Angle Mount (Late Model)");
-            this.put("92", "UNKNOWN");
-            this.put("93", "UNKNOWN");
-            this.put("94", "UNKNOWN");
-            this.put("95", "UNKNOWN");
-            this.put("96", "UNKNOWN");
-            this.put("97", "UNKNOWN");
+            this.put("毘式40mm連装機銃", "40mm Twin Autocannon Mount");
+            this.put("九七式艦攻(友永隊)", "Type 97 Torpedo Bomber (Tomonaga Sqn)");
+            this.put("天山一二型(友永隊)", "Tenzan Model 12 (Tomonaga Sqn)");
+            this.put("潜水艦53cm艦首魚雷(8門)", "53cm Submarine Bow Torpedo Mount (8 tubes)");
+            this.put("零式艦戦21型(熟練)", "Type 21 Zero Fighter (Skilled)");
+            this.put("九九式艦爆(熟練)", "Type 99 Dive Bomber (Skilled)");
             this.put("98", "UNKNOWN");
             this.put("99", "UNKNOWN");
             this.put("100", "UNKNOWN");
