@@ -310,7 +310,8 @@ public final class CreateReportLogic {
      * @return ヘッダー
      */
     public static String[] getItemListHeader() {
-        return new String[] { "", "Name", "Type", "Qty", "Firepower", "Accuracy", "Range", "Luck", "Evasion "Bomber", "Torpedo", "LOS", "ASW", "AA" };
+        return new String[] { "", "Name", "Type", "Qty", "Firepower", "Accuracy", "Range", "Luck", "Evasion", "Bomber",
+                "Torpedo", "LOS", "ASW", "AA" };
     }
 
     /**
