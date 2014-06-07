@@ -144,18 +144,26 @@ public final class ItemDto extends AbstractDto {
     }
 
     /**
-     * type3を設定します。
-     * @param type2 type2
-     */
-    public void setType2(long type2) {
-        this.type2 = type2;
-    }
-
-    /**
      * @return type3
      */
     public String getTypeId3() {
         return Long.toString(this.type3);
+    }
+
+    /**
+     * type2を取得します。
+     * @return type2
+     */
+    public long getType2() {
+        return type2;
+    }
+
+    /**
+     * type2を設定します。
+     * @param type2 type2
+     */
+    public void setType2(long type2) {
+        this.type2 = type2;
     }
 
     /**
@@ -164,6 +172,14 @@ public final class ItemDto extends AbstractDto {
      */
     public void setType3(long type3) {
         this.type3 = type3;
+    }
+
+    /**
+     * type3を取得します。
+     * @return type3
+     */
+    public long getType3() {
+        return type3;
     }
 
     /**

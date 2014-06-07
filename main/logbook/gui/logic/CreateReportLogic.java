@@ -310,8 +310,7 @@ public final class CreateReportLogic {
      * @return ヘッダー
      */
     public static String[] getItemListHeader() {
-        return new String[] { "", "Name", "Type", "Qty", "Firepower", "Accuracy", "Range", "Luck", "Bomber", "Torpedo",
-                "LOS", "ASW", "AA" };
+        return new String[] { "", "Name", "Type", "Qty", "Firepower", "Accuracy", "Range", "Luck", "Evasion "Bomber", "Torpedo", "LOS", "ASW", "AA" };
     }
 
     /**
@@ -349,7 +348,7 @@ public final class CreateReportLogic {
             ItemDto item = entry.getKey();
             count++;
             body.add(new Object[] { count, item.getName(), item.getType(), entry.getValue(), item.getHoug(),
-                    item.getHoum(), item.getLeng(), item.getLuck(), item.getBaku(), item.getRaig(),
+                    item.getHoum(), item.getLeng(), item.getLuck(), item.getHouk(), item.getBaku(), item.getRaig(),
                     item.getSaku(), item.getTais(), item.getTyku()
             });
         }
