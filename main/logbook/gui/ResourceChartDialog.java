@@ -146,7 +146,7 @@ public final class ResourceChartDialog extends Dialog {
             public void paintControl(PaintEvent e) {
                 ResourceLog log = ResourceChartDialog.this.log;
                 int scale = SCALE_DAYS[ResourceChartDialog.this.combo.getSelectionIndex()];
-                String scaleText = "スケール:" + ResourceChartDialog.this.combo.getText();
+                String scaleText = "Scale:" + ResourceChartDialog.this.combo.getText();
                 Point size = ResourceChartDialog.this.canvas.getSize();
                 int width = size.x - 1;
                 int height = size.y - 1;
@@ -235,7 +235,7 @@ public final class ResourceChartDialog extends Dialog {
                         }
                     }
                     int scale = SCALE_DAYS[this.combo.getSelectionIndex()];
-                    String scaleText = "スケール:" + this.combo.getText();
+                    String scaleText = "Scale:" + this.combo.getText();
                     Point size = this.canvas.getSize();
                     int width = size.x - 1;
                     int height = size.y - 1;
