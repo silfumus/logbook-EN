@@ -1,10 +1,13 @@
 package logbook.gui.background;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.concurrent.TimeUnit;
 
 import logbook.config.AppConfig;
 import logbook.constants.AppConstants;
@@ -17,6 +20,7 @@ import logbook.gui.ApplicationMain;
 import logbook.gui.logic.Sound;
 import logbook.gui.logic.TimeLogic;
 import logbook.gui.widgets.FleetComposite;
+import logbook.util.SwtUtils;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
@@ -26,6 +30,7 @@ import org.eclipse.swt.custom.CTabItem;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.TaskItem;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.ToolTip;
 import org.eclipse.wb.swt.SWTResourceManager;
@@ -36,7 +41,6 @@ import org.eclipse.wb.swt.SWTResourceManager;
 public final class AsyncExecApplicationMain extends Thread {
     private static final Logger LOG = LogManager.getLogger(AsyncExecApplicationMain.class);
 
-    private static final int ONE_SECONDS_FORMILIS = 1000;
     private static final int ONE_MINUTES = 60;
 
     private final ApplicationMain main;
@@ -71,7 +75,7 @@ public final class AsyncExecApplicationMain extends Thread {
                 // 遠征と入渠を更新する
                 Display.getDefault().asyncExec(new UpdateDeckNdockTask(this.main));
 
-                Thread.sleep(ONE_SECONDS_FORMILIS);
+                TimeUnit.SECONDS.sleep(1);
             }
         } catch (Exception e) {
             LOG.fatal("Thread is aborted", e);
@@ -87,7 +91,7 @@ public final class AsyncExecApplicationMain extends Thread {
      * @return
      */
     private static long getRest(Date date1, Date date2) {
-        return ((date2.getTime() - date1.getTime()) / ONE_SECONDS_FORMILIS);
+        return TimeUnit.MILLISECONDS.toSeconds(date2.getTime() - date1.getTime());
     }
 
     /**
@@ -135,9 +139,34 @@ public final class AsyncExecApplicationMain extends Thread {
             Button shipList = this.main.getShipList();
             String setText = "Ships(" + GlobalContext.getShipMap().size() + "/" + GlobalContext.maxChara()
                     + ")";
-            if (!setText.equals(shipList.getText())) {
-                shipList.setText(setText);
-                shipList.getParent().layout();
+            if (setText.equals(shipList.getText())) {
+                return;
+            }
+
+            shipList.setText(setText);
+            shipList.getParent().layout();
+
+            if (AppConfig.get().isUseTaskbarNotify()) {
+                TaskItem item = SwtUtils.getTaskBarItem(this.main.getShell());
+                if (item != null) {
+                    int max = GlobalContext.maxChara();
+                    int size = GlobalContext.getShipMap().size();
+                    int locked = 0;
+                    for (Entry<Long, ShipDto> entry : GlobalContext.getShipMap().entrySet()) {
+                        if (entry.getValue().getLocked()) {
+                            locked++;
+                        }
+                    }
+                    int r = Math.round(((float) (size - locked) / (float) (max - locked)) * 100);
+
+                    item.setProgress(r);
+
+                    if (max <= (size + AppConfig.get().getNotifyFully())) {
+                        item.setProgressState(SWT.PAUSED);
+                    } else {
+                        item.setProgressState(SWT.NORMAL);
+                    }
+                }
             }
         }
     }
@@ -153,6 +182,9 @@ public final class AsyncExecApplicationMain extends Thread {
         private static final boolean[] FLAG_NOTICE_NDOCK = { false, false, false, false };
 
         private final ApplicationMain main;
+
+        /** 日付フォーマット */
+        private final SimpleDateFormat format = new SimpleDateFormat(AppConstants.DATE_SHORT_FORMAT);
 
         /**
          * コンストラクター
@@ -221,6 +253,10 @@ public final class AsyncExecApplicationMain extends Thread {
 
                     if (deckMissions[i].getTime() != null) {
                         long rest = getRest(now, deckMissions[i].getTime());
+
+                        // ツールチップテキストで時刻を表示する
+                        deckTimeTexts[i].setToolTipText(this.format.format(deckMissions[i].getTime()));
+
                         // 20分前、10分前、5分前になったら背景色を変更する
                         if (rest <= (ONE_MINUTES * 5)) {
                             deckTimeTexts[i].setBackground(SWTResourceManager
@@ -241,7 +277,7 @@ public final class AsyncExecApplicationMain extends Thread {
                                 FLAG_NOTICE_DECK[i] = true;
                             } else if (AppConfig.get().isMissionRemind() && (rest < -1)
                                     && ((rest % AppConfig.get().getRemindInterbal()) == 0)) {
-                                // 3分毎にリマインドする
+                                // 定期的にリマインドする
                                 notice.add(dispname + "  will arrive soon.");
                                 noticeflg = true;
                             } else if (rest > ONE_MINUTES) {
@@ -257,6 +293,7 @@ public final class AsyncExecApplicationMain extends Thread {
                     }
                 } else {
                     deckTimeTexts[i].setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
+                    deckTimeTexts[i].setToolTipText(null);
                 }
                 deckNameLabels[i].setText(dispname);
                 deckTimeTexts[i].setText(time);
@@ -292,6 +329,10 @@ public final class AsyncExecApplicationMain extends Thread {
                     if (ship != null) {
                         name = ship.getName() + " (Lv" + ship.getLv() + ")";
                         long rest = getRest(now, ndocks[i].getNdocktime());
+
+                        // ツールチップテキストで時刻を表示する
+                        ndockTimeTexts[i].setToolTipText(this.format.format(ndocks[i].getNdocktime()));
+
                         // 20分前、10分前、5分前になったら背景色を変更する
                         if (rest <= (ONE_MINUTES * 5)) {
                             ndockTimeTexts[i].setBackground(SWTResourceManager
@@ -325,6 +366,7 @@ public final class AsyncExecApplicationMain extends Thread {
                     }
                 } else {
                     ndockTimeTexts[i].setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
+                    ndockTimeTexts[i].setToolTipText(null);
                 }
                 ndockNameLabels[i].setText(name);
                 ndockTimeTexts[i].setText(time);

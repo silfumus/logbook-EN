@@ -41,8 +41,14 @@ public final class AsyncExecUpdateCheck extends Thread {
                 Display.getDefault().asyncExec(new Runnable() {
                     @Override
                     public void run() {
+                        Shell shell = AsyncExecUpdateCheck.this.shell;
 
-                        MessageBox box = new MessageBox(AsyncExecUpdateCheck.this.shell, SWT.YES | SWT.NO
+                        if (shell.isDisposed()) {
+                            // ウインドウが閉じられていたらなにもしない
+                            return;
+                        }
+
+                        MessageBox box = new MessageBox(shell, SWT.YES | SWT.NO
                                 | SWT.ICON_QUESTION);
                         box.setText("Update");
                         box.setMessage("There is a new version available. Update?\r\n"
