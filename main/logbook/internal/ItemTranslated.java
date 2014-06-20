@@ -114,8 +114,8 @@ public final class ItemTranslated {
             this.put("98", "UNKNOWN");
             this.put("99", "UNKNOWN");
             this.put("100", "UNKNOWN");
-            this.put("101", "UNKNOWN");
-            this.put("102", "UNKNOWN");
+            this.put("照明弾", "Star Shell");
+            this.put("九八式水上偵察機(夜偵)", "Type 98 Night Recon Seaplane");
             this.put("103", "UNKNOWN");
             this.put("104", "UNKNOWN");
             this.put("105", "UNKNOWN");
