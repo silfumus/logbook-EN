@@ -6,7 +6,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
-import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
@@ -101,7 +100,7 @@ public final class GlobalContext {
     private static String lastBuildKdock;
 
     /** 戦闘詳細 */
-    private static Queue<BattleDto> battleList = new ArrayBlockingQueue<BattleDto>(1);
+    private static BattleDto battle = null;
 
     /** 遠征リスト */
     private static DeckMissionDto[] deckMissions = new DeckMissionDto[] { DeckMissionDto.EMPTY, DeckMissionDto.EMPTY,
@@ -136,16 +135,23 @@ public final class GlobalContext {
      * @return 装備Map
      */
     public static Map<Long, ItemDto> getItemMap() {
-        return Collections.unmodifiableMap(itemMap);
+        return itemMap;
     }
 
     /**
      * 装備を復元する
      * @param map
      */
-    public static void setItemMap(Map<Long, String> map) {
-        for (Entry<Long, String> entry : map.entrySet()) {
-            String id = entry.getValue();
+    public static void setItemMap(Map<Long, Integer> map) {
+        for (Entry<Long, Integer> entry : map.entrySet()) {
+            Object obj = entry.getValue();
+            Integer id;
+            if (obj instanceof Integer) {
+                id = (Integer) obj;
+            } else {
+                // 旧設定ファイル用
+                id = Integer.parseInt(obj.toString());
+            }
             ItemDto item = Item.get(id);
             if (item != null) {
                 itemMap.put(entry.getKey(), item);
@@ -157,7 +163,7 @@ public final class GlobalContext {
      * @return 艦娘Map
      */
     public static Map<Long, ShipDto> getShipMap() {
-        return Collections.unmodifiableMap(shipMap);
+        return shipMap;
     }
 
     /**
@@ -192,28 +198,28 @@ public final class GlobalContext {
      * @return 建造艦娘List
      */
     public static List<GetShipDto> getGetshipList() {
-        return Collections.unmodifiableList(getShipList);
+        return getShipList;
     }
 
     /**
      * @return 開発アイテムList
      */
     public static List<CreateItemDto> getCreateItemList() {
-        return Collections.unmodifiableList(createItemList);
+        return createItemList;
     }
 
     /**
      * @return 海戦・ドロップList
      */
     public static List<BattleResultDto> getBattleResultList() {
-        return Collections.unmodifiableList(battleResultList);
+        return battleResultList;
     }
 
     /**
      * @return 遠征結果
      */
     public static List<MissionResultDto> getMissionResultList() {
-        return Collections.unmodifiableList(missionResultList);
+        return missionResultList;
     }
 
     /**
@@ -281,7 +287,7 @@ public final class GlobalContext {
      * @return 任務
      */
     public static Map<Integer, QuestDto> getQuest() {
-        return Collections.unmodifiableMap(questMap);
+        return questMap;
     }
 
     /**
@@ -605,8 +611,8 @@ public final class GlobalContext {
                     String name = object.getString("api_name");
                     JsonArray jmission = object.getJsonArray("api_mission");
 
-                    long section = ((JsonNumber) jmission.get(1)).longValue();
-                    String mission = Deck.get(Long.toString(section));
+                    int section = ((JsonNumber) jmission.get(1)).intValue();
+                    String mission = Deck.get(section);
                     long milis = ((JsonNumber) jmission.get(2)).longValue();
                     long fleetid = object.getJsonNumber("api_id").longValue();
 
@@ -639,12 +645,10 @@ public final class GlobalContext {
      */
     private static void doBattle(Data data) {
         try {
-            if (battleList.size() == 0) {
-                JsonObject apidata = data.getJsonObject().getJsonObject("api_data");
-                battleList.add(new BattleDto(apidata));
+            JsonObject apidata = data.getJsonObject().getJsonObject("api_data");
+            battle = new BattleDto(apidata);
 
-                addConsole("Battle information updated");
-            }
+            addConsole("Battle information updated");
         } catch (Exception e) {
             LOG.warn("Battle information update failed", e);
             LOG.warn(data);
@@ -657,11 +661,16 @@ public final class GlobalContext {
      */
     private static void doBattleresult(Data data) {
         try {
-            JsonObject apidata = data.getJsonObject().getJsonObject("api_data");
-            BattleResultDto dto = new BattleResultDto(apidata, mapCellNo, battleList.poll());
-            battleResultList.add(dto);
-            CreateReportLogic.storeBattleResultReport(dto);
+            if (battle != null) {
+                JsonObject apidata = data.getJsonObject().getJsonObject("api_data");
+                BattleResultDto dto = new BattleResultDto(apidata, mapCellNo, battle);
+                battleResultList.add(dto);
+                CreateReportLogic.storeBattleResultReport(dto);
 
+                for (int i = 0; i < (battleResultList.size() - AppConstants.MAX_LOG_SIZE); i++) {
+                    battleResultList.remove(0);
+                }
+            }
             addConsole("Battle information updated");
         } catch (Exception e) {
             LOG.warn("Battle information update failed", e);
@@ -741,7 +750,7 @@ public final class GlobalContext {
                 JsonArray slotitem = apidata.getJsonArray("api_slotitem");
                 for (int i = 0; i < slotitem.size(); i++) {
                     JsonObject object = (JsonObject) slotitem.get(i);
-                    String typeid = object.getJsonNumber("api_slotitem_id").toString();
+                    int typeid = object.getJsonNumber("api_slotitem_id").intValue();
                     Long id = object.getJsonNumber("api_id").longValue();
                     ItemDto item = Item.get(typeid);
                     if (item != null) {
@@ -788,7 +797,7 @@ public final class GlobalContext {
             CreateItemDto createitem = new CreateItemDto(apidata, resources);
             if (createitem.isCreateFlag()) {
                 JsonObject object = apidata.getJsonObject("api_slot_item");
-                String typeid = object.getJsonNumber("api_slotitem_id").toString();
+                int typeid = object.getJsonNumber("api_slotitem_id").intValue();
                 Long id = object.getJsonNumber("api_id").longValue();
                 ItemDto item = Item.get(typeid);
                 if (item != null) {
@@ -803,6 +812,9 @@ public final class GlobalContext {
             }
             CreateReportLogic.storeCreateItemReport(createitem);
 
+            for (int i = 0; i < (createItemList.size() - AppConstants.MAX_LOG_SIZE); i++) {
+                createItemList.remove(0);
+            }
             addConsole("Craft information updated");
         } catch (Exception e) {
             LOG.warn("Craft information update failed", e);
@@ -822,7 +834,7 @@ public final class GlobalContext {
             itemMap.clear();
             for (int i = 0; i < apidata.size(); i++) {
                 JsonObject object = (JsonObject) apidata.get(i);
-                String typeid = object.getJsonNumber("api_slotitem_id").toString();
+                int typeid = object.getJsonNumber("api_slotitem_id").intValue();
                 Long id = object.getJsonNumber("api_id").longValue();
                 ItemDto item = Item.get(typeid);
                 if (item != null) {
@@ -1161,6 +1173,9 @@ public final class GlobalContext {
             CreateReportLogic.storeCreateMissionReport(result);
             missionResultList.add(result);
 
+            for (int i = 0; i < (missionResultList.size() - AppConstants.MAX_LOG_SIZE); i++) {
+                missionResultList.remove(0);
+            }
             addConsole("Expedition result info updated");
         } catch (Exception e) {
             LOG.warn("Expedition result info update failed", e);
@@ -1328,7 +1343,7 @@ public final class GlobalContext {
                 for (int i = 0; i < apiMstSlotitem.size(); i++) {
                     JsonObject object = (JsonObject) apiMstSlotitem.get(i);
                     ItemDto item = new ItemDto(object);
-                    String id = object.getJsonNumber("api_id").toString();
+                    int id = object.getJsonNumber("api_id").intValue();
                     Item.set(id, item);
                 }
                 addConsole("Equipment updated");

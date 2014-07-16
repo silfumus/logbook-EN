@@ -13,6 +13,7 @@ import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.layout.RowData;
@@ -75,7 +76,7 @@ public final class ShipFilterDialog extends Dialog {
     /** 艦種.工作艦 */
     private Button repairship;
     /** Submarine Tender */
-    private Button submarinetender;
+    private Button submarineTender;
     /** 全て選択 */
     private Button selectall;
     /** 装備 */
@@ -128,6 +129,8 @@ public final class ShipFilterDialog extends Dialog {
         this.shell.setText("Filter");
         this.shell.setLayout(new GridLayout(1, false));
 
+        SelectionListener listener = new ApplyFilterSelectionAdapter();
+
         Composite composite = new Composite(this.shell, SWT.NONE);
         composite.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
         composite.setLayout(new GridLayout(1, false));
@@ -146,7 +149,7 @@ public final class ShipFilterDialog extends Dialog {
 
         this.regexp = new Button(namegroup, SWT.CHECK);
         this.regexp.setText("Regex");
-        this.regexp.addSelectionListener(new ApplyFilterSelectionAdapter());
+        this.regexp.addSelectionListener(listener);
 
         Group shiptypegroup = new Group(composite, SWT.NONE);
         shiptypegroup.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
@@ -156,82 +159,82 @@ public final class ShipFilterDialog extends Dialog {
         this.destroyer = new Button(shiptypegroup, SWT.CHECK);
         this.destroyer.setText("DD");
         this.destroyer.setSelection(true);
-        this.destroyer.addSelectionListener(new ApplyFilterSelectionAdapter());
+        this.destroyer.addSelectionListener(listener);
 
         this.lightCruiser = new Button(shiptypegroup, SWT.CHECK);
         this.lightCruiser.setText("CL");
         this.lightCruiser.setSelection(true);
-        this.lightCruiser.addSelectionListener(new ApplyFilterSelectionAdapter());
+        this.lightCruiser.addSelectionListener(listener);
 
         this.torpedoCruiser = new Button(shiptypegroup, SWT.CHECK);
         this.torpedoCruiser.setText("CLT");
         this.torpedoCruiser.setSelection(true);
-        this.torpedoCruiser.addSelectionListener(new ApplyFilterSelectionAdapter());
+        this.torpedoCruiser.addSelectionListener(listener);
 
         this.heavyCruiser = new Button(shiptypegroup, SWT.CHECK);
         this.heavyCruiser.setText("CA");
         this.heavyCruiser.setSelection(true);
-        this.heavyCruiser.addSelectionListener(new ApplyFilterSelectionAdapter());
+        this.heavyCruiser.addSelectionListener(listener);
 
         this.flyingDeckCruiser = new Button(shiptypegroup, SWT.CHECK);
         this.flyingDeckCruiser.setText("CAV");
         this.flyingDeckCruiser.setSelection(true);
-        this.flyingDeckCruiser.addSelectionListener(new ApplyFilterSelectionAdapter());
+        this.flyingDeckCruiser.addSelectionListener(listener);
 
         this.seaplaneTender = new Button(shiptypegroup, SWT.CHECK);
         this.seaplaneTender.setText("AV");
         this.seaplaneTender.setSelection(true);
-        this.seaplaneTender.addSelectionListener(new ApplyFilterSelectionAdapter());
+        this.seaplaneTender.addSelectionListener(listener);
 
         this.escortCarrier = new Button(shiptypegroup, SWT.CHECK);
         this.escortCarrier.setText("CVL");
         this.escortCarrier.setSelection(true);
-        this.escortCarrier.addSelectionListener(new ApplyFilterSelectionAdapter());
+        this.escortCarrier.addSelectionListener(listener);
 
         this.carrier = new Button(shiptypegroup, SWT.CHECK);
         this.carrier.setText("CV");
         this.carrier.setSelection(true);
-        this.carrier.addSelectionListener(new ApplyFilterSelectionAdapter());
+        this.carrier.addSelectionListener(listener);
 
         this.battleship = new Button(shiptypegroup, SWT.CHECK);
         this.battleship.setText("BB");
         this.battleship.setSelection(true);
-        this.battleship.addSelectionListener(new ApplyFilterSelectionAdapter());
+        this.battleship.addSelectionListener(listener);
 
         this.flyingDeckBattleship = new Button(shiptypegroup, SWT.CHECK);
         this.flyingDeckBattleship.setText("BBV");
         this.flyingDeckBattleship.setSelection(true);
-        this.flyingDeckBattleship.addSelectionListener(new ApplyFilterSelectionAdapter());
+        this.flyingDeckBattleship.addSelectionListener(listener);
 
         this.submarine = new Button(shiptypegroup, SWT.CHECK);
         this.submarine.setText("SS");
         this.submarine.setSelection(true);
-        this.submarine.addSelectionListener(new ApplyFilterSelectionAdapter());
+        this.submarine.addSelectionListener(listener);
 
         this.carrierSubmarine = new Button(shiptypegroup, SWT.CHECK);
         this.carrierSubmarine.setText("SSV");
         this.carrierSubmarine.setSelection(true);
-        this.carrierSubmarine.addSelectionListener(new ApplyFilterSelectionAdapter());
+        this.carrierSubmarine.addSelectionListener(listener);
 
         this.landingship = new Button(shiptypegroup, SWT.CHECK);
         this.landingship.setText("LHA");
         this.landingship.setSelection(true);
-        this.landingship.addSelectionListener(new ApplyFilterSelectionAdapter());
+        this.landingship.addSelectionListener(listener);
 
         this.armoredcarrier = new Button(shiptypegroup, SWT.CHECK);
         this.armoredcarrier.setText("CVB");
         this.armoredcarrier.setSelection(true);
-        this.armoredcarrier.addSelectionListener(new ApplyFilterSelectionAdapter());
+        this.armoredcarrier.addSelectionListener(listener);
 
         this.repairship = new Button(shiptypegroup, SWT.CHECK);
         this.repairship.setText("AR");
         this.repairship.setSelection(true);
-        this.repairship.addSelectionListener(new ApplyFilterSelectionAdapter());
+        this.repairship.addSelectionListener(listener);
 
-        this.submarinetender = new Button(shiptypegroup, SWT.CHECK);
-        this.submarinetender.setText("AS");
-        this.submarinetender.setSelection(true);
-        this.submarinetender.addSelectionListener(new ApplyFilterSelectionAdapter());
+        this.submarineTender = new Button(shiptypegroup, SWT.CHECK);
+        this.submarineTender.setText("AS");
+        this.submarineTender.setSelection(true);
+        this.submarineTender.addSelectionListener(listener);
 
         this.selectall = new Button(shiptypegroup, SWT.CHECK);
         this.selectall.setText("Select All");
@@ -251,11 +254,11 @@ public final class ShipFilterDialog extends Dialog {
         this.item.setText("Equip");
         this.item.setSelection(false);
         this.item.addSelectionListener(new ItemCheckAdapter());
-        this.item.addSelectionListener(new ApplyFilterSelectionAdapter());
+        this.item.addSelectionListener(listener);
 
         this.itemcombo = new Combo(itemcomposite, SWT.READ_ONLY);
         this.itemcombo.setEnabled(false);
-        this.itemcombo.addSelectionListener(new ApplyFilterSelectionAdapter());
+        this.itemcombo.addSelectionListener(listener);
         Set<String> items = new TreeSet<String>();
         for (ItemDto entry : GlobalContext.getItemMap().values()) {
             items.add(entry.getName());
@@ -267,22 +270,22 @@ public final class ShipFilterDialog extends Dialog {
         this.onfleet = new Button(etcgroup, SWT.CHECK);
         this.onfleet.setText("Assigned");
         this.onfleet.setSelection(true);
-        this.onfleet.addSelectionListener(new ApplyFilterSelectionAdapter());
+        this.onfleet.addSelectionListener(listener);
 
         this.notonfleet = new Button(etcgroup, SWT.CHECK);
         this.notonfleet.setText("Unassigned");
         this.notonfleet.setSelection(true);
-        this.notonfleet.addSelectionListener(new ApplyFilterSelectionAdapter());
+        this.notonfleet.addSelectionListener(listener);
 
         this.locked = new Button(etcgroup, SWT.CHECK);
         this.locked.setText("Locked");
         this.locked.setSelection(true);
-        this.locked.addSelectionListener(new ApplyFilterSelectionAdapter());
+        this.locked.addSelectionListener(listener);
 
         this.notlocked = new Button(etcgroup, SWT.CHECK);
         this.notlocked.setText("Not Locked");
         this.notlocked.setSelection(true);
-        this.notlocked.addSelectionListener(new ApplyFilterSelectionAdapter());
+        this.notlocked.addSelectionListener(listener);
 
         // 初期値を復元する
         if (this.filter != null) {
@@ -324,7 +327,7 @@ public final class ShipFilterDialog extends Dialog {
             // 艦種.工作艦
             this.repairship.setSelection(this.filter.repairship);
             // Submarine Tender
-            this.submarinetender.setSelection(this.filter.submarinetender);
+            this.submarineTender.setSelection(this.filter.submarineTender);
 
             if (!StringUtils.isEmpty(this.filter.itemname)) {
                 // 装備
@@ -376,7 +379,7 @@ public final class ShipFilterDialog extends Dialog {
         filter.landingship = this.landingship.getSelection();
         filter.armoredcarrier = this.armoredcarrier.getSelection();
         filter.repairship = this.repairship.getSelection();
-        filter.submarinetender = this.submarinetender.getSelection();
+        filter.submarineTender = this.submarineTender.getSelection();
         if (ShipFilterDialog.this.item.getSelection()) {
             if (ShipFilterDialog.this.itemcombo.getSelectionIndex() >= 0) {
                 filter.itemname = this.itemcombo.getItem(ShipFilterDialog.this.itemcombo
@@ -426,7 +429,7 @@ public final class ShipFilterDialog extends Dialog {
             ShipFilterDialog.this.landingship.setSelection(select);
             ShipFilterDialog.this.armoredcarrier.setSelection(select);
             ShipFilterDialog.this.repairship.setSelection(select);
-            ShipFilterDialog.this.submarinetender.setSelection(select);
+            ShipFilterDialog.this.submarineTender.setSelection(select);
 
             ShipFilterDialog.this.shipTable.updateFilter(ShipFilterDialog.this.createFilter());
         }

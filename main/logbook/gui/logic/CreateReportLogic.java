@@ -765,11 +765,10 @@ public final class CreateReportLogic {
             }
 
         }
-        if (!filter.submarinetender) {
+        if (!filter.submarineTender) {
             if ("AS".equals(ship.getType())) {
                 return false;
             }
-
         }
         // グループでフィルタ
         if (filter.group != null) {

@@ -13,10 +13,10 @@ import java.util.List;
 
 import javax.annotation.CheckForNull;
 
+import logbook.config.AppConfig;
 import logbook.dto.AbstractDto;
 
 import org.apache.commons.io.LineIterator;
-import org.eclipse.swt.graphics.RGB;
 
 /**
  * 資材ログを表します
@@ -88,10 +88,10 @@ public class ResourceLog extends AbstractDto {
             bauxite[i] = log.bauxite;
         }
         Resource[] resources = new Resource[] {
-                new Resource("Fuel", new RGB(0x00, 0x80, 0x00), fuel),
-                new Resource("Ammo", new RGB(0x66, 0x33, 0x00), ammo),
-                new Resource("Steel", new RGB(0x80, 0x80, 0x80), metal),
-                new Resource("Bauxite", new RGB(0xCC, 0x33, 0x00), bauxite)
+                new Resource("Fuel", AppConfig.get().getFuelColor(), fuel),
+                new Resource("Ammo", AppConfig.get().getAmmoColor(), ammo),
+                new Resource("Steel", AppConfig.get().getMetalColor(), metal),
+                new Resource("Bauxite", AppConfig.get().getBauxiteColor(), bauxite)
         };
         return new ResourceLog(time, resources);
     }

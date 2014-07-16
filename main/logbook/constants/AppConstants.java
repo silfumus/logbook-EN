@@ -13,7 +13,7 @@ import org.eclipse.swt.graphics.RGB;
 public class AppConstants {
 
     /** バージョン */
-    public static final String VERSION = "0.6.3";
+    public static final String VERSION = "0.6.5";
 
     /** ホームページ */
     public static final URI HOME_PAGE_URI = URI.create("http://kancolle.sanaechan.net/");
@@ -123,6 +123,9 @@ public class AppConstants {
 
     /** 保有資材:開発資材 */
     public static final int MATERIAL_RESEARCH = 7;
+
+    /** 報告書のオンメモリ記憶数 */
+    public static final int MAX_LOG_SIZE = 50;
 
     /** /resources/icon/add.png */
     public static final String R_ICON_ADD = "/resources/icon/add.png";
