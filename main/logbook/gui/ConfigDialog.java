@@ -96,13 +96,13 @@ public final class ConfigDialog extends Dialog {
         fleettab.setText("Fleets");
         fleettab.setData("fleettab");
         TreeItem notify = new TreeItem(systemroot, SWT.NONE);
-        notify.setText("通知");
+        notify.setText("Notification");
         notify.setData("notify");
         TreeItem capture = new TreeItem(systemroot, SWT.NONE);
         capture.setText("Capture");
         capture.setData("capture");
         TreeItem chart = new TreeItem(systemroot, SWT.NONE);
-        chart.setText("資材チャート");
+        chart.setText("Resource Chart");
         chart.setData("chart");
         TreeItem proxy = new TreeItem(systemroot, SWT.NONE);
         proxy.setText("Proxy");
@@ -186,7 +186,7 @@ public final class ConfigDialog extends Dialog {
 
         Label materialintervallabel = new Label(compositeSystem, SWT.NONE);
         materialintervallabel.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
-        materialintervallabel.setText("Material Log Interval (Seconds)");
+        materialintervallabel.setText("Material log interval (s)");
 
         final Spinner materialintervalSpinner = new Spinner(compositeSystem, SWT.BORDER);
         materialintervalSpinner.setMaximum(60 * 60 * 24);
@@ -224,16 +224,16 @@ public final class ConfigDialog extends Dialog {
         compositeFleetTab.setLayout(new GridLayout(1, false));
 
         Group leveling = new Group(compositeFleetTab, SWT.NONE);
-        leveling.setText("Leveling");
+        leveling.setText("Leveling Counter");
         leveling.setLayout(new RowLayout());
         leveling.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 
         final Button displaycount = new Button(leveling, SWT.CHECK);
-        displaycount.setText("Show finish count");
+        displaycount.setText("Show # of sortie remaining");
         displaycount.setSelection(AppConfig.get().isDisplayCount());
 
         Label label9 = new Label(leveling, SWT.NONE);
-        label9.setText("Sea");
+        label9.setText("Map:");
         final Combo seacombo = new Combo(leveling, SWT.READ_ONLY);
         int count = 0;
         for (Entry<String, Integer> entry : SeaExp.get().entrySet()) {
@@ -244,7 +244,7 @@ public final class ConfigDialog extends Dialog {
             count++;
         }
         Label label10 = new Label(leveling, SWT.NONE);
-        label10.setText("Evaluation");
+        label10.setText("Eval:");
         final Combo evalcombo = new Combo(leveling, SWT.READ_ONLY);
         count = 0;
         for (Entry<String, Double> entry : EvaluateExp.get().entrySet()) {
@@ -297,12 +297,12 @@ public final class ConfigDialog extends Dialog {
 
         final Button remind = new Button(compositeNotify, SWT.CHECK);
         remind.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false, 3, 1));
-        remind.setText("遠征の通知をリマインドする");
+        remind.setText("Remind me for finished expedition");
         remind.setSelection(AppConfig.get().isMissionRemind());
 
         Label intervallabel = new Label(compositeNotify, SWT.NONE);
         intervallabel.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
-        intervallabel.setText("間隔(秒)");
+        intervallabel.setText("Remind interval (s):");
 
         final Spinner intervalSpinner = new Spinner(compositeNotify, SWT.BORDER);
         intervalSpinner.setMaximum(60 * 60);
@@ -316,17 +316,17 @@ public final class ConfigDialog extends Dialog {
 
         final Button balloon = new Button(compositeNotify, SWT.CHECK);
         balloon.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false, 3, 1));
-        balloon.setText("遠征・入渠をバルーンで通知する");
+        balloon.setText("Use balloon tip notification");
         balloon.setSelection(AppConfig.get().isUseBalloon());
 
         final Button taskbar = new Button(compositeNotify, SWT.CHECK);
         taskbar.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false, 3, 1));
-        taskbar.setText("母港の空きをタスクバーで通知する");
+        taskbar.setText("Notify me for insufficient dock space in the taskbar");
         taskbar.setSelection(AppConfig.get().isUseTaskbarNotify());
 
         Label fullyLabel1 = new Label(compositeNotify, SWT.NONE);
         fullyLabel1.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
-        fullyLabel1.setText("母港の空きが");
+        fullyLabel1.setText("Warn me if only:");
 
         final Spinner fullySpinner = new Spinner(compositeNotify, SWT.BORDER);
         fullySpinner.setMaximum(Math.max(100, GlobalContext.maxChara()));
@@ -338,7 +338,7 @@ public final class ConfigDialog extends Dialog {
 
         Label fullyLabel2 = new Label(compositeNotify, SWT.NONE);
         fullyLabel2.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
-        fullyLabel2.setText("以下で警告表示");
+        fullyLabel2.setText("empty dock space remaining");
 
         // キャプチャ タブ
         Composite compositeCapture = new Composite(this.composite, SWT.NONE);
@@ -388,7 +388,7 @@ public final class ConfigDialog extends Dialog {
 
         final Button createDateFolder = new Button(compositeCapture, SWT.CHECK);
         createDateFolder.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false, 3, 1));
-        createDateFolder.setText("日付のフォルダを作成する");
+        createDateFolder.setText("Save to a subfolder with current date");
         createDateFolder.setSelection(AppConfig.get().isCreateDateFolder());
 
         // 資材チャート タブ
@@ -398,7 +398,7 @@ public final class ConfigDialog extends Dialog {
 
         final Label fuel = new Label(compositeChart, SWT.NONE);
         fuel.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
-        fuel.setText("燃料の色■");
+        fuel.setText("Fuel■");
         fuel.setForeground(SWTResourceManager.getColor(AppConfig.get().getFuelColor()));
 
         Button changeFuelColor = new Button(compositeChart, SWT.NONE);
@@ -413,7 +413,7 @@ public final class ConfigDialog extends Dialog {
                 }
             }
         });
-        changeFuelColor.setText("色の設定");
+        changeFuelColor.setText("Change color");
 
         Button resetFuelColor = new Button(compositeChart, SWT.NONE);
         resetFuelColor.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false, 1, 1));
@@ -423,11 +423,11 @@ public final class ConfigDialog extends Dialog {
                 fuel.setForeground(SWTResourceManager.getColor(new RGB(0x00, 0x80, 0x00)));
             }
         });
-        resetFuelColor.setText("リセット");
+        resetFuelColor.setText("Reset");
 
         final Label ammo = new Label(compositeChart, SWT.NONE);
         ammo.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
-        ammo.setText("弾薬の色■");
+        ammo.setText("Ammo■");
         ammo.setForeground(SWTResourceManager.getColor(AppConfig.get().getAmmoColor()));
 
         Button changeAmmoColor = new Button(compositeChart, SWT.NONE);
@@ -442,7 +442,7 @@ public final class ConfigDialog extends Dialog {
                 }
             }
         });
-        changeAmmoColor.setText("色の設定");
+        changeAmmoColor.setText("Change color");
 
         Button resetAmmoColor = new Button(compositeChart, SWT.NONE);
         resetAmmoColor.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false, 1, 1));
@@ -452,11 +452,11 @@ public final class ConfigDialog extends Dialog {
                 ammo.setForeground(SWTResourceManager.getColor(new RGB(0x66, 0x33, 0x00)));
             }
         });
-        resetAmmoColor.setText("リセット");
+        resetAmmoColor.setText("Reset");
 
         final Label metal = new Label(compositeChart, SWT.NONE);
         metal.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
-        metal.setText("鋼材の色■");
+        metal.setText("Steel■");
         metal.setForeground(SWTResourceManager.getColor(AppConfig.get().getMetalColor()));
 
         Button changeMetalColor = new Button(compositeChart, SWT.NONE);
@@ -471,7 +471,7 @@ public final class ConfigDialog extends Dialog {
                 }
             }
         });
-        changeMetalColor.setText("色の設定");
+        changeMetalColor.setText("Change color");
 
         Button resetMetalColor = new Button(compositeChart, SWT.NONE);
         resetMetalColor.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false, 1, 1));
@@ -481,11 +481,11 @@ public final class ConfigDialog extends Dialog {
                 metal.setForeground(SWTResourceManager.getColor(new RGB(0x80, 0x80, 0x80)));
             }
         });
-        resetMetalColor.setText("リセット");
+        resetMetalColor.setText("Reset");
 
         final Label bauxite = new Label(compositeChart, SWT.NONE);
         bauxite.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
-        bauxite.setText("ボーキの色■");
+        bauxite.setText("Bauxite■");
         bauxite.setForeground(SWTResourceManager.getColor(AppConfig.get().getBauxiteColor()));
 
         Button changeBauxiteColor = new Button(compositeChart, SWT.NONE);
@@ -500,7 +500,7 @@ public final class ConfigDialog extends Dialog {
                 }
             }
         });
-        changeBauxiteColor.setText("色の設定");
+        changeBauxiteColor.setText("Change color");
 
         Button resetBauxiteColor = new Button(compositeChart, SWT.NONE);
         resetBauxiteColor.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false, 1, 1));
@@ -510,7 +510,7 @@ public final class ConfigDialog extends Dialog {
                 bauxite.setForeground(SWTResourceManager.getColor(new RGB(0xCC, 0x33, 0x00)));
             }
         });
-        resetBauxiteColor.setText("リセット");
+        resetBauxiteColor.setText("Reset");
 
         // プロキシ
         Composite compositeProxy = new Composite(this.composite, SWT.NONE);
@@ -519,7 +519,7 @@ public final class ConfigDialog extends Dialog {
 
         final Button useProxyButton = new Button(compositeProxy, SWT.CHECK);
         useProxyButton.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false, 4, 1));
-        useProxyButton.setText("To use a proxy to connect*");
+        useProxyButton.setText("Use a proxy to connect*");
         useProxyButton.setSelection(AppConfig.get().isUseProxy());
 
         Label proxyHostLabel = new Label(compositeProxy, SWT.NONE);
@@ -552,7 +552,7 @@ public final class ConfigDialog extends Dialog {
         new Label(compositeDevelopment, SWT.NONE);
         final Button btnJson = new Button(compositeDevelopment, SWT.CHECK);
         btnJson.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false, 1, 1));
-        btnJson.setText("Save JSON to file");
+        btnJson.setText("Save JSON to disk");
         btnJson.setSelection(AppConfig.get().isStoreJson());
 
         Label lblJson = new Label(compositeDevelopment, SWT.NONE);

@@ -116,7 +116,7 @@ public final class AppConfigBean {
     private String defaultSea = "3-2";
 
     /** デフォルト評価 */
-    private String defaultEvaluate = "Perfect S";
+    private String defaultEvaluate = "S";
 
     /** タスクバー通知を使用する */
     private boolean useTaskbarNotify = true;

@@ -15,12 +15,12 @@ public class EvaluateExp {
      */
     private static final Map<String, Double> EVAL_EXP = new LinkedHashMap<String, Double>() {
         {
-            this.put("Perfect S", 1.2d);
-            this.put("S (Victory)", 1.2d);
-            this.put("A (Victory)", 1.0d);
-            this.put("B (Tactical Victory)", 1.0d);
-            this.put("C (Tactical Defeat)", 0.8d);
-            this.put("D (Defeat)", 0.7d);
+            this.put("S (P)", 1.2d);
+            this.put("S", 1.2d);
+            this.put("A", 1.0d);
+            this.put("B", 1.0d);
+            this.put("C", 0.8d);
+            this.put("D", 0.7d);
         }
     };
 
