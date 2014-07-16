@@ -336,7 +336,7 @@ public class Ship {
             this.put("316", new ShipInfoDto("Amatsukaze Kai", "DD", "Amatsukaze", 0, 20, 20));
             this.put("317", new ShipInfoDto("Urakaze Kai", "DD", "Urakaze", 0, 20, 15));
             this.put("318", new ShipInfoDto("Ryuuhou Kai", "CVL", "Ryuuhou", 0, 40, 35));
-            this.put("319", ShipInfoDto.EMPTY);
+            this.put("319", new ShipInfoDto("Myoukou Kai2", "CA", "Myoukou", 0, 75, 45));
             this.put("320", ShipInfoDto.EMPTY);
             this.put("321", ShipInfoDto.EMPTY);
             this.put("322", ShipInfoDto.EMPTY);
