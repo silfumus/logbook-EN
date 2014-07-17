@@ -531,10 +531,10 @@ public final class CreateReportLogic {
             String state = "";
             switch (quest.getState()) {
             case 2:
-                state = "On Progress";
+                state = "Active";
                 break;
             case 3:
-                state = "Complete";
+                state = "Done";
                 break;
             default:
                 continue;

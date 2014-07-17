@@ -80,8 +80,10 @@ public final class QuestTranslated {
             this.put("「潜水母艦」と複数の潜水艦(4隻以上)からなる潜水艦隊「第六艦隊」を編成せよ！",
                     "Have a submarine tender (AS) and 4 SS in your main fleet."); //A37
             //Sortie Quests - B
+            this.put("航空戦艦2隻を基幹とする艦隊で、西方海域カスガダマ島の敵勢力を撃破せよ！", "Have 2 BBV ships in your main fleet and score a victory against World 4-4 boss."); //B23
+            this.put("「第三十駆逐隊(第二次)」は直ちに抜錨！鎮守府正面の対潜哨戒を実施せよ！", "Deploy Mutsuki, Yayoi, Uzuki, and Mochizuki and encounter World 1-5 boss."); //B24
             this.put("新編「二航戦」を基幹とした艦隊で、珊瑚諸島沖に出撃、敵機動部隊を撃滅せよ！",
-                    "Deploy a fleet with Hiryuu Kai2 (flagship), Souryuu, and 2 DD. Score S rating against world 5-2 boss."); //B25
+                    "Deploy a fleet with Hiryuu Kai2 (flagship), Souryuu, and 2 DD. Score S rating against World 5-2 boss."); //B25
             this.put("艦隊を出撃させ、敵艦隊を捕捉、これを撃滅せよ！", "Defeat an enemy fleet."); //Bd1
             this.put("艦隊を出撃させ、敵艦隊「主力」を捕捉！これを撃滅せよ！", "Defeat the flagship of an enemy fleet."); //Bd2
             this.put("艦隊全力出撃！遊弋する敵艦隊を10回邀撃せよ！", "Defeat 10 enemy fleets."); //Bd3
@@ -101,6 +103,7 @@ public final class QuestTranslated {
             this.put("西方海域カスガダマ島沖に出撃し、敵東方中枢艦隊を捕捉、これを撃破せよ！", "Defeat a boss in World 4-4.");
             this.put("南方海域珊瑚諸島沖に出撃し、敵機動部隊本体を捕捉撃滅、これに完全勝利せよ！",
                     "Defeat 2 bosses in World 5-2 with S RATING victory or higher."); //Bw9
+            this.put("「第五戦隊」は沖ノ島沖の戦闘哨戒を実施、敵艦隊主力を捕捉、これを撃滅せよ！", "Deploy a fleet with Myoukou, Nachi, Haguro, and additional ships. Score S rating against world 2-5 boss."); //Bm1
             //Practice Quests - C
             this.put("他の提督(プレイヤー)の艦隊と「演習」を行おう！", "Challenge another fleet in practice mode."); //C1
             this.put("本日中に他の司令官の艦隊に対して3回「演習」を挑もう！", "Challenge 3 other fleets in practice mode within the same day."); //C2
@@ -110,10 +113,22 @@ public final class QuestTranslated {
             this.put("艦隊を「遠征」に出発させよう！", "Perform an expedition."); //D1
             this.put("本日中に「遠征」３回成功させよう！", "Perform 3 successful expeditions within the same day."); //D2
             this.put("本日中に「遠征」10回成功させよう！", "Perform 10 successful expeditions within the same day."); //D3
-            this.put("「遠洋潜水艦作戦」を実施し、潜水艦隊の練度向上と敵艦隊漸滅に努めよ！", "Complete Expedition 39."); //D13
-            this.put("Placeholder", "Placeholder"); //D14
+            this.put("今週中に「遠征」30回成功させよう！", "Perform 30 successful expeditions within the same week."); //D4
+            this.put("はじめての潜水艦派遣作戦を成功させよう！", "Complete Expedition 30."); //D5
+            this.put("第２次潜水艦派遣作戦を成功させよう！", "Complete Expedition 30 one more time."); //D6
+            this.put("第3次及び第4次潜水艦派遣作戦を成功させ、他国製技術の導入に努めよ！", "Complete Expedition 30 two more times."); //D7
+            this.put("有力な潜水艦隊派遣による海外艦との接触作戦を成功させよ！", "Complete Expedition 31 to receive German DD Z1!"); //D8
+            this.put("激戦海域である南方海域への「東京急行」系遠征を敢行、これを成功させよ！", "Complete expedition 37 or 38."); //D9
+            this.put("「航空戦艦運用演習」を実施し、航空火力艦の運用の強化に努めよ！", "Complete Expedition 23."); //D10
+            this.put("今週中に「東京急行」系遠征を継続的に実施、同種作戦を7回成功させよう！", "Complete expedition 37 or 38 a total of 7 times in a week."); //D11
+            this.put("「航空戦艦運用演習」を継続実施し、航空火力艦の運用の強化に引き続き努めよ！", "Complete expedition 23 four more times."); //D12
+            this.put("「遠洋潜水艦作戦」を実施し、潜水艦隊の練度向上と敵艦隊漸減に努めよ！", "Complete Expedition 39."); //D13
+            this.put("「遠洋潜水艦作戦」を継続実施し、潜水艦隊の練度向上と敵艦隊漸減に努めよ！", "Complete expedition 39 two more times."); //D14
             //Supply / Docking Quests - E
+            this.put("補給は大事です！燃料・弾薬を艦に「補給」しよう！", "Resupply a ship.");
+            this.put("戦闘で傷ついた艦を「入渠」させて修理して、次の出撃に備えよう！", "Repair a ship.");
             this.put("各艦隊から整備が必要な艦を5隻以上ドック入りさせ、大規模な整備をしよう！", "Repair 5 ships."); //E3
+            this.put("艦隊酒保祭り！各艦に延べ15回以上の補給を実施しよう！", "Resupply your ships 15 times."); //E4
             ///Building Quests - F
             this.put("「工廠」で鋼材などの資材を使って新しい艦を「建造」しよう！", "Craft a ship."); //F1
             this.put("「工廠」でボーキサイトなどの資材を使って新しい装備アイテムを「開発」しよう！", "Craft a piece of equipment.");
@@ -125,7 +140,7 @@ public final class QuestTranslated {
             this.put("艦隊強化のため、「工廠」で艦娘を本日中に3隻「建造」しよう！", "Craft 3 ships.");
             this.put("少し艦隊規模が大きくなりすぎました！「工廠」で不要な艦を2隻「解体」してください！", "Scrap 2 ships.");
             this.put("大型艦建造の準備をします！「工廠」で装備アイテムを4回「廃棄」してみてください！", "Scrap equipment 4 times."); //F10
-            this.put("「工廠」で装備アイテムを3回「廃棄」して、輸送用ドラム缶を準備します。", "Scrap equipment 3 times.");
+            this.put("「工廠」で装備アイテムを3回「廃棄」して、輸送用のドラム缶を準備します。", "Scrap equipment 3 times.");
             this.put("「工廠」で余剰の装備アイテムをなるべく多く「廃棄」して、鋼材の再利用に努めよう！", "Scrap equipment 24 times."); //F12
             this.put("「九七式艦攻(友永隊)」搭載空母を秘書艦にした状態で新たに「天山」を2つ廃棄！",
                     "Equip Type 97 Bomber (Tomonaga Sqn) on Hiryuu Kai2 and scrap 2 Tenzan."); //F13
@@ -135,6 +150,13 @@ public final class QuestTranslated {
             this.put("一週間の間に、近代化改修を１5回成功させよ！", "Perform 15 successful modernizations within the same week.");
             this.put("大型艦/新型艦建造のための準備を行う。任意の艦で近代化改修を4回成功させよ！", "Perform 4 successful modernizations.");
             this.put("Sample", "Sample");
+            ///Marriage Quests - W
+            this.put("式の準備をします！「工廠」で装備アイテムを2回「廃棄」して身の回りの整理を！", "Scrap equipment 2 times to show your love!.");
+            this.put("本日中に「演習」で2回以上「勝利」をおさめ、式への気持ちを整理しよう！", "Show your love by getting 2 victories in practice mode!");
+            this.put("第一艦隊旗艦に練度の高い(Lv.90以上～99以下)艦娘を配備して気持ちを整理せよ！", "Organize your feelings and deploy your fleet with a high level flagship (Lv.90~99)!");
+            this.put("練度の高い(Lv.90以上～99以下）第一艦隊旗艦で出撃し、オリョール海の暁に勝利を刻め！", "Deploy a fleet with a high level flagship (Lv.90~99) and score S rating against world 2-3 boss.");
+            this.put("第一艦隊旗艦に強い絆を結んだLv.100以上の艦娘を配備した6隻の艦隊を編成せよ！", "Organize a fleet of 6 ships with Lv.100 married ship as flagship");
+            this.put("強い絆を結んだ艦娘を旗艦とした第一艦隊でリランカ島へ出撃、敵中枢を撃滅せよ！", "Deploy a fleet with Lv.100 married ship as flagship and score S rating against world 4-3 boss.");
         }
     };
 
