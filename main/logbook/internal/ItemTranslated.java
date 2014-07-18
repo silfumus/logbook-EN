@@ -36,7 +36,7 @@ public final class ItemTranslated {
             this.put("零式艦戦21型", "Type 21 Zero Fighter");
             this.put("零式艦戦52型", "Type 52 Zero Fighter");
             this.put("烈風", "Reppu");
-            this.put("九九式艦爆", "Type 99 Bomber");
+            this.put("九九式艦爆", "Type 99 Dive Bomber");
             this.put("彗星", "Suisei");
             this.put("零式水上偵察機", "Type 0 Recon Seaplane");
             this.put("瑞雲", "Zuiun");
@@ -111,12 +111,12 @@ public final class ItemTranslated {
             this.put("潜水艦53cm艦首魚雷(8門)", "53cm Submarine Bow Torpedo Mount (8 tubes)");
             this.put("零式艦戦21型(熟練)", "Type 21 Zero Fighter (Skilled)");
             this.put("九九式艦爆(熟練)", "Type 99 Dive Bomber (Skilled)");
-            this.put("98", "UNKNOWN");
-            this.put("99", "UNKNOWN");
-            this.put("100", "UNKNOWN");
+            this.put("九七式艦攻(熟練)", "Type 97 Torpedo Bomber (Skilled)");
+            this.put("九九式艦爆(江草隊)", "Type 99 Bomber (Egusa Sqn)");
+            this.put("彗星(江草隊)", "Suisei (Egusa Sqn)");
             this.put("照明弾", "Star Shell");
             this.put("九八式水上偵察機(夜偵)", "Type 98 Night Recon Seaplane");
-            this.put("103", "UNKNOWN");
+            this.put("試製35.6cm三連装砲", "Prototype 35.6cm Triple Gun Mount");
             this.put("104", "UNKNOWN");
             this.put("105", "UNKNOWN");
             this.put("106", "UNKNOWN");
