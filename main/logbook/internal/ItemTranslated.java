@@ -112,7 +112,7 @@ public final class ItemTranslated {
             this.put("零式艦戦21型(熟練)", "Type 21 Zero Fighter (Skilled)");
             this.put("九九式艦爆(熟練)", "Type 99 Dive Bomber (Skilled)");
             this.put("九七式艦攻(熟練)", "Type 97 Torpedo Bomber (Skilled)");
-            this.put("九九式艦爆(江草隊)", "Type 99 Bomber (Egusa Sqn)");
+            this.put("九九式艦爆(江草隊)", "Type 99 Dive Bomber (Egusa Sqn)");
             this.put("彗星(江草隊)", "Suisei (Egusa Sqn)");
             this.put("照明弾", "Star Shell");
             this.put("九八式水上偵察機(夜偵)", "Type 98 Night Recon Seaplane");
