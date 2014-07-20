@@ -80,7 +80,7 @@ public final class QuestTranslated {
             this.put("「潜水母艦」と複数の潜水艦(4隻以上)からなる潜水艦隊「第六艦隊」を編成せよ！",
                     "Have a submarine tender (AS) and 4 SS in your main fleet."); //A37
             this.put("新型電探運用試験のため、第一艦隊の旗艦に「妙高改二」を配備せよ！", "Have Myoukou Kai2 as flagship in your main fleet."); //A38
-            this.put("「蒼龍改二」（※旗艦）及び「飛龍改二」を旗艦とした二航戦（要駆逐艦2隻）を編成せよ！", "Have Souryuu Kai2 (flagship), Hiryuu Kai2, and 2 DD in your main fleet."); //A39
+            this.put("「蒼龍改二」(※旗艦)及び「飛龍改二」を基幹とした二航戦(要駆逐艦2隻)を編成せよ！", "Have Souryuu Kai2 (flagship), Hiryuu Kai2, and 2 DD in your main fleet."); //A39
             //Sortie Quests - B
             this.put("航空戦艦2隻を基幹とする艦隊で、西方海域カスガダマ島の敵勢力を撃破せよ！", "Have 2 BBV ships in your main fleet and score a victory against World 4-4 boss."); //B23
             this.put("「第三十駆逐隊(第二次)」は直ちに抜錨！鎮守府正面の対潜哨戒を実施せよ！", "Deploy Mutsuki, Yayoi, Uzuki, and Mochizuki and encounter World 1-5 boss."); //B24
@@ -147,7 +147,7 @@ public final class QuestTranslated {
             this.put("「工廠」で余剰の装備アイテムをなるべく多く「廃棄」して、鋼材の再利用に努めよう！", "Scrap equipment 24 times."); //F12
             this.put("「九七式艦攻(友永隊)」搭載空母を秘書艦にした状態で新たに「天山」を2つ廃棄！",
                     "Have flagship equipped with Type 97 Torpedo Bomber (Tomonaga Sqn) and scrap 2 Tenzan."); //F13
-            this.put("「九九式艦爆（江草隊）」搭載空母を秘書艦にした状態で新たに「彗星」を2つ廃棄！", "Have flagship equipped with Type 99 Dive Bomber (Egusa Sqn) and scrap 2 Suisei."); //F14
+            this.put("「九九式艦爆(江草隊)」搭載空母を秘書艦にした状態で新たに「彗星」を2つ廃棄！", "Have flagship equipped with Type 99 Dive Bomber (Egusa Sqn) and scrap 2 Suisei."); //F14
             ///Modernization Quests - G
             this.put("任意の艦を近代化改修(合成)して、強化せよ！", "Perform a successful modernization.");
             this.put("近代化改修を実施して、２回以上これを成功させよ！", "Perform 2 successful modernizations within the same day.");
