@@ -1,0 +1,105 @@
+20140804;JP-Name;TR-Name
+1;12cm単装砲;12cm Naval Gun
+2;12.7cm連装砲;12.7cm Twin Gun Mount
+3;10cm連装高角砲;10cm Twin High-angle Mount
+4;14cm単装砲;14cm Naval Gun
+5;15.5cm三連装砲;15.5cm Triple Gun Mount (Main)
+6;20.3cm連装砲;20.3cm Twin Gun Mount
+7;35.6cm連装砲;35.6cm Twin Gun Mount
+8;41cm連装砲;41cm Twin Gun Mount
+9;46cm三連装砲;46cm Triple Gun Mount
+10;12.7cm連装高角砲;12.7cm Twin High-angle Mount
+11;15.2cm単装砲;15.2cm Naval Gun
+12;15.5cm三連装副砲;15.5cm Triple Gun Mount (Secondary)
+13;61cm三連装魚雷;61cm Triple Torpedo Mount
+14;61cm四連装魚雷;61cm Quad Torpedo Mount
+15;61cm四連装(酸素)魚雷;61cm Quad Oxygen Torpedo Mount
+16;九七式艦攻;Type 97 Torpedo Bomber
+17;天山;Tenzan
+18;流星;Ryuusei
+19;九六式艦戦;Type 96 Fighter
+20;零式艦戦21型;Type 21 Zero Fighter
+21;零式艦戦52型;Type 52 Zero Fighter
+22;烈風;Reppuu
+23;九九式艦爆;Type 99 Dive Bomber
+24;彗星;Suisei
+25;零式水上偵察機;Type 0 Recon Seaplane
+26;瑞雲;Zuiun
+27;13号対空電探;Type 13 Air RADAR
+28;22号対水上電探;Type 22 Surface RADAR
+29;33号対水上電探;Type 33 Surface RADAR
+30;21号対空電探;Type 21 Air RADAR
+31;32号対水上電探;Type 32 Surface RADAR
+32;14号対空電探;Type 14 Air RADAR
+33;改良型艦本式タービン;Improved Steam Turbine
+34;強化型艦本式缶;Enhanced Steam Boiler
+35;三式弾;Type 3 Shell
+36;九一式徹甲弾;Type 91 AP Shell
+37;7.7mm機銃;7.7mm Machine Gun
+38;12.7mm単装機銃;12.7mm Machine Gun
+39;25mm連装機銃;25mm Twin Autocannon Mount
+40;25mm三連装機銃;25mm Triple Autocannon Mount
+41;甲標的;Type A Ko-hyoteki
+42;応急修理要員;Repair Team
+43;応急修理女神;Repair Goddess
+44;九四式爆雷投射機;Type 94 Depth Charge
+45;三式爆雷投射機;Type 3 Depth Charge
+46;九三式水中聴音機;Type 93 SONAR
+47;三式水中探信儀;Type 3 SONAR
+48;12.7cm単装高角砲;12.7cm High-angle Mount
+49;25mm単装機銃;25mm Autocannon
+50;20.3cm(3号)連装砲;20.3cm(no.3) Twin Gun Mount
+51;12cm30連装噴進砲;12cm 30-tube Rocket Launcher
+52;流星改;Ryuusei Kai
+53;烈風改;Reppuu Kai
+54;彩雲;Saiun
+55;紫電改二;Shiden Kai2
+56;震電改;Shinden Kai
+57;彗星一二型甲;Suisei Model 12A
+58;61cm五連装(酸素)魚雷;61cm Quint Oxygen Torpedo Mount
+59;零式水上観測機;Type 0 Observation Seaplane
+60;零式艦戦62型(爆戦);Type 62 Zero Fighter-Bomber
+61;二式艦上偵察機;Type 2 Recon Aircraft
+62;試製晴嵐;Prototype Seiran
+63;12.7cm連装砲B型改二;12.7cm Twin Mount Type B Kai2
+64;Ju87C改;Ju 87C Kai
+65;15.2cm連装砲;15.2cm Twin Gun Mount
+66;8cm高角砲;8cm Twin High-angle Mount
+67;53cm艦首(酸素)魚雷;53cm Hull-mount Oxygen Torpedoes
+68;大発動艇;Daihatsu-Class Landing Craft
+69;カ号観測機;Type Ka Observation Autogyro
+70;三式指揮連絡機(対潜);Type 3 Spotter/Liaison (ASW)
+71;10cm連装高角砲(砲架);10cm Twin High-angle Carriage Mount
+72;増設バルジ（中型艦）;Anti-Torpedo Bulge (M)
+73;増設バルジ（大型艦）;Anti-Torpedo Bulge (L)
+74;探照灯;Searchlight
+75;ドラム缶(輸送用);Drum Canister
+76;38cm連装砲;38cm Twin Gun Mount
+77;15cm連装副砲;15cm Twin Gun Mount
+78;12.7cm単装砲;12.7cm Naval Gun
+79;瑞雲(六三四空);Zuiun (634 Air Group)
+80;瑞雲12型;Zuiun Model 12
+81;瑞雲12型(六三四空);Zuiun Model 12 (634 Air Group)
+82;九七艦攻(九三一空);Type 97 Torpedo Bomber (931 Air Group)
+83;天山(九三一空);Tenzan (931 Air Group)
+84;2cm 四連装FlaK 38;2cm Flakvierling 38
+85;3.7cm FlaK M42;3.7cm FlaK M42
+86;艦艇修理施設;Ship Repair Facility
+87;新型高温高圧缶;New High Pressure-Temperature Steam Boiler
+88;22号対水上電探改四;Type 22 Surface RADAR Kai4
+89;21号対空電探改;Type 21 Air RADAR Kai
+90;20.3cm(2号)連装砲;20.3cm(no.2) Twin Gun Mount
+91;12.7cm連装高角砲(後期型);12.7cm Twin High-Angle Mount (Late Model)
+92;毘式40mm連装機銃;Type HI 40mm Twin Machine Gun
+93;九七式艦攻(友永隊);Type 97 Torpedo Bomber (Tomonaga Squadron)
+94;天山一二型(友永隊);Tenzan Model 12 (Tomonaga Squadron)
+95;潜水艦53cm艦首魚雷(8門);53cm Submarine Bow Torpedo Mount (8 tubes)
+96;零式艦戦21型(熟練);Type 21 Zero Fighter (Skilled)
+97;九九式艦爆(熟練);Type 99 Dive Bomber (Skilled)
+98;九七式艦攻(熟練);Type 97 Torpedo Bomber (Skilled)
+99;照明弾;Star Shell
+100;九八式水上偵察機(夜偵);Type 98 Night Recon Seaplane
+101;九九式艦爆(江草隊);Type 99 Dive Bomber (Egusa Squadron)
+102;彗星(江草隊);Suisei (Egusa Squadron)
+103;試製35.6cm三連装砲;Prototype 35.6cm Triple Gun Mount
+104;35.6cm連装砲(ダズル迷彩);35.6cm Twin Gun Mount (Dazzle Camo)

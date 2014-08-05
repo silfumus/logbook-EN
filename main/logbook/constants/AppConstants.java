@@ -20,7 +20,15 @@ public class AppConstants {
 
     /** アップデートチェック先 */
     public static final URI UPDATE_CHECK_URI = URI
-            .create("https://raw.githubusercontent.com/silfumus/logbook-EN/master/checkversion.txt");
+            .create("http://localhost/silfumus/logbook-EN/master/checkversion.txt");
+
+    /** アップデートチェック先 */
+    public static final URI QUEST_TRANSLATION_URI = URI
+            .create("http://localhost/silfumus/logbook-EN/master/data/quest.csv");
+
+    /** ホームページ */
+    public static final URI ITEM_TRANSLATION_URI = URI
+            .create("http://localhost/silfumus/logbook-EN/master/data/item.csv");
 
     /** GitHub Translation */
     public static final URI GITHUB_PAGE_URI = URI.create("https://github.com/silfumus/logbook-EN");
@@ -105,6 +113,9 @@ public class AppConstants {
 
     /** Quest Translation File  */
     public static final File QUEST_TRANSLATION_FILE = new File("./data/quest.csv");
+
+    /** Quest Translation File  */
+    public static final File ITEM_TRANSLATION_FILE = new File("./data/item.csv");
 
     /** 保有資材:燃料 */
     public static final int MATERIAL_FUEL = 1;
