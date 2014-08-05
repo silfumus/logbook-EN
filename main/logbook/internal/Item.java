@@ -1,10 +1,15 @@
 package logbook.internal;
 
+import java.io.IOException;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
+import logbook.constants.AppConstants;
 import logbook.dto.ItemDto;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * アイテム
@@ -315,6 +320,29 @@ public class Item {
                     0, 0, 0, 0, 0, 7, 8));
         }
     };
+
+    private static final Logger LOG = LogManager.getLogger(Item.class);
+
+    private static final Map<String, String> ITEMTRANSLATED = new ConcurrentHashMap<String, String>();
+    static {
+        try {
+            // Populate the HashMap with the translation data
+            // Column: Quest Code, titleJP, titleEN, detailJP, detailEN, api_no
+            TranslationDto.fillMap(ITEMTRANSLATED, AppConstants.ITEM_TRANSLATION_FILE, 1, 2);
+        } catch (IOException e) {
+            LOG.warn("Failed to read item translation.", e);
+        }
+    }
+
+    /**
+     * Get the equipment name
+     * 
+     * @param jpname JP equipment name
+     * @return English name
+     */
+    public static String getTranslated(String jpname) {
+        return ITEMTRANSLATED.containsKey(jpname) ? ITEMTRANSLATED.get(jpname) : jpname;
+    }
 
     /**
      * アイテムを設定します

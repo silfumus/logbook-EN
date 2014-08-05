@@ -1399,7 +1399,7 @@ public final class GlobalContext {
         return new ShipInfoDto(name, type, flagship, afterlv, maxBull, maxFuel);
     }
 
-    private static void addConsole(Object message) {
+    public static void addConsole(Object message) {
         consoleQueue.add(new SimpleDateFormat(AppConstants.DATE_SHORT_FORMAT).format(Calendar.getInstance().getTime())
                 + "  " + message.toString());
     }

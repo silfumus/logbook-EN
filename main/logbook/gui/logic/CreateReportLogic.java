@@ -530,6 +530,9 @@ public final class CreateReportLogic {
 
             String state = "";
             switch (quest.getState()) {
+            case 1:
+                state = "Inactive";
+                break;
             case 2:
                 state = "Active";
                 break;

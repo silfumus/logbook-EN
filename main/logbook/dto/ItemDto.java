@@ -2,7 +2,7 @@ package logbook.dto;
 
 import javax.json.JsonObject;
 
-import logbook.internal.ItemTranslated;
+import logbook.internal.Item;
 import logbook.internal.ItemType;
 
 /**
@@ -331,14 +331,7 @@ public final class ItemDto extends AbstractDto {
      * @return name
      */
     public String getName() {
-        return ItemTranslated.get(this.name);
-    }
-
-    /**
-     * @return English name
-     */
-    public String getTranslated() {
-        return ItemTranslated.get(this.name);
+        return Item.getTranslated(this.name);
     }
 
     /**
