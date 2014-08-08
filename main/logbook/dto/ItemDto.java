@@ -282,7 +282,7 @@ public final class ItemDto extends AbstractDto {
      * idを取得します。
      * @return id
      */
-    public Integer getId() {
+    public int getId() {
         return this.id;
     }
 
