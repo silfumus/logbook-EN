@@ -76,19 +76,19 @@ public final class AsyncExecUpdateCheck extends Thread {
                             versionmessage.append("Latest logbook: " + latestlogbook + "\r\n");
                         }
                         if (questupdate) {
-                            versionmessage.append("Latest definition: " + latestquest + "(Quest)\r\n");
+                            versionmessage.append("Latest definition: " + latestquest + " (Quest)\r\n");
                         }
                         if (itemupdate) {
-                            versionmessage.append("Latest definition: " + latestitem + "(Equipment)\r\n");
+                            versionmessage.append("Latest definition: " + latestitem + " (Equipment)\r\n");
                         }
                         if (shipstyleupdate) {
-                            versionmessage.append("Latest definition: " + latestshipstyle + "(Hull Types)\r\n");
+                            versionmessage.append("Latest definition: " + latestshipstyle + " (Hull Types)\r\n");
                         }
                         if (expnameupdate) {
-                            versionmessage.append("Latest definition: " + latestexpname + "(Expedition)\r\n");
+                            versionmessage.append("Latest definition: " + latestexpname + " (Expedition)\r\n");
                         }
                         if (mapupdate) {
-                            versionmessage.append("Latest definition: " + latestmap + "(Map)\r\n");
+                            versionmessage.append("Latest definition: " + latestmap + " (Map)\r\n");
                         }
                         String messagecontent = versionmessage.toString();
 
