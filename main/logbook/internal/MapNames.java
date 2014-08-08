@@ -1,62 +1,35 @@
 package logbook.internal;
 
+import java.io.IOException;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+
+import logbook.constants.AppConstants;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * Map
  *
  */
 public final class MapNames {
+    private static final Logger LOG = LogManager.getLogger(MapNames.class);
 
     /**
      * Map names predefined value
      */
-    private static final Map<String, String> MAPNAME = new ConcurrentHashMap<String, String>() {
-        {
-            this.put("鎮守府正面海域", "1-1");
-            this.put("南西諸島沖", "1-2");
-            this.put("製油所地帯沿岸", "1-3");
-            this.put("南西諸島防衛線", "1-4");
-            this.put("鎮守府近海", "1-5");
-            this.put("カムラン半島", "2-1");
-            this.put("バシー島沖", "2-2");
-            this.put("東部オリョール海", "2-3");
-            this.put("沖ノ島海域", "2-4");
-            this.put("沖ノ島沖戦闘哨戒", "2-5");
-            this.put("モーレイ海哨戒", "3-1");
-            this.put("キス島沖", "3-2");
-            this.put("アルフォンシーノ方面", "3-3");
-            this.put("北方海域全域", "3-4");
-            this.put("ジャム島攻略作戦", "4-1");
-            this.put("カレー洋制圧戦", "4-2");
-            this.put("リランカ島空襲", "4-3");
-            this.put("カスガダマ沖海戦", "4-4");
-            this.put("南方海域前面", "5-1");
-            this.put("珊瑚諸島沖", "5-2");
-            this.put("サブ島沖海域", "5-3");
-            this.put("サーモン海域", "5-4");
-            this.put("サーモン海域北方", "5-5");
-            this.put("南西海域サメワニ沖", "E-1 Ironbottom");
-            this.put("南西海域ズンダ海峡", "E-2 Ironbottom");
-            this.put("ポートワイン沖海域", "E-3 Ironbottom");
-            this.put("中部太平洋海域", "E-4 Ironbottom");
-            this.put("北太平洋海域", "E-5 Ironbottom");
-            this.put("観音崎沖", "E-1 Arpeggio");
-            this.put("硫黄島周辺海域", "E-2 Arpeggio");
-            this.put("中部太平洋海域", "E-3 Arpeggio");
-            this.put("南西海域サメワニ沖", "E-1 Spring 2014");
-            this.put("南西海域ズンダ海峡", "E-2 Spring 2014");
-            this.put("ポートワイン沖海域", "E-3 Spring 2014");
-            this.put("中部太平洋海域", "E-4 Spring 2014");
-            this.put("北太平洋海域", "E-5 Spring 2014");
-            this.put("111", "ABC");
-            this.put("27", "<UNKNOWN>");
-            this.put("28", "<UNKNOWN>");
-            this.put("29", "<UNKNOWN>");
-            this.put("30", "<UNKNOWN>");
+    private static final Map<String, String> MAPNAME = new ConcurrentHashMap<String, String>();
+
+    static {
+        try {
+            // Populate the HashMap with the translation data
+            // Column: Quest Code, titleJP, titleEN, detailJP, detailEN, api_no
+            TranslationDto.fillMap(MAPNAME, AppConstants.MAPNAME_TRANSLATION_FILE, 0, 1);
+        } catch (IOException e) {
+            LOG.warn("Failed to read quest translation.", e);
         }
-    };
+    }
 
     /**
      * Get the map code
@@ -65,6 +38,6 @@ public final class MapNames {
      * @return Map Code
      */
     public static String get(String jpname) {
-        return MAPNAME.get(jpname);
+        return MAPNAME.containsKey(jpname) ? MAPNAME.get(jpname) : jpname;
     }
 }

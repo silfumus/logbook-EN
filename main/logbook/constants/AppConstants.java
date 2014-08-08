@@ -20,15 +20,27 @@ public class AppConstants {
 
     /** アップデートチェック先 */
     public static final URI UPDATE_CHECK_URI = URI
-            .create("http://localhost/silfumus/logbook-EN/master/checkversion.txt");
+            .create("https://raw.githubusercontent.com/silfumus/logbook-EN/master/checkversion.txt");
 
-    /** アップデートチェック先 */
+    /** Quest Translation Source */
     public static final URI QUEST_TRANSLATION_URI = URI
-            .create("http://localhost/silfumus/logbook-EN/master/data/quest.csv");
+            .create("https://raw.githubusercontent.com/silfumus/logbook-EN/master/data/quest.csv");
 
-    /** ホームページ */
+    /** Item Translation Source */
     public static final URI ITEM_TRANSLATION_URI = URI
-            .create("http://localhost/silfumus/logbook-EN/master/data/item.csv");
+            .create("https://raw.githubusercontent.com/silfumus/logbook-EN/master/data/item.csv");
+
+    /** Hull Type Source */
+    public static final URI SHIPSTYLE_TRANSLATION_URI = URI
+            .create("https://raw.githubusercontent.com/silfumus/logbook-EN/master/data/shipstyle.csv");
+
+    /** Expedition Translation Source */
+    public static final URI EXPEDITION_TRANSLATION_URI = URI
+            .create("https://raw.githubusercontent.com/silfumus/logbook-EN/master/data/expedition.csv");
+
+    /** World Map Translation Source */
+    public static final URI MAPNAME_TRANSLATION_URI = URI
+            .create("https://raw.githubusercontent.com/silfumus/logbook-EN/master/data/map.csv");
 
     /** GitHub Translation */
     public static final URI GITHUB_PAGE_URI = URI.create("https://github.com/silfumus/logbook-EN");
@@ -114,8 +126,17 @@ public class AppConstants {
     /** Quest Translation File  */
     public static final File QUEST_TRANSLATION_FILE = new File("./data/quest.csv");
 
-    /** Quest Translation File  */
+    /** Item Translation File  */
     public static final File ITEM_TRANSLATION_FILE = new File("./data/item.csv");
+
+    /** Hull Classification Translation File  */
+    public static final File SHIPSTYLE_TRANSLATION_FILE = new File("./data/shipstyle.csv");
+
+    /** Hull Classification Translation File  */
+    public static final File EXPEDITION_TRANSLATION_FILE = new File("./data/expedition.csv");
+
+    /** World Map Translation File  */
+    public static final File MAPNAME_TRANSLATION_FILE = new File("./data/map.csv");
 
     /** 保有資材:燃料 */
     public static final int MATERIAL_FUEL = 1;

@@ -1,41 +1,32 @@
 package logbook.internal;
 
+import java.io.IOException;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+
+import logbook.constants.AppConstants;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * 艦種
  * 
  */
 public class ShipStyle {
+    private static final Logger LOG = LogManager.getLogger(ShipStyle.class);
 
     /**
      * 艦種プリセット値
      */
-    private static final Map<String, String> SHIPSTYLE = new ConcurrentHashMap<String, String>() {
-        {
-            this.put("1", "DE");
-            this.put("2", "DD");
-            this.put("3", "CL");
-            this.put("4", "CLT");
-            this.put("5", "CA");
-            this.put("6", "CAV");
-            this.put("7", "CVL");
-            this.put("8", "BB");
-            this.put("9", "BB");
-            this.put("10", "BBV");
-            this.put("11", "CV");
-            this.put("12", "B");
-            this.put("13", "SS");
-            this.put("14", "SSV");
-            this.put("15", "AP");
-            this.put("16", "AV");
-            this.put("17", "LHA");
-            this.put("18", "CVB");
-            this.put("19", "AR");
-            this.put("20", "AS");
+    private static final Map<String, String> SHIPSTYLE = new ConcurrentHashMap<String, String>();
+    static {
+        try {
+            TranslationDto.fillMap(SHIPSTYLE, AppConstants.SHIPSTYLE_TRANSLATION_FILE, 0, 1);
+        } catch (IOException e) {
+            LOG.warn("Failed to read quest translation.", e);
         }
-    };
+    }
 
     /**
      * 艦種を取得します

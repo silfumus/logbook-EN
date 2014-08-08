@@ -44,14 +44,23 @@ public final class AsyncExecUpdateCheck extends Thread {
             final String latestlogbook = versions[0];
             final String latestquest = versions[1];
             final String latestitem = versions[2];
+            final String latestshipstyle = versions[3];
+            final String latestexpname = versions[4];
+            final String latestmap = versions[5];
             final String currentquest = TranslationDto.getVersion(AppConstants.QUEST_TRANSLATION_FILE);
             final String currentitem = TranslationDto.getVersion(AppConstants.ITEM_TRANSLATION_FILE);
+            final String currentshipstyle = TranslationDto.getVersion(AppConstants.SHIPSTYLE_TRANSLATION_FILE);
+            final String currentexpname = TranslationDto.getVersion(AppConstants.EXPEDITION_TRANSLATION_FILE);
+            final String currentmap = TranslationDto.getVersion(AppConstants.MAPNAME_TRANSLATION_FILE);
 
             final boolean logbookupdate = !AppConstants.VERSION.equals(latestlogbook);
             final boolean questupdate = !currentquest.equals(latestquest);
             final boolean itemupdate = !currentitem.equals(latestitem);
+            final boolean shipstyleupdate = !currentshipstyle.equals(latestshipstyle);
+            final boolean expnameupdate = !currentexpname.equals(latestexpname);
+            final boolean mapupdate = !currentmap.equals(latestmap);
 
-            if (logbookupdate || questupdate || itemupdate) {
+            if (logbookupdate || questupdate || itemupdate || shipstyleupdate || expnameupdate || mapupdate) {
                 Display.getDefault().asyncExec(new Runnable() {
                     @Override
                     public void run() {
@@ -71,6 +80,15 @@ public final class AsyncExecUpdateCheck extends Thread {
                         }
                         if (itemupdate) {
                             versionmessage.append("Latest definition: " + latestitem + "(Equipment)\r\n");
+                        }
+                        if (shipstyleupdate) {
+                            versionmessage.append("Latest definition: " + latestshipstyle + "(Hull Types)\r\n");
+                        }
+                        if (expnameupdate) {
+                            versionmessage.append("Latest definition: " + latestexpname + "(Expedition)\r\n");
+                        }
+                        if (mapupdate) {
+                            versionmessage.append("Latest definition: " + latestmap + "(Map)\r\n");
                         }
                         String messagecontent = versionmessage.toString();
 
@@ -99,6 +117,33 @@ public final class AsyncExecUpdateCheck extends Thread {
                                     GlobalContext.addConsole("Equipment file has been updated to: " + latestitem);
                                 } catch (IOException e) {
                                     LOG.warn("Failed to update item file", e);
+                                }
+                            }
+                            if (shipstyleupdate) {
+                                try {
+                                    URL shipstyleURL = AppConstants.SHIPSTYLE_TRANSLATION_URI.toURL();
+                                    FileUtils.copyURLToFile(shipstyleURL, AppConstants.SHIPSTYLE_TRANSLATION_FILE);
+                                    GlobalContext.addConsole("Hull types file has been updated to: " + latestshipstyle);
+                                } catch (IOException e) {
+                                    LOG.warn("Failed to update hull types file", e);
+                                }
+                            }
+                            if (expnameupdate) {
+                                try {
+                                    URL itemURL = AppConstants.EXPEDITION_TRANSLATION_URI.toURL();
+                                    FileUtils.copyURLToFile(itemURL, AppConstants.EXPEDITION_TRANSLATION_FILE);
+                                    GlobalContext.addConsole("Expedition file has been updated to: " + latestexpname);
+                                } catch (IOException e) {
+                                    LOG.warn("Failed to update expedition file", e);
+                                }
+                            }
+                            if (mapupdate) {
+                                try {
+                                    URL mapURL = AppConstants.MAPNAME_TRANSLATION_URI.toURL();
+                                    FileUtils.copyURLToFile(mapURL, AppConstants.MAPNAME_TRANSLATION_FILE);
+                                    GlobalContext.addConsole("Map file has been updated to: " + latestmap);
+                                } catch (IOException e) {
+                                    LOG.warn("Failed to update map file", e);
                                 }
                             }
                             if (logbookupdate) {

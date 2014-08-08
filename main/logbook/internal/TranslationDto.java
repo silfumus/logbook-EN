@@ -66,4 +66,27 @@ public class TranslationDto {
             reader.close();
         }
     }
+
+    public static void fillIntMap(Map<Integer, String> map, File fileName, int columnJP, int columnEN)
+            throws IOException {
+        if (!fileName.canRead()) {
+            //TODO Do something if the file is not found.
+        }
+        Reader reader = null;
+        try {
+            reader = new BufferedReader(new InputStreamReader(new FileInputStream(fileName), "UTF-8"));
+            LineIterator ite = new LineIterator(reader);
+            // Skip the header
+            if (ite.hasNext()) {
+                ite.next();
+            }
+            while (ite.hasNext()) {
+                String line = ite.next();
+                String[] colums = line.split(";");
+                map.put(Integer.parseInt(colums[columnJP]), colums[columnEN]);
+            }
+        } finally {
+            reader.close();
+        }
+    }
 }
