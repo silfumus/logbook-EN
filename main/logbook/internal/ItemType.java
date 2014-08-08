@@ -40,6 +40,7 @@ public class ItemType {
             this.put(24, "Searchlight");
             this.put(25, "Transport Support");
             this.put(26, "Facility");
+            this.put(27, "Star Shell");
         }
     };
 
