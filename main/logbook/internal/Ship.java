@@ -167,7 +167,7 @@ public class Ship {
             this.put("148", new ShipInfoDto("Musashi Kai", "BB", "Musashi", 0, 325, 250));
             this.put("149", new ShipInfoDto("Kongou Kai2", "BB", "Kongou", 0, 125, 100));
             this.put("150", new ShipInfoDto("Hiei Kai2", "BB", "Hiei", 0, 125, 100));
-            this.put("151", ShipInfoDto.EMPTY);
+            this.put("151", new ShipInfoDto("Haruna Kai2", "BB", "Haruna", 0, 125, 100));
             this.put("152", new ShipInfoDto("Kirishima Kai2", "BB", "Kirishima Kai2", 0, 125, 100));
             this.put("153", new ShipInfoDto("Taihou", "CVB", "Taihou", 40, 65, 70));
             this.put("154", ShipInfoDto.EMPTY);
@@ -227,7 +227,7 @@ public class Ship {
             this.put("208", new ShipInfoDto("Shikinami Kai", "DD", "Shikinami", 0, 20, 15));
             this.put("209", new ShipInfoDto("Kongou Kai", "BB", "Kongou", 75, 120, 90));
             this.put("210", new ShipInfoDto("Hiei Kai", "BB", "Hiei", 75, 120, 90));
-            this.put("211", new ShipInfoDto("Haruna Kai", "BB", "Haruna", 0, 120, 90));
+            this.put("211", new ShipInfoDto("Haruna Kai", "BB", "Haruna", 80, 120, 90));
             this.put("212", new ShipInfoDto("Kirishima Kai", "BB", "Kirishima", 75, 120, 90));
             this.put("213", new ShipInfoDto("Tenryuu Kai", "CL", "Tenryuu", 0, 25, 25));
             this.put("214", new ShipInfoDto("Tatsuta Kai", "CL", "Tatsuta", 0, 25, 25));
