@@ -511,17 +511,13 @@ public final class ShipDto extends AbstractDto {
             ItemDto item = items.get(i);
             if (item != null) {
                 if ("12".equals(item.getTypeId3())
-                        || "13".equals(item.getTypeId3())
-                        || "29".equals(item.getTypeId3())) {
+                        || "13".equals(item.getTypeId3())) {
                     //12:Small Radar,13:Large Radar,29:Searchlight
                     sakuteki += item.getSaku();
                 }
-                if ("7".equals(item.getTypeId3())
-                        || "8".equals(item.getTypeId3())
-                        || "9".equals(item.getTypeId3())
+                if ("9".equals(item.getTypeId3())
                         || "10".equals(item.getTypeId3())
-                        || "11".equals(item.getTypeId3())
-                        || "26".equals(item.getTypeId3())) {
+                        || "11".equals(item.getTypeId3())) {
                     //7:DiveBomber,8:TorpBomber,9:ReconPlane
                     //10:ReconSeaplane,11:SeaplaneBomber,26:ASW_Aircraft
                     sakuteki += (item.getSaku() * 2);
