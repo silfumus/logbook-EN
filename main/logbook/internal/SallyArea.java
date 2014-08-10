@@ -8,9 +8,9 @@ public enum SallyArea {
 
     NOTHING(0, ""),
 
-    EVENT_AL(1, "AL作戦"),
+    EVENT_AL(1, "Operation AL"),
 
-    EVENT_MI(2, "MI作戦");
+    EVENT_MI(2, "Operation MI");
 
     private static SallyArea[] areas;
 

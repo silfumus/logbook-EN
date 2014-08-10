@@ -220,7 +220,7 @@ public final class ConfigDialog extends Dialog {
 
         final Button onlyFromLocalhost = new Button(compositeSystem, SWT.CHECK);
         onlyFromLocalhost.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false, 3, 1));
-        onlyFromLocalhost.setText("ローカルループバックアドレスからの接続のみ受け入れる*");
+        onlyFromLocalhost.setText("Only accept connection from localhost*");
         onlyFromLocalhost.setSelection(AppConfig.get().isAllowOnlyFromLocalhost());
 
         // 艦隊タブ タブ

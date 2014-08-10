@@ -659,7 +659,7 @@ public final class GlobalContext {
                         break;
                     }
                 }
-                addConsole("連合艦隊を更新しました");
+                addConsole("Combined fleet updated");
             }
         } catch (Exception e) {
             LOG.warn("Failed to update homeport", e);
