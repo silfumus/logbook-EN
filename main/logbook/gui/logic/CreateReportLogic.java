@@ -41,6 +41,7 @@ import logbook.dto.QuestDto;
 import logbook.dto.ShipDto;
 import logbook.dto.ShipFilterDto;
 import logbook.dto.ShipInfoDto;
+import logbook.internal.SallyArea;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
@@ -362,10 +363,8 @@ public final class CreateReportLogic {
      * @return ヘッダー
      */
     public static String[] getShipListHeader() {
-        return new String[] { "", "ID", "Fleet", "Name", "Type", "Morale", "Recovery", "Lv", "Next", "Exp",
-                "Air Superiority", "Equipment 1", "Equipment 2",
-                "Equipment 3", "Equipment 4", "HP", "Firepower", "Torpedo", "AA", "Armor", "Evasion", "ASW", "LOS",
-                "Luck" };
+        return new String[] { "", "ID", "Fleet", "Name", "Type", "Morale", "Recovery", "Lv", "Next", "Exp", "Currently on", "Air Superiority", "Equipment 1", "Equipment 2",
+                "Equipment 3", "Equipment 4", "HP", "Firepower", "Torpedo", "AA", "Armor", "Evasion", "ASW", "LOS", "Luck" };
     }
 
     /**
@@ -401,6 +400,7 @@ public final class CreateReportLogic {
                         ship.getLv(),
                         ship.getNext(),
                         ship.getExp(),
+                        SallyArea.valueOf(ship.getSallyArea()).getName(),
                         ship.getSeiku(),
                         ship.getSlot().get(0),
                         ship.getSlot().get(1),
@@ -454,6 +454,7 @@ public final class CreateReportLogic {
                         ship.getLv(),
                         ship.getNext(),
                         ship.getExp(),
+                        SallyArea.valueOf(ship.getSallyArea()).getName(),
                         ship.getSeiku(),
                         ship.getSlot().get(0),
                         ship.getSlot().get(1),

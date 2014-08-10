@@ -41,6 +41,9 @@ public class ItemType {
             this.put(25, "Transport Support");
             this.put(26, "Facility");
             this.put(27, "Star Shell");
+            this.put(27, "照明弾");
+            this.put(28, "司令部施設");
+            this.put(29, "航空要員");
         }
     };
 

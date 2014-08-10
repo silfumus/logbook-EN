@@ -367,6 +367,15 @@ public final class ShipFilterDialog extends Dialog {
             // Submarine Tender
             this.submarineTender.setSelection(this.filter.submarineTender);
 
+            if (this.filter.group != null) {
+                // グループ
+                int idx = this.groups.indexOf(this.filter.group);
+                if (idx != -1) {
+                    this.group.setSelection(true);
+                    this.groupcombo.setEnabled(true);
+                    this.groupcombo.select(idx);
+                }
+            }
             if (!StringUtils.isEmpty(this.filter.itemname)) {
                 // 装備
                 this.item.setSelection(true);

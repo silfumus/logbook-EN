@@ -420,7 +420,7 @@ public class Ship {
             this.put("401", new ShipInfoDto("I-19 Kai", "SSV", "I-19", 0, 25, 10));
             this.put("402", new ShipInfoDto("Maruyu Kai", "SS", "Maruyu", 0, 10, 10));
             this.put("403", new ShipInfoDto("I-401 Kai", "SSV", "I-401", 0, 30, 25));
-            this.put("404", new ShipInfoDto("Unryuu", "CV", "Unryuu", 50, 50, 45));
+            this.put("404", new ShipInfoDto("Unryuu", "CV", "Unryuu", 50, 45, 50));
             this.put("405", new ShipInfoDto("Harusame", "DD", "Harusame", 30, 20, 15));
             this.put("406", new ShipInfoDto("Unryuu Kai", "CV", "Unryuu", 0, 55, 50));
             this.put("407", ShipInfoDto.EMPTY);
