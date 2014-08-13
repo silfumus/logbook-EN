@@ -12,6 +12,7 @@ import logbook.internal.ItemType;
 public final class ItemDto extends AbstractDto {
 
     private int id;
+    private int type1;
     private int type2;
     private int type3;
     private int atap;
@@ -48,6 +49,7 @@ public final class ItemDto extends AbstractDto {
      */
     public ItemDto(JsonObject object) {
 
+        this.type1 = object.getJsonArray("api_type").getInt(1);
         this.type2 = object.getJsonArray("api_type").getInt(2);
         this.type3 = object.getJsonArray("api_type").getInt(3);
 
@@ -134,6 +136,13 @@ public final class ItemDto extends AbstractDto {
      */
     public String getType() {
         return ItemType.get(this.type3);
+    }
+
+    /**
+     * @return type1
+     */
+    public String getTypeId1() {
+        return Long.toString(this.type1);
     }
 
     /**
