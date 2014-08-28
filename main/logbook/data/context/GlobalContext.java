@@ -406,10 +406,6 @@ public final class GlobalContext {
                 doBattle(data);
                 break;
             // 海戦
-            case BATTLE_MIDNIGHT:
-                doBattle(data);
-                break;
-            // 海戦
             case BATTLE_SP_MIDNIGHT:
                 doBattle(data);
                 break;
@@ -1432,7 +1428,8 @@ public final class GlobalContext {
     }
 
     public static void addConsole(Object message) {
-        consoleQueue.add(new SimpleDateFormat(AppConstants.DATE_SHORT_FORMAT).format(Calendar.getInstance().getTime())
+        consoleQueue.offer(new SimpleDateFormat(AppConstants.DATE_SHORT_FORMAT)
+                .format(Calendar.getInstance().getTime())
                 + "  " + message.toString());
     }
 }
