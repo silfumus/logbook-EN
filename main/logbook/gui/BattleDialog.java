@@ -88,7 +88,7 @@ public final class BattleDialog extends Dialog {
         // タイトル
         Label lblTitle = new Label(this.shell, SWT.NONE);
         lblTitle.setFont(SWTResourceManager.getFont(fontName, size, SWT.BOLD));
-        lblTitle.setText("「" + result.getQuestName() + "」で作戦行動中に「" + result.getEnemyName() + "」と対峙しました");
+        lblTitle.setText("The fleet attacked " + result.getEnemyName() + "in " + result.getQuestName());
 
         Label lblsp1 = new Label(this.shell, SWT.SEPARATOR | SWT.HORIZONTAL);
         lblsp1.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
@@ -116,47 +116,47 @@ public final class BattleDialog extends Dialog {
 
             Label lblfHp = new Label(fComposite, SWT.NONE);
             lblfHp.setFont(SWTResourceManager.getFont(fontName, size, SWT.BOLD));
-            lblfHp.setText("耐久");
+            lblfHp.setText("HP");
 
             Label lblfCond = new Label(fComposite, SWT.NONE);
             lblfCond.setFont(SWTResourceManager.getFont(fontName, size, SWT.BOLD));
-            lblfCond.setText("cond.");
+            lblfCond.setText("Morale");
 
             Label lblfSeiku = new Label(fComposite, SWT.NONE);
             lblfSeiku.setFont(SWTResourceManager.getFont(fontName, size, SWT.BOLD));
-            lblfSeiku.setText("制空");
+            lblfSeiku.setText("Air Superiority");
 
             Label lblfItem1 = new Label(fComposite, SWT.NONE);
             lblfItem1.setFont(SWTResourceManager.getFont(fontName, size, SWT.BOLD));
-            lblfItem1.setText("装備1");
+            lblfItem1.setText("Equipment 1");
             GridData gdfItem1 = new GridData(SWT.LEFT, SWT.CENTER, false, false, 1, 1);
             gdfItem1.widthHint = 100;
             lblfItem1.setLayoutData(gdfItem1);
 
             Label lblfItem2 = new Label(fComposite, SWT.NONE);
             lblfItem2.setFont(SWTResourceManager.getFont(fontName, size, SWT.BOLD));
-            lblfItem2.setText("装備2");
+            lblfItem2.setText("Equipment 2");
             GridData gdfItem2 = new GridData(SWT.LEFT, SWT.CENTER, false, false, 1, 1);
             gdfItem2.widthHint = 100;
             lblfItem2.setLayoutData(gdfItem2);
 
             Label lblfItem3 = new Label(fComposite, SWT.NONE);
             lblfItem3.setFont(SWTResourceManager.getFont(fontName, size, SWT.BOLD));
-            lblfItem3.setText("装備3");
+            lblfItem3.setText("Equipment 3");
             GridData gdfItem3 = new GridData(SWT.LEFT, SWT.CENTER, false, false, 1, 1);
             gdfItem3.widthHint = 100;
             lblfItem3.setLayoutData(gdfItem3);
 
             Label lblfItem4 = new Label(fComposite, SWT.NONE);
             lblfItem4.setFont(SWTResourceManager.getFont(fontName, size, SWT.BOLD));
-            lblfItem4.setText("装備4");
+            lblfItem4.setText("Equipment 4");
             GridData gdfItem4 = new GridData(SWT.LEFT, SWT.CENTER, false, false, 1, 1);
             gdfItem4.widthHint = 100;
             lblfItem4.setLayoutData(gdfItem4);
 
             Label lblfItem5 = new Label(fComposite, SWT.NONE);
             lblfItem5.setFont(SWTResourceManager.getFont(fontName, size, SWT.BOLD));
-            lblfItem5.setText("装備5");
+            lblfItem5.setText("Equipment 5");
             GridData gdfItem5 = new GridData(SWT.LEFT, SWT.CENTER, false, false, 1, 1);
             gdfItem5.widthHint = 100;
             lblfItem5.setLayoutData(gdfItem5);
@@ -203,39 +203,39 @@ public final class BattleDialog extends Dialog {
 
         Label lbleHp = new Label(eComposite, SWT.NONE);
         lbleHp.setFont(SWTResourceManager.getFont(fontName, size, SWT.BOLD));
-        lbleHp.setText("耐久");
+        lbleHp.setText("HP");
 
         Label lbleItem1 = new Label(eComposite, SWT.NONE);
         lbleItem1.setFont(SWTResourceManager.getFont(fontName, size, SWT.BOLD));
-        lbleItem1.setText("装備1");
+        lbleItem1.setText("Equipment 1");
         GridData gdeItem1 = new GridData(SWT.LEFT, SWT.CENTER, false, false, 1, 1);
         gdeItem1.widthHint = 100;
         lbleItem1.setLayoutData(gdeItem1);
 
         Label lbleItem2 = new Label(eComposite, SWT.NONE);
         lbleItem2.setFont(SWTResourceManager.getFont(fontName, size, SWT.BOLD));
-        lbleItem2.setText("装備2");
+        lbleItem2.setText("Equipment 2");
         GridData gdeItem2 = new GridData(SWT.LEFT, SWT.CENTER, false, false, 1, 1);
         gdeItem2.widthHint = 100;
         lbleItem2.setLayoutData(gdeItem2);
 
         Label lbleItem3 = new Label(eComposite, SWT.NONE);
         lbleItem3.setFont(SWTResourceManager.getFont(fontName, size, SWT.BOLD));
-        lbleItem3.setText("装備3");
+        lbleItem3.setText("Equipment 3");
         GridData gdeItem3 = new GridData(SWT.LEFT, SWT.CENTER, false, false, 1, 1);
         gdeItem3.widthHint = 100;
         lbleItem3.setLayoutData(gdeItem3);
 
         Label lbleItem4 = new Label(eComposite, SWT.NONE);
         lbleItem4.setFont(SWTResourceManager.getFont(fontName, size, SWT.BOLD));
-        lbleItem4.setText("装備4");
+        lbleItem4.setText("Equipment 4");
         GridData gdeItem4 = new GridData(SWT.LEFT, SWT.CENTER, false, false, 1, 1);
         gdeItem4.widthHint = 100;
         lbleItem4.setLayoutData(gdeItem4);
 
         Label lbleItem5 = new Label(eComposite, SWT.NONE);
         lbleItem5.setFont(SWTResourceManager.getFont(fontName, size, SWT.BOLD));
-        lbleItem5.setText("装備5");
+        lbleItem5.setText("Equipment 5");
         GridData gdeItem5 = new GridData(SWT.LEFT, SWT.CENTER, false, false, 1, 1);
         gdeItem5.widthHint = 100;
         lbleItem5.setLayoutData(gdeItem5);
@@ -270,7 +270,7 @@ public final class BattleDialog extends Dialog {
 
         Button save = new Button(this.shell, SWT.NONE);
         save.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
-        save.setText("HTMLファイルとして保存");
+        save.setText("Save as HTML");
         save.addSelectionListener(new SaveAdapter());
 
         this.shell.pack();
@@ -290,7 +290,7 @@ public final class BattleDialog extends Dialog {
         sb.append("<html>").append("\r\n");
         sb.append("<head>").append("\r\n");
         sb.append("<meta charset=\"UTF-8\">").append("\r\n");
-        sb.append("<title>会敵報告</title>").append("\r\n");
+        sb.append("<title>Battle Report</title>").append("\r\n");
         sb.append("<style type=\"text/css\">").append("\r\n");
         sb.append("body,table {").append("\r\n");
         sb.append(" font-family: Meiryo, CI, Arial, Helvetica, Clean,").append("\r\n");
@@ -300,7 +300,7 @@ public final class BattleDialog extends Dialog {
         sb.append("</style>").append("\r\n");
         sb.append("</head>").append("\r\n");
         sb.append("<body>").append("\r\n");
-        sb.append(" <strong>「" + result.getQuestName() + "」で作戦行動中に「" + result.getEnemyName() + "」と対峙しました(" + time
+        sb.append("<strong>The fleet attacked " + result.getEnemyName() + "in " + result.getQuestName() + " (" + time
                 + ")</strong>").append("\r\n");
         sb.append(" <hr>").append("\r\n");
 
@@ -319,14 +319,14 @@ public final class BattleDialog extends Dialog {
             sb.append("     <thead>").append("\r\n");
             sb.append("         <tr>").append("\r\n");
             sb.append("             <th></th>").append("\r\n");
-            sb.append("             <th>耐久</th>").append("\r\n");
-            sb.append("             <th>cond.</th>").append("\r\n");
-            sb.append("             <th>制空</th>").append("\r\n");
-            sb.append("             <th>装備1</th>").append("\r\n");
-            sb.append("             <th>装備2</th>").append("\r\n");
-            sb.append("             <th>装備3</th>").append("\r\n");
-            sb.append("             <th>装備4</th>").append("\r\n");
-            sb.append("             <th>装備5</th>").append("\r\n");
+            sb.append("             <th>HP</th>").append("\r\n");
+            sb.append("             <th>Morale</th>").append("\r\n");
+            sb.append("             <th>Air Superiority</th>").append("\r\n");
+            sb.append("             <th>Equipment 1</th>").append("\r\n");
+            sb.append("             <th>Equipment 2</th>").append("\r\n");
+            sb.append("             <th>Equipment 3</th>").append("\r\n");
+            sb.append("             <th>Equipment 4</th>").append("\r\n");
+            sb.append("             <th>Equipment 5</th>").append("\r\n");
             sb.append("         </tr>").append("\r\n");
             sb.append("     </thead>").append("\r\n");
             sb.append("     <tbody>").append("\r\n");
@@ -358,12 +358,12 @@ public final class BattleDialog extends Dialog {
         sb.append("     <thead>").append("\r\n");
         sb.append("         <tr>").append("\r\n");
         sb.append("             <th></th>").append("\r\n");
-        sb.append("             <th>耐久</th>").append("\r\n");
-        sb.append("             <th>装備1</th>").append("\r\n");
-        sb.append("             <th>装備2</th>").append("\r\n");
-        sb.append("             <th>装備3</th>").append("\r\n");
-        sb.append("             <th>装備4</th>").append("\r\n");
-        sb.append("             <th>装備5</th>").append("\r\n");
+        sb.append("             <th>HP</th>").append("\r\n");
+        sb.append("             <th>Equipment 1</th>").append("\r\n");
+        sb.append("             <th>Equipment 2</th>").append("\r\n");
+        sb.append("             <th>Equipment 3</th>").append("\r\n");
+        sb.append("             <th>Equipment 4</th>").append("\r\n");
+        sb.append("             <th>Equipment 5</th>").append("\r\n");
         sb.append("         </tr>").append("\r\n");
         sb.append("     </thead>").append("\r\n");
         sb.append("     <tbody>").append("\r\n");
@@ -411,15 +411,15 @@ public final class BattleDialog extends Dialog {
         public void widgetSelected(SelectionEvent e) {
 
             FileDialog dialog = new FileDialog(BattleDialog.this.shell, SWT.SAVE);
-            dialog.setFileName("会敵報告.html");
+            dialog.setFileName("Battle Report.html");
             dialog.setFilterExtensions(new String[] { "*.html" });
             String filename = dialog.open();
             if (filename != null) {
                 File file = new File(filename);
                 if (file.exists()) {
                     MessageBox messageBox = new MessageBox(BattleDialog.this.shell, SWT.YES | SWT.NO);
-                    messageBox.setText("確認");
-                    messageBox.setMessage("指定されたファイルは存在します。\n上書きしますか？");
+                    messageBox.setText("Confirmation");
+                    messageBox.setMessage(filename + " already exists.\nDo you want to overwrite it?");
                     if (messageBox.open() == SWT.NO) {
                         return;
                     }
@@ -428,7 +428,7 @@ public final class BattleDialog extends Dialog {
                     FileUtils.writeStringToFile(file, BattleDialog.this.getHtml(), "UTF-8");
                 } catch (IOException ex) {
                     MessageBox messageBox = new MessageBox(BattleDialog.this.shell, SWT.ICON_ERROR);
-                    messageBox.setText("書き込めませんでした");
+                    messageBox.setText("Write error.");
                     messageBox.setMessage(ex.toString());
                     messageBox.open();
                 }

@@ -115,8 +115,8 @@ public final class BattleDto extends AbstractDto {
                 this.enemyFormation = toFormation(Integer.parseInt(formation.getString(1)));
             }
         } else {
-            this.friendFormation = "陣形不明";
-            this.enemyFormation = "陣形不明";
+            this.friendFormation = "Unknown Formation";
+            this.enemyFormation = "Unknown Formation";
         }
     }
 
@@ -124,34 +124,34 @@ public final class BattleDto extends AbstractDto {
         String formation;
         switch (f) {
         case 1:
-            formation = "単縦陣";
+            formation = "Line Ahead";
             break;
         case 2:
-            formation = "複縦陣";
+            formation = "Double Line";
             break;
         case 3:
-            formation = "輪形陣";
+            formation = "Ring-shaped";
             break;
         case 4:
-            formation = "梯形陣";
+            formation = "Echelon";
             break;
         case 5:
-            formation = "単横陣";
+            formation = "Line Abreast";
             break;
         case 11:
-            formation = "第一警戒航行序列";
+            formation = "1st Alert Cruising";
             break;
         case 12:
-            formation = "第二警戒航行序列";
+            formation = "2nd Alert Cruising";
             break;
         case 13:
-            formation = "第三警戒航行序列";
+            formation = "3rd Alert Cruising";
             break;
         case 14:
-            formation = "第四警戒航行序列";
+            formation = "4th Alert Cruising";
             break;
         default:
-            formation = "単縦陣";
+            formation = "Line Ahead";
             break;
         }
         return formation;

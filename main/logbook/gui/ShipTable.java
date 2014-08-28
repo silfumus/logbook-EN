@@ -89,7 +89,7 @@ public final class ShipTable extends AbstractTableDialog {
         List<ShipGroupBean> groups = ShipGroupConfig.get().getGroup();
 
         MenuItem groupFilterCascade = new MenuItem(this.tablemenu, SWT.CASCADE);
-        groupFilterCascade.setText("グループフィルター(&G)");
+        groupFilterCascade.setText("&Group Filter");
         Menu groupFilterMenu = new Menu(groupFilterCascade);
         groupFilterCascade.setMenu(groupFilterMenu);
         for (ShipGroupBean groupBean : groups) {
