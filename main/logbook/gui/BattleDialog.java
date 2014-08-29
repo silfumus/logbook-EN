@@ -88,7 +88,7 @@ public final class BattleDialog extends Dialog {
         // タイトル
         Label lblTitle = new Label(this.shell, SWT.NONE);
         lblTitle.setFont(SWTResourceManager.getFont(fontName, size, SWT.BOLD));
-        lblTitle.setText("The fleet attacked " + result.getEnemyName() + "in " + result.getQuestName());
+        lblTitle.setText("The fleet attacked " + result.getEnemyName() + " in " + result.getQuestName());
 
         Label lblsp1 = new Label(this.shell, SWT.SEPARATOR | SWT.HORIZONTAL);
         lblsp1.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
@@ -107,7 +107,7 @@ public final class BattleDialog extends Dialog {
             lblfName.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false, 9, 1));
             lblfName.setFont(SWTResourceManager.getFont(fontName, size, SWT.BOLD));
             if (i == 0) {
-                lblfName.setText(dock.getName() + "(" + battle.getFriendFormation() + ")");
+                lblfName.setText(dock.getName() + " (" + battle.getFriendFormation() + ")");
             } else {
                 lblfName.setText(dock.getName());
             }
@@ -124,7 +124,7 @@ public final class BattleDialog extends Dialog {
 
             Label lblfSeiku = new Label(fComposite, SWT.NONE);
             lblfSeiku.setFont(SWTResourceManager.getFont(fontName, size, SWT.BOLD));
-            lblfSeiku.setText("Air Superiority");
+            lblfSeiku.setText("Air Sup.");
 
             Label lblfItem1 = new Label(fComposite, SWT.NONE);
             lblfItem1.setFont(SWTResourceManager.getFont(fontName, size, SWT.BOLD));
@@ -197,7 +197,7 @@ public final class BattleDialog extends Dialog {
         Label lbleName = new Label(eComposite, SWT.NONE);
         lbleName.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false, 7, 1));
         lbleName.setFont(SWTResourceManager.getFont(fontName, size, SWT.BOLD));
-        lbleName.setText(result.getEnemyName() + "(" + battle.getEnemyFormation() + ")");
+        lbleName.setText(result.getEnemyName() + " (" + battle.getEnemyFormation() + ")");
 
         new Label(eComposite, SWT.NONE);
 
@@ -300,7 +300,7 @@ public final class BattleDialog extends Dialog {
         sb.append("</style>").append("\r\n");
         sb.append("</head>").append("\r\n");
         sb.append("<body>").append("\r\n");
-        sb.append("<strong>The fleet attacked " + result.getEnemyName() + "in " + result.getQuestName() + " (" + time
+        sb.append("<strong>The fleet attacked " + result.getEnemyName() + " in " + result.getQuestName() + " (" + time
                 + ")</strong>").append("\r\n");
         sb.append(" <hr>").append("\r\n");
 
@@ -311,7 +311,7 @@ public final class BattleDialog extends Dialog {
             sb.append(" <table>").append("\r\n");
             if (i == 0) {
                 sb.append(
-                        "     <caption>" + dock.getName() + "(" + battle.getFriendFormation() + ")" + "</caption>")
+                        "     <caption>" + dock.getName() + " (" + battle.getFriendFormation() + ")" + "</caption>")
                         .append("\r\n");
             } else {
                 sb.append("     <caption>" + dock.getName() + "</caption>").append("\r\n");
@@ -321,7 +321,7 @@ public final class BattleDialog extends Dialog {
             sb.append("             <th></th>").append("\r\n");
             sb.append("             <th>HP</th>").append("\r\n");
             sb.append("             <th>Morale</th>").append("\r\n");
-            sb.append("             <th>Air Superiority</th>").append("\r\n");
+            sb.append("             <th>Air Sup.</th>").append("\r\n");
             sb.append("             <th>Equipment 1</th>").append("\r\n");
             sb.append("             <th>Equipment 2</th>").append("\r\n");
             sb.append("             <th>Equipment 3</th>").append("\r\n");
@@ -353,7 +353,7 @@ public final class BattleDialog extends Dialog {
 
         sb.append(" <hr>").append("\r\n");
         sb.append(" <table>").append("\r\n");
-        sb.append("     <caption>" + result.getEnemyName() + "(" + battle.getEnemyFormation() + ")" + "</caption>")
+        sb.append("     <caption>" + result.getEnemyName() + " (" + battle.getEnemyFormation() + ")" + "</caption>")
                 .append("\r\n");
         sb.append("     <thead>").append("\r\n");
         sb.append("         <tr>").append("\r\n");

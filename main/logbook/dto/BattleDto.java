@@ -130,7 +130,7 @@ public final class BattleDto extends AbstractDto {
             formation = "Double Line";
             break;
         case 3:
-            formation = "Ring-shaped";
+            formation = "Diamond";
             break;
         case 4:
             formation = "Echelon";
@@ -139,16 +139,16 @@ public final class BattleDto extends AbstractDto {
             formation = "Line Abreast";
             break;
         case 11:
-            formation = "1st Alert Cruising";
+            formation = "ASW Alert Cruise";
             break;
         case 12:
-            formation = "2nd Alert Cruising";
+            formation = "Forward Alert Cruise";
             break;
         case 13:
-            formation = "3rd Alert Cruising";
+            formation = "Wheel Formation";
             break;
         case 14:
-            formation = "4th Alert Cruising";
+            formation = "Battle Formation";
             break;
         default:
             formation = "Line Ahead";
