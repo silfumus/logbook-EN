@@ -654,8 +654,8 @@ public final class GlobalContext {
                     default:
                         break;
                     }
+                    addConsole("Combined fleet updated");
                 }
-                addConsole("Combined fleet updated");
             }
         } catch (Exception e) {
             LOG.warn("Failed to update homeport", e);
