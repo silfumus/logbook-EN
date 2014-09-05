@@ -32,7 +32,7 @@ public final class AppConfigBean {
     private int height = 420;
 
     /** 最前面に表示 */
-    private boolean onTop = true;
+    private boolean onTop = false;
 
     /** 縮小表示 */
     private boolean minimumLayout;

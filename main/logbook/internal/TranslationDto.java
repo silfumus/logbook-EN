@@ -10,6 +10,8 @@ import java.util.Map;
 
 import javax.annotation.CheckForNull;
 
+import logbook.data.context.GlobalContext;
+
 import org.apache.commons.io.LineIterator;
 
 /**
@@ -34,7 +36,7 @@ public class TranslationDto {
     }
 
     /**
-     * Fill Map with the translation data, make sure the file source is encoded in Shift-JIS.
+     * Fill Map with the translation data, make sure the file source is encoded in UTF-8.
      * 
      * @param HashMap
      * @param fileName
@@ -47,7 +49,7 @@ public class TranslationDto {
     @CheckForNull
     public static void fillMap(Map<String, String> map, File fileName, int columnJP, int columnEN) throws IOException {
         if (!fileName.canRead()) {
-            //TODO Do something if the file is not found.
+            GlobalContext.addConsole("Failed to read " + fileName.getCanonicalPath());
         }
         Reader reader = null;
         try {
@@ -63,6 +65,9 @@ public class TranslationDto {
                 map.put(colums[columnJP], colums[columnEN]);
             }
         } finally {
+            if (map == null) {
+                map.put("Unknown", "Unknown");
+            }
             reader.close();
         }
     }
@@ -70,7 +75,7 @@ public class TranslationDto {
     public static void fillIntMap(Map<Integer, String> map, File fileName, int columnJP, int columnEN)
             throws IOException {
         if (!fileName.canRead()) {
-            //TODO Do something if the file is not found.
+            GlobalContext.addConsole("Failed to read " + fileName.getCanonicalPath());
         }
         Reader reader = null;
         try {
@@ -86,6 +91,9 @@ public class TranslationDto {
                 map.put(Integer.parseInt(colums[columnJP]), colums[columnEN]);
             }
         } finally {
+            if (map == null) {
+                map.put(0, "Unknown");
+            }
             reader.close();
         }
     }
