@@ -315,7 +315,7 @@ public class FleetComposite extends Composite {
             // 艦隊合計Lv
             totallv += ship.getLv();
             // 索敵値計
-            totalSakuteki += ship.getSakuteki();
+            totalSakuteki += ship.getSakuteki25();
             equipmentSakuteki += ship.getEquipmentSakuteki();
             effectiveSakuteki = (int) (equipmentSakuteki + Math.sqrt(totalSakuteki - equipmentSakuteki));
 

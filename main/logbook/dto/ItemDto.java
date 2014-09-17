@@ -139,27 +139,6 @@ public final class ItemDto extends AbstractDto {
     }
 
     /**
-     * @return type1
-     */
-    public String getTypeId1() {
-        return Long.toString(this.type1);
-    }
-
-    /**
-     * @return type2
-     */
-    public String getTypeId2() {
-        return Long.toString(this.type2);
-    }
-
-    /**
-     * @return type3
-     */
-    public String getTypeId3() {
-        return Long.toString(this.type3);
-    }
-
-    /**
      * type2を取得します。
      * @return type2
      */

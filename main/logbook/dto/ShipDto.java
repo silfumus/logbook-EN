@@ -407,13 +407,13 @@ public final class ShipDto extends AbstractDto {
     public int getSeiku() {
         List<ItemDto> items = this.getItem();
         int seiku = 0;
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < items.size(); i++) {
             ItemDto item = items.get(i);
             if (item != null) {
-                if ("6".equals(item.getTypeId3())
-                        || "7".equals(item.getTypeId3())
-                        || "8".equals(item.getTypeId3())
-                        || ("10".equals(item.getTypeId3()) && "11".equals(item.getTypeId2()))) {
+                if ((item.getType3() == 6)
+                        || (item.getType3() == 7)
+                        || (item.getType3() == 8)
+                        || ((item.getType3() == 10) && (item.getType2() == 11))) {
                     //6:艦上戦闘機,7:艦上爆撃機,8:艦上攻撃機,10:水上偵察機(ただし瑞雲のみ)の場合は制空値を計算する
                     seiku += (int) Math.floor(item.getTyku() * Math.sqrt(this.onslot.get(i)));
                 }
@@ -514,27 +514,34 @@ public final class ShipDto extends AbstractDto {
     }
 
     /**
-     * @return Equipment LoS
+     * 索敵値
+     * <p>
+     * 偵察機索敵値×2 ＋ 電探索敵値 ＋ √(艦隊の装備込み索敵値合計 - 偵察機索敵値 - 電探索敵値)
+     * </p>
+     * @return 索敵値(2-5)
      */
-    public int getEquipmentSakuteki() {
+    public double getSakuteki25() {
         List<ItemDto> items = this.getItem();
-        int sakuteki = 0;
-        for (int i = 0; i < 4; i++) {
+        double saku = 0;
+        int survey = 0;
+        int rader = 0;
+        for (int i = 0; i < items.size(); i++) {
             ItemDto item = items.get(i);
             if (item != null) {
-                if ("8".equals(item.getTypeId1())) {
-                    //Radar
-                    sakuteki += item.getSaku();
-                }
-                if ("7".equals(item.getTypeId1()) && (this.onslot.get(i) > 0)) {
-                    //Saiun [5,7,9,9]
-                    //Type 0 Recon [5,7,10,10]
-                    //Zuiun [5,7,11,10]
-                    sakuteki += (item.getSaku() * 2);
+                if ((item.getType3() == 9) || (item.getType3() == 10)) {
+                    // 偵察機索敵値
+                    survey += item.getSaku();
+                } else if (item.getType3() == 11) {
+                    //  電探索敵値
+                    rader += item.getSaku();
                 }
             }
         }
-        return sakuteki;
+        double a = Math.sqrt(this.getSakuteki() - survey - rader);
+        saku += survey * 2;
+        saku += rader;
+        saku += Double.isNaN(a) ? 0 : a;
+        return saku;
     }
 
     /**
