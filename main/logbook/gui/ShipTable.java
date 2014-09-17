@@ -113,7 +113,7 @@ public final class ShipTable extends AbstractTableDialog {
         }
 
         MenuItem addGroupCascade = new MenuItem(this.tablemenu, SWT.CASCADE);
-        addGroupCascade.setText("Add to selected group(&A)");
+        addGroupCascade.setText("Add to the group (&A)");
         Menu addGroupMenu = new Menu(addGroupCascade);
         addGroupCascade.setMenu(addGroupMenu);
         for (ShipGroupBean groupBean : groups) {
@@ -133,8 +133,8 @@ public final class ShipTable extends AbstractTableDialog {
                         }
                         MessageBox box = new MessageBox(ShipTable.this.shell, SWT.YES | SWT.NO
                                 | SWT.ICON_QUESTION);
-                        box.setText("選択した艦娘をグループに追加");
-                        box.setMessage("「" + StringUtils.join(name, ",") + "」をグループに追加しますか？");
+                        box.setText("Add to the group");
+                        box.setMessage("Do you want to add " + StringUtils.join(name, ", ") + " to the group?");
 
                         if (box.open() == SWT.YES) {
                             for (int i = 0; i < tableItems.length; i++) {
@@ -149,7 +149,7 @@ public final class ShipTable extends AbstractTableDialog {
         }
 
         MenuItem removeGroupCascade = new MenuItem(this.tablemenu, SWT.CASCADE);
-        removeGroupCascade.setText("Remove from selected group(&D)");
+        removeGroupCascade.setText("Remove from the group (&D)");
         Menu removeGroupMenu = new Menu(removeGroupCascade);
         removeGroupCascade.setMenu(removeGroupMenu);
         for (ShipGroupBean groupBean : groups) {
@@ -169,8 +169,8 @@ public final class ShipTable extends AbstractTableDialog {
                         }
                         MessageBox box = new MessageBox(ShipTable.this.shell, SWT.YES | SWT.NO
                                 | SWT.ICON_QUESTION);
-                        box.setText("選択した艦娘をグループから除去");
-                        box.setMessage("「" + StringUtils.join(name, ",") + "」をグループから除去しますか？");
+                        box.setText("Remove from the group");
+                        box.setMessage("Do you want to remove " + StringUtils.join(name, ", ") + " from the group?");
 
                         if (box.open() == SWT.YES) {
                             for (int i = 0; i < tableItems.length; i++) {
