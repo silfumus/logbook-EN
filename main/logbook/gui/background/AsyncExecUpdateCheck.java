@@ -1,7 +1,9 @@
 package logbook.gui.background;
 
 import java.awt.Desktop;
+import java.io.File;
 import java.io.IOException;
+import java.net.URI;
 import java.net.URL;
 
 import logbook.constants.AppConstants;
@@ -39,6 +41,23 @@ public final class AsyncExecUpdateCheck extends Thread {
 
     @Override
     public void run() {
+        if (!AppConstants.QUEST_TRANSLATION_FILE.canRead() || !AppConstants.ITEM_TRANSLATION_FILE.canRead()
+                || !AppConstants.SHIPSTYLE_TRANSLATION_FILE.canRead()
+                || !AppConstants.EXPEDITION_TRANSLATION_FILE.canRead()
+                || !AppConstants.MAPNAME_TRANSLATION_FILE.canRead()) {
+            GlobalContext.addConsole("Data folder not found, trying to download...");
+            try {
+                UpdateOperation(AppConstants.QUEST_TRANSLATION_URI, AppConstants.QUEST_TRANSLATION_FILE);
+                UpdateOperation(AppConstants.ITEM_TRANSLATION_URI, AppConstants.ITEM_TRANSLATION_FILE);
+                UpdateOperation(AppConstants.SHIPSTYLE_TRANSLATION_URI, AppConstants.SHIPSTYLE_TRANSLATION_FILE);
+                UpdateOperation(AppConstants.EXPEDITION_TRANSLATION_URI, AppConstants.EXPEDITION_TRANSLATION_FILE);
+                UpdateOperation(AppConstants.MAPNAME_TRANSLATION_URI, AppConstants.MAPNAME_TRANSLATION_FILE);
+                GlobalContext.addConsole("Download complete");
+            } catch (IOException e) {
+                GlobalContext.addConsole("Failed to download data folder");
+                GlobalContext.addConsole("Exception: " + e);
+            }
+        }
         try {
             String[] versions = IOUtils.toString(AppConstants.UPDATE_CHECK_URI).split(";");
             final String latestlogbook = versions[0];
@@ -103,8 +122,8 @@ public final class AsyncExecUpdateCheck extends Thread {
                         if (box.open() == SWT.YES) {
                             if (questupdate) {
                                 try {
-                                    URL questURL = AppConstants.QUEST_TRANSLATION_URI.toURL();
-                                    FileUtils.copyURLToFile(questURL, AppConstants.QUEST_TRANSLATION_FILE);
+                                    UpdateOperation(AppConstants.QUEST_TRANSLATION_URI,
+                                            AppConstants.QUEST_TRANSLATION_FILE);
                                     GlobalContext.addConsole("Quest file has been updated to: " + latestquest);
                                 } catch (IOException e) {
                                     LOG.warn("Failed to update quest file", e);
@@ -112,8 +131,8 @@ public final class AsyncExecUpdateCheck extends Thread {
                             }
                             if (itemupdate) {
                                 try {
-                                    URL itemURL = AppConstants.ITEM_TRANSLATION_URI.toURL();
-                                    FileUtils.copyURLToFile(itemURL, AppConstants.ITEM_TRANSLATION_FILE);
+                                    UpdateOperation(AppConstants.ITEM_TRANSLATION_URI,
+                                            AppConstants.ITEM_TRANSLATION_FILE);
                                     GlobalContext.addConsole("Equipment file has been updated to: " + latestitem);
                                 } catch (IOException e) {
                                     LOG.warn("Failed to update item file", e);
@@ -121,26 +140,28 @@ public final class AsyncExecUpdateCheck extends Thread {
                             }
                             if (shipstyleupdate) {
                                 try {
-                                    URL shipstyleURL = AppConstants.SHIPSTYLE_TRANSLATION_URI.toURL();
-                                    FileUtils.copyURLToFile(shipstyleURL, AppConstants.SHIPSTYLE_TRANSLATION_FILE);
-                                    GlobalContext.addConsole("Hull types file has been updated to: " + latestshipstyle);
+                                    UpdateOperation(AppConstants.SHIPSTYLE_TRANSLATION_URI,
+                                            AppConstants.SHIPSTYLE_TRANSLATION_FILE);
+                                    GlobalContext.addConsole("Hull types file has been updated to: "
+                                            + latestshipstyle);
                                 } catch (IOException e) {
                                     LOG.warn("Failed to update hull types file", e);
                                 }
                             }
                             if (expnameupdate) {
                                 try {
-                                    URL itemURL = AppConstants.EXPEDITION_TRANSLATION_URI.toURL();
-                                    FileUtils.copyURLToFile(itemURL, AppConstants.EXPEDITION_TRANSLATION_FILE);
-                                    GlobalContext.addConsole("Expedition file has been updated to: " + latestexpname);
+                                    UpdateOperation(AppConstants.EXPEDITION_TRANSLATION_URI,
+                                            AppConstants.EXPEDITION_TRANSLATION_FILE);
+                                    GlobalContext.addConsole("Expedition file has been updated to: "
+                                            + latestexpname);
                                 } catch (IOException e) {
                                     LOG.warn("Failed to update expedition file", e);
                                 }
                             }
                             if (mapupdate) {
                                 try {
-                                    URL mapURL = AppConstants.MAPNAME_TRANSLATION_URI.toURL();
-                                    FileUtils.copyURLToFile(mapURL, AppConstants.MAPNAME_TRANSLATION_FILE);
+                                    UpdateOperation(AppConstants.MAPNAME_TRANSLATION_URI,
+                                            AppConstants.MAPNAME_TRANSLATION_FILE);
                                     GlobalContext.addConsole("Map file has been updated to: " + latestmap);
                                 } catch (IOException e) {
                                     LOG.warn("Failed to update map file", e);
@@ -161,5 +182,10 @@ public final class AsyncExecUpdateCheck extends Thread {
             // アップデートチェック失敗はクラス名のみ
             LOG.info(e.getClass().getName() + " failed to do an update check");
         }
+    }
+
+    static void UpdateOperation(URI translationURI, File TranslationFile) throws IOException {
+        URL translationURL = translationURI.toURL();
+        FileUtils.copyURLToFile(translationURL, TranslationFile);
     }
 }

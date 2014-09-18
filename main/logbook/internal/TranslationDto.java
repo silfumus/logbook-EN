@@ -50,6 +50,7 @@ public class TranslationDto {
     public static void fillMap(Map<String, String> map, File fileName, int columnJP, int columnEN) throws IOException {
         if (!fileName.canRead()) {
             GlobalContext.addConsole("Failed to read " + fileName.getCanonicalPath());
+            map.put("Unknown", "Unknown");
         }
         Reader reader = null;
         try {
@@ -64,9 +65,6 @@ public class TranslationDto {
                 String[] colums = line.split(";");
                 map.put(colums[columnJP], colums[columnEN]);
             }
-            if (!fileName.canRead()) {
-                map.put("Unknown", "Unknown");
-            }
         } finally {
             reader.close();
         }
@@ -76,6 +74,7 @@ public class TranslationDto {
             throws IOException {
         if (!fileName.canRead()) {
             GlobalContext.addConsole("Failed to read " + fileName.getCanonicalPath());
+            map.put(0, "Unknown");
         }
         Reader reader = null;
         try {
@@ -89,9 +88,6 @@ public class TranslationDto {
                 String line = ite.next();
                 String[] colums = line.split(";");
                 map.put(Integer.parseInt(colums[columnJP]), colums[columnEN]);
-            }
-            if (!fileName.canRead()) {
-                map.put(0, "Unknown");
             }
         } finally {
             reader.close();
