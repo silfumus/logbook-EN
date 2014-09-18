@@ -139,6 +139,14 @@ public final class ItemDto extends AbstractDto {
     }
 
     /**
+     * type1を取得します。
+     * @return type1
+     */
+    public int getType1() {
+        return this.type1;
+    }
+
+    /**
      * type2を取得します。
      * @return type2
      */

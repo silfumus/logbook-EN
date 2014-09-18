@@ -528,10 +528,10 @@ public final class ShipDto extends AbstractDto {
         for (int i = 0; i < items.size(); i++) {
             ItemDto item = items.get(i);
             if (item != null) {
-                if ((item.getType3() == 9) || (item.getType3() == 10)) {
+                if ((item.getType1() == 7) && (this.onslot.get(i) > 0)) {
                     // 偵察機索敵値
                     survey += item.getSaku();
-                } else if (item.getType3() == 11) {
+                } else if (item.getType1() == 8) {
                     //  電探索敵値
                     rader += item.getSaku();
                 }
