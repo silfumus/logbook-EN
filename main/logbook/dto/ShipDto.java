@@ -520,9 +520,9 @@ public final class ShipDto extends AbstractDto {
      * </p>
      * @return 索敵値(2-5)
      */
-    public double getSakuteki25() {
+    public int getSakuteki25() {
         List<ItemDto> items = this.getItem();
-        double saku = 0;
+        int saku = 0;
         int survey = 0;
         int rader = 0;
         for (int i = 0; i < items.size(); i++) {
@@ -537,10 +537,10 @@ public final class ShipDto extends AbstractDto {
                 }
             }
         }
-        double a = Math.sqrt(this.getSakuteki() - survey - rader);
+        //double a = Math.sqrt(this.getSakuteki() - survey - rader);
         saku += survey * 2;
         saku += rader;
-        saku += Double.isNaN(a) ? 0 : a;
+        //saku += Double.isNaN(a) ? 0 : a;
         return saku;
     }
 

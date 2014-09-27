@@ -284,6 +284,8 @@ public class FleetComposite extends Composite {
         // 艦隊合計Lv
         int totallv = 0;
         // 索敵値計
+        int fleetSakuteki = 0;
+        int equipmentSakuteki = 0;
         int totalSakuteki = 0;
 
         for (int i = 0; i < ships.size(); i++) {
@@ -313,7 +315,9 @@ public class FleetComposite extends Composite {
             // 艦隊合計Lv
             totallv += ship.getLv();
             // 索敵値計
-            totalSakuteki += ship.getSakuteki25();
+            fleetSakuteki += ship.getSakuteki();
+            equipmentSakuteki += ship.getSakuteki25();
+            totalSakuteki = (int) (equipmentSakuteki + Math.sqrt(fleetSakuteki - equipmentSakuteki));
 
             // 疲労している艦娘がいる場合メッセージを表示
             if (this.cond > cond) {
