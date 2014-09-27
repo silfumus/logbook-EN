@@ -47,11 +47,11 @@ public final class AsyncExecUpdateCheck extends Thread {
                 || !AppConstants.MAPNAME_TRANSLATION_FILE.canRead()) {
             GlobalContext.addConsole("Data folder not found, trying to download...");
             try {
-                UpdateOperation(AppConstants.QUEST_TRANSLATION_URI, AppConstants.QUEST_TRANSLATION_FILE);
-                UpdateOperation(AppConstants.ITEM_TRANSLATION_URI, AppConstants.ITEM_TRANSLATION_FILE);
-                UpdateOperation(AppConstants.SHIPSTYLE_TRANSLATION_URI, AppConstants.SHIPSTYLE_TRANSLATION_FILE);
-                UpdateOperation(AppConstants.EXPEDITION_TRANSLATION_URI, AppConstants.EXPEDITION_TRANSLATION_FILE);
-                UpdateOperation(AppConstants.MAPNAME_TRANSLATION_URI, AppConstants.MAPNAME_TRANSLATION_FILE);
+                updateOperation(AppConstants.QUEST_TRANSLATION_URI, AppConstants.QUEST_TRANSLATION_FILE);
+                updateOperation(AppConstants.ITEM_TRANSLATION_URI, AppConstants.ITEM_TRANSLATION_FILE);
+                updateOperation(AppConstants.SHIPSTYLE_TRANSLATION_URI, AppConstants.SHIPSTYLE_TRANSLATION_FILE);
+                updateOperation(AppConstants.EXPEDITION_TRANSLATION_URI, AppConstants.EXPEDITION_TRANSLATION_FILE);
+                updateOperation(AppConstants.MAPNAME_TRANSLATION_URI, AppConstants.MAPNAME_TRANSLATION_FILE);
                 GlobalContext.addConsole("Download complete");
             } catch (IOException e) {
                 GlobalContext.addConsole("Failed to download data folder");
@@ -122,7 +122,7 @@ public final class AsyncExecUpdateCheck extends Thread {
                         if (box.open() == SWT.YES) {
                             if (questupdate) {
                                 try {
-                                    UpdateOperation(AppConstants.QUEST_TRANSLATION_URI,
+                                    updateOperation(AppConstants.QUEST_TRANSLATION_URI,
                                             AppConstants.QUEST_TRANSLATION_FILE);
                                     GlobalContext.addConsole("Quest file has been updated to: " + latestquest);
                                 } catch (IOException e) {
@@ -131,7 +131,7 @@ public final class AsyncExecUpdateCheck extends Thread {
                             }
                             if (itemupdate) {
                                 try {
-                                    UpdateOperation(AppConstants.ITEM_TRANSLATION_URI,
+                                    updateOperation(AppConstants.ITEM_TRANSLATION_URI,
                                             AppConstants.ITEM_TRANSLATION_FILE);
                                     GlobalContext.addConsole("Equipment file has been updated to: " + latestitem);
                                 } catch (IOException e) {
@@ -140,7 +140,7 @@ public final class AsyncExecUpdateCheck extends Thread {
                             }
                             if (shipstyleupdate) {
                                 try {
-                                    UpdateOperation(AppConstants.SHIPSTYLE_TRANSLATION_URI,
+                                    updateOperation(AppConstants.SHIPSTYLE_TRANSLATION_URI,
                                             AppConstants.SHIPSTYLE_TRANSLATION_FILE);
                                     GlobalContext.addConsole("Hull types file has been updated to: "
                                             + latestshipstyle);
@@ -150,7 +150,7 @@ public final class AsyncExecUpdateCheck extends Thread {
                             }
                             if (expnameupdate) {
                                 try {
-                                    UpdateOperation(AppConstants.EXPEDITION_TRANSLATION_URI,
+                                    updateOperation(AppConstants.EXPEDITION_TRANSLATION_URI,
                                             AppConstants.EXPEDITION_TRANSLATION_FILE);
                                     GlobalContext.addConsole("Expedition file has been updated to: "
                                             + latestexpname);
@@ -160,7 +160,7 @@ public final class AsyncExecUpdateCheck extends Thread {
                             }
                             if (mapupdate) {
                                 try {
-                                    UpdateOperation(AppConstants.MAPNAME_TRANSLATION_URI,
+                                    updateOperation(AppConstants.MAPNAME_TRANSLATION_URI,
                                             AppConstants.MAPNAME_TRANSLATION_FILE);
                                     GlobalContext.addConsole("Map file has been updated to: " + latestmap);
                                 } catch (IOException e) {
@@ -184,7 +184,7 @@ public final class AsyncExecUpdateCheck extends Thread {
         }
     }
 
-    static void UpdateOperation(URI translationURI, File TranslationFile) throws IOException {
+    static void updateOperation(URI translationURI, File TranslationFile) throws IOException {
         URL translationURL = translationURI.toURL();
         FileUtils.copyURLToFile(translationURL, TranslationFile);
     }
