@@ -514,34 +514,39 @@ public final class ShipDto extends AbstractDto {
     }
 
     /**
-     * 索敵値
-     * <p>
-     * 偵察機索敵値×2 ＋ 電探索敵値 ＋ √(艦隊の装備込み索敵値合計 - 偵察機索敵値 - 電探索敵値)
-     * </p>
-     * @return 索敵値(2-5)
+     * @return 偵察機索敵値
      */
-    public int getSakuteki25() {
-        List<ItemDto> items = this.getItem();
-        int saku = 0;
+    public int getSakutekiSurvey() {
         int survey = 0;
-        int rader = 0;
+        List<ItemDto> items = this.getItem();
         for (int i = 0; i < items.size(); i++) {
             ItemDto item = items.get(i);
             if (item != null) {
                 if ((item.getType1() == 7) && (this.onslot.get(i) > 0)) {
                     // 偵察機索敵値
                     survey += item.getSaku();
-                } else if (item.getType1() == 8) {
+                }
+            }
+        }
+        return survey;
+    }
+
+    /**
+     * @return 電探索敵値
+     */
+    public int getSakutekiRader() {
+        int rader = 0;
+        List<ItemDto> items = this.getItem();
+        for (int i = 0; i < items.size(); i++) {
+            ItemDto item = items.get(i);
+            if (item != null) {
+                if (item.getType3() == 11) {
                     //  電探索敵値
                     rader += item.getSaku();
                 }
             }
         }
-        //double a = Math.sqrt(this.getSakuteki() - survey - rader);
-        saku += survey * 2;
-        saku += rader;
-        //saku += Double.isNaN(a) ? 0 : a;
-        return saku;
+        return rader;
     }
 
     /**

@@ -43,6 +43,9 @@ public final class BattleDto extends AbstractDto {
     /** 敵陣形 */
     private final String enemyFormation;
 
+    /** 艦隊行動 */
+    private final String intercept;
+
     /**
      * コンストラクター
      */
@@ -100,6 +103,7 @@ public final class BattleDto extends AbstractDto {
 
         if (object.containsKey("api_formation")) {
             JsonArray formation = object.getJsonArray("api_formation");
+            // 味方陣形
             switch (formation.get(0).getValueType()) {
             case NUMBER:
                 this.friendFormation = toFormation(formation.getInt(0));
@@ -107,6 +111,7 @@ public final class BattleDto extends AbstractDto {
             default:
                 this.friendFormation = toFormation(Integer.parseInt(formation.getString(0)));
             }
+            // 敵陣形
             switch (formation.get(1).getValueType()) {
             case NUMBER:
                 this.enemyFormation = toFormation(formation.getInt(1));
@@ -114,9 +119,18 @@ public final class BattleDto extends AbstractDto {
             default:
                 this.enemyFormation = toFormation(Integer.parseInt(formation.getString(1)));
             }
+            // 艦隊行動
+            switch (formation.get(2).getValueType()) {
+            case NUMBER:
+                this.intercept = toIntercept(formation.getInt(2));
+                break;
+            default:
+                this.intercept = toIntercept(Integer.parseInt(formation.getString(2)));
+            }
         } else {
             this.friendFormation = "Unknown Formation";
             this.enemyFormation = "Unknown Formation";
+            this.intercept = "Unknown";
         }
     }
 
@@ -155,6 +169,27 @@ public final class BattleDto extends AbstractDto {
             break;
         }
         return formation;
+    }
+
+    private static String toIntercept(int i) {
+        String intercept;
+        switch (i) {
+        case 1:
+            intercept = "Parallel";
+            break;
+        case 2:
+            intercept = "Head-on";
+            break;
+        case 3:
+            intercept = "T(Advantage)";
+            break;
+        case 4:
+            intercept = "T(Disadvantage)";
+            break;
+        default:
+            intercept = "Parallel";
+        }
+        return intercept;
     }
 
     /**
@@ -227,5 +262,13 @@ public final class BattleDto extends AbstractDto {
      */
     public String getEnemyFormation() {
         return this.enemyFormation;
+    }
+
+    /**
+     * 艦隊行動を取得します。
+     * @return 艦隊行動
+     */
+    public String getIntercept() {
+        return this.intercept;
     }
 }
