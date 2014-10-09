@@ -1,3 +1,7 @@
+[![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](https://github.com/silfumus/logbook-EN/blob/master/LICENSE.txt)
+[![Issues](http://img.shields.io/github/issues/silfumus/logbook-EN.svg)](https://github.com/silfumus/logbook-EN/issues)
+[![Releases](http://img.shields.io/github/tag/silfumus/logbook-EN.svg)](https://github.com/silfumus/logbook-EN/releases)
+
 logbook-EN (航海日誌)
 --
 A utility program written in Java that is used along side Kantai Collection (Kancolle). This is the English translation project of the program written by [@sanae_hirotaka](https://twitter.com/sanae_hirotaka). The original program and its source code is available on the [developer's site](http://kancolle.sanaechan.net/).

@@ -88,8 +88,8 @@ public final class BattleDialog extends Dialog {
         // タイトル
         Label lblTitle = new Label(this.shell, SWT.NONE);
         lblTitle.setFont(SWTResourceManager.getFont(fontName, size, SWT.BOLD));
-        lblTitle.setText("The fleet attacked " + result.getEnemyName() + " in" + result.getQuestName() + " ("
-                + battle.getIntercept() + ")");
+        lblTitle.setText("The fleet attacked " + result.getEnemyName() + " in " + result.getQuestName() + " ("
+                + battle.getIntercept() + " Engagement)");
 
         Label lblsp1 = new Label(this.shell, SWT.SEPARATOR | SWT.HORIZONTAL);
         lblsp1.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
@@ -301,8 +301,8 @@ public final class BattleDialog extends Dialog {
         sb.append("</style>").append("\r\n");
         sb.append("</head>").append("\r\n");
         sb.append("<body>").append("\r\n");
-        sb.append(" <strong>The fleet attacked " + result.getEnemyName() + "in" + result.getQuestName() + " ("
-                + battle.getIntercept() + ")(" + time + ")</strong>").append("\r\n");
+        sb.append(" <strong>The fleet attacked " + result.getEnemyName() + " in " + result.getQuestName() + " ("
+                + battle.getIntercept() + " Engagement)(" + time + ")</strong>").append("\r\n");
         sb.append(" <hr>").append("\r\n");
 
         List<DockDto> docks = battle.getFriends();
