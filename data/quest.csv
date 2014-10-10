@@ -1,4 +1,4 @@
-20140927;titleJP;titleEN;detailJP;detailEN
+20141010;titleJP;titleEN;detailJP;detailEN
 107;「空母機動部隊」を編成せよ！;Form a Carrier Task Force;空母1隻以上を旗艦とし、その護衛艦艇と共に、空母機動部隊を編成せよ！;Have a CV/CVL as a flagship and 3 DD in your main fleet.
 108;「天龍」型軽巡姉妹の全２艦を編成せよ！;Form the Tenryuu-class;天龍型軽巡洋艦「天龍」「龍田」を同一艦隊に配属せよ！;Have Tenryuu and Tatsuta in your main fleet.
 109;「川内」型軽巡姉妹の全３艦を編成せよ！;Form the Sendai-class;川内型軽巡洋艦、「川内」「神通」「那珂」を同一艦隊に編成せよ！;Have Sendai, Jintsuu, and Naka in your main fleet.
@@ -31,8 +31,10 @@
 139;潜水艦隊「第六艦隊」を編成せよ！;Form the 6th Fleet;「潜水母艦」と複数の潜水艦(4隻以上)からなる潜水艦隊「第六艦隊」を編成せよ！;Have an AS and 4 SS/SSV in your fleet.
 140;新型電探を配備せよ！;Test the new RADAR;新型電探運用試験のため、第一艦隊の旗艦に「妙高改二」を配備せよ！;Have Myoukou Kai2 as flagship of your fleet.
 141;再編成「第二航空戦隊」を強化せよ！;Form the the Elite 2nd CarDiv;「蒼龍改二」(※旗艦)及び「飛龍改二」を基幹とした二航戦(要駆逐艦2隻)を編成せよ！;Have Souryuu Kai2 as flagship, Hiryuu Kai2, 2 DD in your fleet.
-142;精鋭「第三戦隊」全艦集結せよ！;Formation of the BatDiv 3;第二次改装を完了した改装金剛型高速戦艦4隻を集結させよ！;Have all four Kongou-class Kai2 in your main fleet.
+142;精鋭「第三戦隊」全艦集結せよ！;Form the 3rd BatDiv;第二次改装を完了した改装金剛型高速戦艦4隻を集結させよ！;Have all four Kongou-class Kai2 in your main fleet.
 143;「新型正規空母」を配備せよ！;Deploy the New CV;雲龍型航空母艦一番艦「雲龍」を第一艦隊機旗艦に配備せよ！;Have Unryuu as flagship.
+144;主力戦艦部隊「第二戦隊」を編成せよ！;Form the 2nd BatDiv;長門型2隻及び扶桑型2隻の計4隻の主力戦艦からなる第二戦隊を編成せよ！;Have 2 Fusou- and 2 Nagato-class in your fleet.
+145;戦艦を主力とした水上打撃部隊を編成せよ！;Form a Battleship Strike Force;大和型・長門型・伊勢型・扶桑型のいずれか3隻と軽巡1隻他の水上打撃部隊を配備せよ！;Have 3 ships from either Yamato-, Nagato-, Ise-, or Fusou-class, and 1 CL in your fleet.
 201;敵艦隊を撃破せよ！;Daily Sortie 1;艦隊を出撃させ、敵艦隊を捕捉、これを撃滅せよ！;Defeat an enemy fleet.
 205;接近する「敵前衛艦隊」を迎撃せよ！;Intercept Approaching Enemy Vanguard Fleet;南西諸島沖に接近する「敵前衛艦隊」を捕捉、これを撃滅せよ！;Deploy to World 1-2 after defeating its boss and clear the stage.
 210;敵艦隊を10回邀撃せよ！;Daily Sortie 3;艦隊全力出撃！遊弋する敵艦隊を10回邀撃せよ！;Defeat 10 enemy fleets.
@@ -67,7 +69,11 @@
 253;「第六〇一航空隊」出撃せよ！;Deploy the 601st Naval Air Group;雲龍型航空母艦「雲龍改」含む機動部隊で珊瑚島沖に出撃、敵機動部隊を撃滅せよ！;Deploy a fleet with Unryuu Kai as flagship and 5 other ships. Score an S rank against World 5-2 boss.
 254;「軽空母」戦隊、出撃せよ！;Sortie a CVL Squadron;軽空母1～2隻、軽巡1隻、駆逐艦3～4隻の艦隊でカムラン半島の敵を撃滅せよ！;Deploy a fleet with 1~2 CVL, 1 CL and 3~4 DD. Score an S victory against World 2-1 boss.
 255;「水雷戦隊」バシー島沖緊急展開;Bashi Islands Emergency Deployment;軽巡を旗艦とした水雷戦隊(軽巡最大2隻他駆逐艦)でバシー島沖の敵を撃滅せよ！;Deploy a fleet with 1~2 CL as flagship and 4~5 DD. Score a victory against World 2-2 boss and sink the boss/flagship.
-256;「潜水艦隊」出撃せよ！;Sortie a Submarine Fleet;潜水艦戦力を中核とした艦隊で中部海域哨戒線へ反復出撃、敵戦力を漸減せよ！;Score an S rank against World 6-1 boss three times.
+256;「潜水艦隊」出撃せよ！;Sortie a Submarine Fleet;潜水艦戦力を中核とした艦隊で中部海域哨戒線へ反復出撃、敵戦力を漸減せよ！;Score S rank against World 6-1 boss three times.
+257;「水雷戦隊」南西へ！;Deploy a Torpedo Squadron to Nansei Islands;軽巡旗艦の水雷戦隊(軽巡最大3隻他駆逐艦)を急派、南西諸島防衛線で敵を撃滅せよ！;Deploy a fleet with 1~3 CL as flagship and 3~5 DD. Score an S victory against World 1-4 boss.
+258;「第二戦隊」抜錨！;2nd BatDiv, Setting Sail;「第二戦隊」を基幹とした艦隊でカレー洋に進出、反復出撃により敵海上兵力を撃滅せよ！;Deploy 4 ships from 2nd BatDiv and 2 other ships. Score S rank against World 4-2 boss two times.
+259;「水上打撃部隊」南方へ！;;戦艦3隻軽巡1隻他を基幹とした水上打撃部隊で南方海域へ進出、敵艦隊を撃滅せよ！;Deploy 3 (Non-fast) BB, 1 CL, and 2 other ships. Score an S rank against World 5-1 boss.
+260;「戦艦部隊」北方海域に突入せよ！;Deploy the Battleship Fleet to Northern Waters;戦艦2隻と直援軽空母1隻(正規空母無し)基幹の艦隊で北方AL海域に突入、敵を撃滅せよ！;Deploy 2 BB, 1 CVL, and 3 other ships. Score an S rank against World 3-5 boss. Using more than 1CV, 3 BB, 2 CVL, and/or using BBV will fail the quest.
 301;はじめての「演習」！;First Exercise;他の提督(プレイヤー)の艦隊と「演習」を行おう！;Challenge another fleet in practice mode.
 302;大規模演習;Weekly Exercises;今週中に「演習」で他の提督の艦隊に対して20回「勝利」しよう！;Get 20 victories in practice mode within the same week.
 303;「演習」で練度向上！;Daily Exercises 1;本日中に他の司令官の艦隊に対して3回「演習」を挑もう！;Challenge 3 other fleets in practice mode within the same day.
@@ -126,7 +132,6 @@ B8;「戦艦」を出撃させよ！;Sortie a Battleship;海上の覇者、戦�
 B9;「空母機動部隊」出撃せよ！;Sortie a Carrier Task Force;空母1隻とその護衛艦艇で構成した空母機動部隊を出撃させよ！;Deply a fleet with CV(L) as flagship and 5 DD/CL/AV for the escorts.
 Bd6;敵輸送船団を叩け！;Daily Sortie 6;敵の輸送船5隻以上を撃沈し、敵の補給路を寸断せよ！;Sink 5 enemy transport ships.
 Bd8;敵潜水艦を制圧せよ！;Daily Sortie 8;対潜能力の充実した艦隊で出撃、敵潜水艦狩りを実施せよ！;Sink 6 enemy submarines.
-Bm3;「水雷戦隊」南西へ！;Deploy a Torpedo Squadron to Nansei Islands;軽巡旗艦の水雷戦隊(軽巡最大3隻他駆逐艦)を急派、南西諸島防衛線で敵を撃滅せよ！;Deploy a fleet with 1~3 CL as flagship and 3~5 DD. Score an S victory against World 1-4 boss.
 Bw8;敵東方中枢艦隊を撃破せよ！;Weekly Sortie 8;西方海域カスガダマ島沖に出撃し、敵東方中枢艦隊を捕捉、これを撃破せよ！;Defeat a boss in World 4-4.
 Bw9;南方海域珊瑚諸島沖の制空権を握れ！;Weekly Sortie 9;南方海域珊瑚諸島沖に出撃し、敵機動部隊本体を捕捉撃滅、これに完全勝利せよ！;Defeat 2 World 5-2 bosses with S rank victory.
 E1;はじめての「補給」！;First Supply;補給は大事です！燃料・弾薬を艦に「補給」しよう！;Resupply a ship.

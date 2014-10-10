@@ -1,4 +1,4 @@
-20140928;JP-Name;TR-Name
+20141010;JP-Name;TR-Name
 1;12cm単装砲;12cm Naval Gun
 2;12.7cm連装砲;12.7cm Twin Gun Mount
 3;10cm連装高角砲;10cm Twin High-angle Mount
@@ -114,6 +114,9 @@
 113;流星(六〇一空);Ryuusei (601 Air Group)
 114;38cm連装砲改;38cm Twin Gun Mount Kai
 115;Ar196改;Ar196 Kai
+116;一式徹甲弾;Type 1 AP Shell
+117;試製46cm連装砲;Prototype 46cm Twin Gun Mount
+118;紫雲;Shiun
 501;5inch単装砲;5inch Naval Gun
 502;5inch連装砲;5inch Twin Gun Mount
 503;3inch単装高角砲;3inch High-angle Mount
