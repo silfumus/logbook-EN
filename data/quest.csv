@@ -1,12 +1,21 @@
-20141010;titleJP;titleEN;detailJP;detailEN
+20141031;titleJP;titleEN;detailJP;detailEN
+101;はじめての「編成」！;First Formation;２隻以上の艦で構成される「艦隊」を編成せよ！;Have 2 ships in your main fleet.
+102;「駆逐隊」を編成せよ！;Form a Destroyer Division;駆逐艦４隻以上で構成される「駆逐隊」を編成せよ！;Have 4 DD in your main fleet.
+103;「水雷戦隊」を編成せよ！;Form a Torpedo Squadron;軽巡洋艦を旗艦とし、数隻の駆逐艦で構成される「水雷戦隊」を編成せよ！;Have a CL as a flagship and 5 DD in your main fleet.
+104;6隻編成の艦隊を編成せよ！;Form a Fleet with 6 Ships;全6隻で構成される主力艦隊を編成せよ！;Have 6 ships in your main fleet.
+105;軽巡２隻を擁する隊を編成せよ！;Form a Squadron with 2 CL;軽巡洋艦２隻を擁する高速艦隊を編成せよ！;Have 2 CL in your main fleet.
+106;「重巡戦隊」を編成せよ！;Form a Heavy Cruiser Squadron;重巡洋艦２隻を擁する重巡艦隊を編成せよ！;Have 2 CA in your main fleet.
 107;「空母機動部隊」を編成せよ！;Form a Carrier Task Force;空母1隻以上を旗艦とし、その護衛艦艇と共に、空母機動部隊を編成せよ！;Have a CV/CVL as a flagship and 3 DD in your main fleet.
 108;「天龍」型軽巡姉妹の全２艦を編成せよ！;Form the Tenryuu-class;天龍型軽巡洋艦「天龍」「龍田」を同一艦隊に配属せよ！;Have Tenryuu and Tatsuta in your main fleet.
-109;「川内」型軽巡姉妹の全３艦を編成せよ！;Form the Sendai-class;川内型軽巡洋艦、「川内」「神通」「那珂」を同一艦隊に編成せよ！;Have Sendai, Jintsuu, and Naka in your main fleet.
+109;「川内」型軽巡姉妹の全３艦を編成せよ！;Form the Sendai-class;川内型軽巡洋艦「川内」「神通」「那珂」を同一艦隊に配属せよ！;Have Sendai, Jintsuu, and Naka in your main fleet.
 110;「妙高」型重巡姉妹の全４隻を編成せよ！;Form the Myoukou-class;妙高型重巡洋艦「妙高」「那智」「足柄」「羽黒」を同一艦隊に配属せよ！;Have Myoukou, Nachi, Ashigara, and Haguro in your main fleet.
 111;「扶桑」型戦艦姉妹の全２隻を編成せよ！;Form the Fusou-class;扶桑型戦艦「扶桑」「山城」を同一艦隊に配属せよ！;Have Fusou and Yamashiro in your main fleet.
 112;「伊勢」型戦艦姉妹の全２隻を編成せよ！;Form the Ise-class;伊勢型戦艦「伊勢」「日向」を同一艦隊に配属せよ！;Have Ise and Hyuuga in your main fleet.
+113;戦艦と重巡による主力艦隊を編成せよ！;Form the Main Fleet with BB and CA;戦艦1隻以上、重巡2隻以上を主力とした水上打撃艦隊を編成せよ！;Have a BB and 2 CA in your main fleet.
 114;「南雲機動部隊」を編成せよ！;Form the Nagumo Task Force;一航戦「赤城」「加賀」二航戦「飛龍」「蒼龍」からなる第一機動部隊を編成せよ！;Have only Akagi, Kaga, Hiryuu, and Souryuu in your main fleet.
-117;第２艦隊で空母機動部隊を編成せよ！;Form a Carrier Task Force in the Second Fleet;第2艦隊に空母を配備して、空母機動部隊を編成せよ！;Have a CV/CVL and 3 DD in your second fleet.
+115;第２艦隊を編成せよ！;Form the Second Fleet;二つ目の艦隊、第２艦隊の旗艦を指定して、第２艦隊を編成せよ！;Have a flagship in your second fleet.
+116;「水上機母艦」を配備せよ！;Ready a Seaplane Carrier;多数の水上偵察機を運用する「水上機母艦」を艦隊に配備せよ！;Have an AV in your main fleet.
+117;第２艦隊で空母機動部隊を編成せよ！;Form a Carrier Task Force in the Second Fleet;第２艦隊に空母を配備して、空母機動部隊を編成せよ！;Have a CV/CVL and 3 DD in your second fleet.
 118;「金剛」型による高速戦艦部隊を編成せよ！;Form the Kongou-class;金剛型戦艦「金剛」「比叡」「榛名」「霧島」全4隻の高速戦艦を集中配備せよ！;Have Kongou, Hiei, Haruna, and Kirishima in your main fleet.
 119;「三川艦隊」を編成せよ！;Form the Mikawa Fleet;「鳥海」「青葉」「加古」「古鷹」「天龍」を含む高速艦隊を編成せよ！;Have Choukai, Aoba, Kako, Furutaka, Tenryuu, and a fast ship in your main fleet.
 120;「第六駆逐隊」を編成せよ！;Form the DesDiv 6;「暁」「響」「雷」「電」4隻による第六駆逐隊を編成せよ！;Have only Akatsuki, Hibiki, Inazuma, and Ikazuchi in your main fleet.
@@ -35,13 +44,22 @@
 143;「新型正規空母」を配備せよ！;Deploy the New CV;雲龍型航空母艦一番艦「雲龍」を第一艦隊機旗艦に配備せよ！;Have Unryuu as flagship.
 144;主力戦艦部隊「第二戦隊」を編成せよ！;Form the 2nd BatDiv;長門型2隻及び扶桑型2隻の計4隻の主力戦艦からなる第二戦隊を編成せよ！;Have 2 Fusou- and 2 Nagato-class in your fleet.
 145;戦艦を主力とした水上打撃部隊を編成せよ！;Form a Battleship Strike Force;大和型・長門型・伊勢型・扶桑型のいずれか3隻と軽巡1隻他の水上打撃部隊を配備せよ！;Have 3 ships from either Yamato-, Nagato-, Ise-, or Fusou-class, and 1 CL in your fleet.
+146;改修工廠を準備せよ！;Prepare the Improvement Arsenal;第一艦隊の旗艦に工作艦「明石」を配備、改修工廠の準備を実施せよ！;Have Akashi as flagship in your main fleet.
+147;「西村艦隊」を再編成せよ！;Reorganize the Nishimura Fleet;「扶桑」「山城」「最上」「時雨」「満潮」を基幹とした西村艦隊を編成せよ！;Have Fusou, Yamashiro, Mogami, Michishio, and Shigure in your main fleet.
 201;敵艦隊を撃破せよ！;Daily Sortie 1;艦隊を出撃させ、敵艦隊を捕捉、これを撃滅せよ！;Defeat an enemy fleet.
+202;はじめての「出撃」！;First Sortie;艦隊を出撃させ、敵艦隊と交戦せよ！;Deploy your main fleet on a combat mission.
+203;鎮守府正面海域を護れ！;Protect the Seas of Chinju-Fu;鎮守府正面海域に艦隊を出撃させ、敵艦の跳梁を阻止せよ！;Deploy to World 1-1 and clear the stage.
+204;南西諸島沖に出撃せよ！;Sortie to the Coast of Nansei Islands;南西諸島沖に艦隊を出撃させ、敵艦隊と交戦せよ！;Deploy to World 1-2 and clear the stage.
 205;接近する「敵前衛艦隊」を迎撃せよ！;Intercept Approaching Enemy Vanguard Fleet;南西諸島沖に接近する「敵前衛艦隊」を捕捉、これを撃滅せよ！;Deploy to World 1-2 after defeating its boss and clear the stage.
+206;「水雷戦隊」で出撃せよ！;Sortie the Torpedo Squadron;軽巡洋艦1隻を旗艦とし、複数の駆逐艦からなる水雷戦隊で出撃せよ！;Deploy a fleet with a CL as flagship and 3 DD as escorts.
+208;「戦艦」を出撃させよ！;Sortie a Battleship;海上の覇者、戦艦を旗艦とした艦隊を編成、これを出撃させよ！;Deploy a fleet with a BB as its flagship. BBV don't count.
 210;敵艦隊を10回邀撃せよ！;Daily Sortie 3;艦隊全力出撃！遊弋する敵艦隊を10回邀撃せよ！;Defeat 10 enemy fleets.
 211;敵空母を３隻撃沈せよ！;Daily Sortie 4;艦隊の脅威となる敵空母群。これを捕捉撃滅し、3隻轟沈せよ！;Sink 3 enemy aircraft carriers.
 213;海上通商破壊作戦;Weekly Sortie 3;1週間で敵輸送船を20隻以上撃沈せよ！;Sink 20 transport ships.
 214;あ号作戦;Weekly Sortie 1;1週間の全力出撃を行い、可能な限り多くの敵艦隊を捕捉、これを迎撃せよ！;Deploy your fleet 36 times, encounter 24 bosses, defeat 12 bosses, and get 6 Perfect S rank victories.
+215;第２艦隊、出撃せよ！;Second Fleet Sortie;新たに編成した「第２艦隊」を出撃させよ！;Deploy your 2nd Fleet on a combat mission.
 216;敵艦隊主力を撃滅せよ！;Daily Sortie 2;艦隊を出撃させ、敵艦隊「主力」を捕捉！これを撃滅せよ！;Defeat the flagship of an enemy fleet.
+217;敵空母を撃沈せよ！;Sink Enemy Carrier;敵機動部隊を捕捉し、これを邀撃、敵空母を轟沈せよ！;Sink an enemy aircraft carrier.
 218;敵補給艦を3隻撃沈せよ！;Daily Sortie 5;艦隊を出撃させ、敵補給艦を捕捉、これを撃滅せよ！;Sink 3 enemy transport ships.
 219;「三川艦隊」出撃せよ！;Sortie the Mikawa Fleet;新編成した「三川艦隊」で出撃せよ！;Deploy a fleet with Choukai, Aoba, Kako, Furutaka, Tenryuu, and another fast ship.
 220;い号作戦;Weekly Sortie 2;有力な母艦航空隊で1週間の全力出撃を行い、可能な限り多くの敵空母を撃滅せよ！;Sink 20 aircraft carriers.
@@ -74,6 +92,8 @@
 258;「第二戦隊」抜錨！;2nd BatDiv, Setting Sail;「第二戦隊」を基幹とした艦隊でカレー洋に進出、反復出撃により敵海上兵力を撃滅せよ！;Deploy 4 ships from 2nd BatDiv and 2 other ships. Score S rank against World 4-2 boss two times.
 259;「水上打撃部隊」南方へ！;;戦艦3隻軽巡1隻他を基幹とした水上打撃部隊で南方海域へ進出、敵艦隊を撃滅せよ！;Deploy 3 (Non-fast) BB, 1 CL, and 2 other ships. Score an S rank against World 5-1 boss.
 260;「戦艦部隊」北方海域に突入せよ！;Deploy the Battleship Fleet to Northern Waters;戦艦2隻と直援軽空母1隻(正規空母無し)基幹の艦隊で北方AL海域に突入、敵を撃滅せよ！;Deploy 2 BB, 1 CVL, and 3 other ships. Score an S rank against World 3-5 boss. Using more than 1CV, 3 BB, 2 CVL, and/or using BBV will fail the quest.
+261;海上輸送路の安全確保に努めよ！;Ensuring the Safety of Sea Lanes;鎮守府正面の対潜哨戒を反復実施し、安全な海上輸送路を確保せよ！;Score at least A rank against World 1-5 boss three times.
+262;「西村艦隊」南方海域へ進出せよ！;Deploy the Nishimura Fleet to Southern Waters;「西村艦隊」を南方海域に進出させ、敵主力艦隊へ突入、これを撃滅せよ！;Deploy a fleet with Fusou, Yamashiro, Mogami, Michishio, Shigure, and 1 other ship. Score an S rank against World 5-1 boss.
 301;はじめての「演習」！;First Exercise;他の提督(プレイヤー)の艦隊と「演習」を行おう！;Challenge another fleet in practice mode.
 302;大規模演習;Weekly Exercises;今週中に「演習」で他の提督の艦隊に対して20回「勝利」しよう！;Get 20 victories in practice mode within the same week.
 303;「演習」で練度向上！;Daily Exercises 1;本日中に他の司令官の艦隊に対して3回「演習」を挑もう！;Challenge 3 other fleets in practice mode within the same day.
@@ -93,8 +113,14 @@
 413;(続)航空火力艦の運用を強化せよ！;Strengthen the Operation of the BBV (Cont.);「航空戦艦運用演習」を継続実施し、航空火力艦の運用の強化に引き続き努めよ！;Complete expedition 23 four more times.
 414;遠洋潜水艦作戦を実施せよ！;Blue Waters Submarine Operation;「遠洋潜水艦作戦」を実施し、潜水艦隊の練度向上と敵艦隊漸減に努めよ！;Complete expedition 39.
 415;遠洋潜水艦作戦の成果を拡大せよ！;Blue Waters Extended Submarine Operation;「遠洋潜水艦作戦」を継続実施し、潜水艦隊の練度向上と敵艦隊漸減に努めよ！;Complete expedition 39 two more times.
+501;はじめての「補給」！;First Supply;補給は大事です！燃料・弾薬を艦に「補給」しよう！;Resupply a ship.
+502;はじめての「入渠」！;First Docking;戦闘で傷ついた艦を「入渠」させて修理して、次の出撃に備えよう！;Repair a ship.
 503;艦隊大整備！;Daily Repairs;各艦隊から整備が必要な艦を5隻以上ドック入りさせ、大規模な整備をしよう！;Repair 5 ships.
 504;艦隊酒保祭り！;Daily Resupplies;艦隊酒保祭り！各艦に延べ15回以上の補給を実施しよう！;Resupply your ships 15 times.
+601;はじめての「建造」！;First Construction;「工廠」で鋼材などの資材を使って新しい艦を「建造」しよう！;Craft a ship.
+602;はじめての「開発」！;First Development;「工廠」でボーキサイトなどの資材を使って新しい装備アイテムを「開発」しよう！;Craft a piece of equipment.
+603;はじめての「解体」！;First Dismantlement;「工廠」で不要な艦を「解体」してみよう！;Dismantle a ship.
+604;はじめての「廃棄」！;First Disposal;「工廠」で装備アイテムを「廃棄」してみよう！;Scrap a piece of equipment.
 605;新装備「開発」指令;Daily Equipment Development 1;「工廠」で装備アイテムを新たに「開発」しよう(失敗もOK)！;Craft a piece of equipment. (Failures are OK)
 606;新造艦「建造」指令;Daily Ship Construction 1;「工廠」で艦娘を本日中に新たに「建造」しよう！;Craft a ship.
 607;装備「開発」集中強化！;Daily Development 2;「工廠」で装備アイテムを本日中に3回「開発」しよう(失敗もOK)！;Craft 3 pieces of equipment. (Failures are OK)
@@ -110,37 +136,15 @@
 701;はじめての「近代化改修」！;First Modernization;任意の艦を近代化改修(合成)して、強化せよ！;Perform a successful modernization.
 702;艦の「近代化改修」を実施せよ！;Daily Modernization;近代化改修を実施して、２回以上これを成功させよ！;Perform 2 successful modernizations within the same day.
 703;「近代化改修」を進め、戦備を整えよ！;Weekly Modernization;一週間の間に、近代化改修を１5回成功させよ！;Perform 15 successful modernizations within the same week.
-A1;はじめての「編成」！;First Formation;2隻以上の艦で編成される「艦隊」を編成せよ！;Have 2 ships in your main fleet.
-A13;戦艦と重巡による主力艦隊を編成せよ！;Form the Main Fleet with BB and CA;戦艦1隻以上、重巡2隻以上を主力とした水上打撃艦隊を編成せよ！;Have a BB and 2 CA in your main fleet.
-A2;「駆逐隊」を編成せよ！;Form a Destroyer Division;駆逐艦4隻以上で編成される「駆逐隊」を編成せよ！;Have 4 DD in your main fleet.
-A3;「水雷戦隊」を編成せよ！;Form a Torpedo Squadron;軽巡洋艦を旗艦とし、数隻の駆逐艦で構成される「水雷戦隊」を編成せよ！;Have a CL as a flagship and 5 DD in your main fleet.
-A4;6隻編成の艦隊を編成せよ！;Form a Fleet with 6 Ships;全6隻で構成される主力艦隊を編成せよ！;Have 6 ships in your main fleet.
-A5;軽巡２隻を擁する隊を編成せよ！;Form a Squadron with 2 CL;軽巡洋艦２隻を擁する高速艦隊を編成せよ！;Have 2 CL in your main fleet.
-A6;第２艦隊を編成せよ！;Form the Second Fleet;二つ目の艦隊、第２艦隊の旗艦を指定して、第２艦隊を編成せよ！;Have a flagship in your second fleet.
-A7;「重巡戦隊」を編成せよ！;Form a Heavy Cruiser Squadron;重巡洋艦２隻を擁する重巡艦隊を編成せよ！;Have 2 CA in your main fleet.
-A9;「水上機母艦」を配備せよ！;Ready a Seaplane Carrier;多数の水上偵察機を運用する「水上機母艦」を艦隊に配備せよ！;Have an AV in your main fleet.
-B1;はじめての「出撃」！;First Sortie;艦隊を出撃させ、敵艦隊と交戦せよ！;Deploy your main fleet on a combat mission.
-B10;敵空母を撃沈せよ！;Sink Enemy Carrier;敵機動部隊を捕捉し、これを邀撃、敵空母を轟沈せよ！;Sink an enemy aircraft carrier.
 B12;「第六駆逐隊」出撃せよ！;Sortie the DesDiv 6;「暁」「響」「雷」「電」による第六駆逐隊、出撃せよ！;Deploy a fleet with only Akatsuki, Hibiki, Inazuma, and Ikazuchi.
-B2;鎮守府正面海域を護れ！;Protect the Seas of Chinju-Fu;鎮守府正面海域に艦隊を出撃させ、敵艦の跋梁を阻止せよ！;Deploy to World 1-1 and clear the stage.
 B21;「第十八駆逐隊」出撃せよ！;Sortie the DesDiv 18;編成した「第十八駆逐隊」を含む艦隊で出撃し、北方海域モーレイ海の敵を撃滅せよ！;Deploy a fleet with Kasumi, Arare, Kagerou, Shiranui and 2 other ships. Score a victory against World 3-1 boss.
-B3;第２艦隊、出撃せよ！;Second Fleet Sortie;新たに編成した「第２艦隊」を出撃せよ！;Deploy your 2nd Fleet on a combat mission.
-B4;南西諸島沖に出撃せよ！;Sortie to the Coast of Nansei Islands;南西諸島沖に艦隊を出撃させ、敵艦隊と交戦せよ！;Deploy to World 1-2 and clear the stage.
-B6;「水雷戦隊」で出撃せよ！;Sortie the Torpedo Squadron;軽巡洋艦1隻を旗艦とし、複数の駆逐艦からなる水雷戦隊で出撃せよ！;Deploy a fleet with a CL as flagship and 3 DD as escorts.
 B7;「重巡洋艦」を出撃させよ！;Sortie a Heavy Cruiser;重巡洋艦を旗艦とした艦隊を編成、これを出撃させよ！;Deploy a fleet with a CA as its flagship.
-B8;「戦艦」を出撃させよ！;Sortie a Battleship;海上の覇者、戦艦を旗艦とした艦隊を編成、これを出撃させよ！;Deploy a fleet with a BB as its flagship. BBV don't count.
 B9;「空母機動部隊」出撃せよ！;Sortie a Carrier Task Force;空母1隻とその護衛艦艇で構成した空母機動部隊を出撃させよ！;Deply a fleet with CV(L) as flagship and 5 DD/CL/AV for the escorts.
 Bd6;敵輸送船団を叩け！;Daily Sortie 6;敵の輸送船5隻以上を撃沈し、敵の補給路を寸断せよ！;Sink 5 enemy transport ships.
 Bd8;敵潜水艦を制圧せよ！;Daily Sortie 8;対潜能力の充実した艦隊で出撃、敵潜水艦狩りを実施せよ！;Sink 6 enemy submarines.
 Bw8;敵東方中枢艦隊を撃破せよ！;Weekly Sortie 8;西方海域カスガダマ島沖に出撃し、敵東方中枢艦隊を捕捉、これを撃破せよ！;Defeat a boss in World 4-4.
 Bw9;南方海域珊瑚諸島沖の制空権を握れ！;Weekly Sortie 9;南方海域珊瑚諸島沖に出撃し、敵機動部隊本体を捕捉撃滅、これに完全勝利せよ！;Defeat 2 World 5-2 bosses with S rank victory.
-E1;はじめての「補給」！;First Supply;補給は大事です！燃料・弾薬を艦に「補給」しよう！;Resupply a ship.
-E2;はじめての「入渠」！;First Docking;戦闘で傷ついた艦を「入渠」させて修理して、次の出撃に備えよう！;Repair a ship.
-F1;はじめての「建造」！;First Construction;「工廠」で鋼材などの資材を使って新しい艦を「建造」しよう！;Craft a ship.
 F10;「大型艦建造」の準備！(その弐);Preparation for LSC (Part 2);大型艦建造の準備をします！「工廠」で装備アイテムを4回「廃棄」してみてください！;Scrap equipment 4 times.
-F11;輸送用ドラム缶の準備;Preparation for Transport Drum Canisters;「工廠」で装備アイテムを3回「廃棄」して、輸送用ドラム缶を準備します。;Scrap equipment 3 times.
-F2;はじめての「開発」！;First Development;「工廠」でボーキサイトなどの資材を使って新しい装備アイテムを「開発」しよう！;Craft a piece of equipment.
-F3;はじめての「解体」！;First Dismantlement;「工廠」で不要な艦を「解体」してみよう！;Dismantle a ship.
-F4;はじめての「廃棄」！;First Disposal;「工廠」で不要な装備アイテムを「廃棄」してみよう！;Scrap a piece of equipment.
+F11;輸送用ドラム缶の準備;Preparation for Transport Drum Canisters;「工廠」で装備アイテムを3回「廃棄」して、輸送用ドラム缶を準備します。;Scrap 3 times.
 G4;「大型艦建造」の準備！(その壱);Preparation for LSC (Part 1);大型艦/新型艦建造のための準備を行う。任意の艦で近代化改修を4回成功させよ！;Perform 4 successful modernizations.
 WB01;式の準備！(最終);In Preparation of Love! (Final);練度の高い(Lv.90以上～99以下）第一艦隊旗艦で出撃し、オリョール海の暁に勝利を刻め！;Deploy a fleet with a high level (Lv.90~99) flagship and score an S victory against World 2-3 boss.
