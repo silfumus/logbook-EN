@@ -1,3 +1,5 @@
 language: java
-jdk: oraclejdk7
+jdk:
+  - oraclejdk8
+  - oraclejdk7
 script: ant create_run_jar
