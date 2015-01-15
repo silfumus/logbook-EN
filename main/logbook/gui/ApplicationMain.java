@@ -21,6 +21,7 @@ import logbook.gui.listener.ItemListReportAdapter;
 import logbook.gui.listener.MainShellAdapter;
 import logbook.gui.listener.MissionResultReportAdapter;
 import logbook.gui.listener.ShipListReportAdapter;
+import logbook.gui.listener.TrayItemMenuListener;
 import logbook.gui.listener.TraySelectionListener;
 import logbook.gui.logic.LayoutLogic;
 import logbook.gui.logic.Sound;
@@ -161,6 +162,8 @@ public final class ApplicationMain {
      */
     public static void main(String[] args) {
         try {
+            // グループ化のためのアプリケーションID (Windows 7以降)
+            Display.setAppName(AppConstants.NAME);
             // 設定読み込み
             AppConfig.load();
             ShipConfig.load();
@@ -176,25 +179,36 @@ public final class ApplicationMain {
             LOG.fatal("Main thread is aborted", e);
         } catch (Exception e) {
             LOG.fatal("Main thread is aborted", e);
+        } finally {
+            // リソースを開放する
+            SWTResourceManager.dispose();
+            // プロキシサーバーをシャットダウンする
+            ProxyServer.end();
         }
-        // 
-        new Thread(new ShutdownHookThread()).start();
     }
 
     /**
      * Open the window.
      */
     public void open() {
-        Display display = Display.getDefault();
-        this.createContents();
-        this.shell.open();
-        this.shell.layout();
-        while (!this.shell.isDisposed()) {
-            if (!display.readAndDispatch()) {
-                display.sleep();
+        try {
+            Display display = Display.getDefault();
+            this.createContents();
+            this.shell.open();
+            this.shell.layout();
+            while (!this.shell.isDisposed()) {
+                if (!display.readAndDispatch()) {
+                    display.sleep();
+                }
+            }
+        } finally {
+            Tray tray = Display.getDefault().getSystemTray();
+            if (tray != null) {
+                for (TrayItem item : tray.getItems()) {
+                    item.dispose();
+                }
             }
         }
-        this.trayItem.dispose();
     }
 
     /**
@@ -203,11 +217,11 @@ public final class ApplicationMain {
     public void createContents() {
         final Display display = Display.getDefault();
         int shellStyle = SWT.CLOSE | SWT.TITLE | SWT.MIN | SWT.RESIZE;
-        if (AppConfig.get().isOnTop()) {
+        if (AppConfig.get().isOnTop() && !"gtk".equals(SWT.getPlatform())) {
             shellStyle |= SWT.ON_TOP;
         }
         this.shell = new Shell(shellStyle);
-        this.shell.setText("logbook " + AppConstants.VERSION);
+        this.shell.setText(AppConstants.NAME + AppConstants.VERSION);
         this.shell.setAlpha(AppConfig.get().getAlpha());
         GridLayout glShell = new GridLayout(1, false);
         glShell.horizontalSpacing = 1;
@@ -234,11 +248,7 @@ public final class ApplicationMain {
                             | SWT.ICON_QUESTION);
                     box.setText("Confirmation");
                     box.setMessage("Are you sure you want to exit logbook?");
-                    if (box.open() == SWT.YES) {
-                        e.doit = true;
-                    } else {
-                        e.doit = false;
-                    }
+                    e.doit = box.open() == SWT.YES;
                 }
             }
         });
@@ -342,6 +352,27 @@ public final class ApplicationMain {
         calcexp.setAccelerator(SWT.CTRL + 'C');
         calcexp.addSelectionListener(new CalcExpAdapter(this.shell));
 
+        // その他-資材チャート
+        MenuItem resourceChart = new MenuItem(etcmenu, SWT.NONE);
+        resourceChart.setText("資材チャート(&R)");
+        resourceChart.addSelectionListener(new SelectionAdapter() {
+            @Override
+            public void widgetSelected(SelectionEvent e) {
+                new ResourceChartDialog(ApplicationMain.this.shell).open();
+            }
+        });
+        // コマンド-出撃統計
+        MenuItem battleCounter = new MenuItem(etcmenu, SWT.NONE);
+        battleCounter.setText("出撃統計(&A)\tCtrl+A");
+        battleCounter.setAccelerator(SWT.CTRL + 'A');
+        battleCounter.addSelectionListener(new SelectionAdapter() {
+            @Override
+            public void widgetSelected(SelectionEvent e) {
+                new BattleAggDialog(ApplicationMain.this.shell).open();
+            }
+        });
+        // セパレータ
+        new MenuItem(etcmenu, SWT.SEPARATOR);
         // その他-グループエディター
         MenuItem shipgroup = new MenuItem(etcmenu, SWT.NONE);
         shipgroup.setText("&Group Editor");
@@ -349,15 +380,6 @@ public final class ApplicationMain {
             @Override
             public void widgetSelected(SelectionEvent e) {
                 new ShipFilterGroupDialog(ApplicationMain.this.shell).open();
-            }
-        });
-        // その他-資材チャート
-        MenuItem resourceChart = new MenuItem(etcmenu, SWT.NONE);
-        resourceChart.setText("Resource Chart");
-        resourceChart.addSelectionListener(new SelectionAdapter() {
-            @Override
-            public void widgetSelected(SelectionEvent e) {
-                new ResourceChartDialog(ApplicationMain.this.shell).open();
             }
         });
         // その他-自動プロキシ構成スクリプトファイル生成
@@ -369,15 +391,13 @@ public final class ApplicationMain {
                 new CreatePacFileDialog(ApplicationMain.this.shell).open();
             }
         });
-        // セパレータ
-        new MenuItem(etcmenu, SWT.SEPARATOR);
         // その他-設定
         MenuItem config = new MenuItem(etcmenu, SWT.NONE);
         config.setText("&Settings");
         config.addSelectionListener(new ConfigDialogAdapter(this.shell));
         // その他-バージョン情報
         MenuItem version = new MenuItem(etcmenu, SWT.NONE);
-        version.setText("&About");
+        version.setText("バージョン情報(&V)");
         version.addSelectionListener(new HelpEventListener(this.shell));
 
         // シェルイベント
@@ -641,7 +661,9 @@ public final class ApplicationMain {
         TrayItem item = new TrayItem(tray, SWT.NONE);
         Image image = display.getSystemImage(SWT.ICON_INFORMATION);
         item.setImage(image);
+        item.setToolTipText(AppConstants.NAME + AppConstants.VERSION);
         item.addListener(SWT.Selection, new TraySelectionListener(this.shell));
+        item.addMenuDetectListener(new TrayItemMenuListener(this.getShell()));
         return item;
     }
 

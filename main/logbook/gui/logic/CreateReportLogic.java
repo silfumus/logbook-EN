@@ -131,6 +131,10 @@ public final class CreateReportLogic {
             if (this.docks.contains(ship)) {
                 item.setForeground(SWTResourceManager.getColor(AppConstants.NDOCK_COLOR));
             }
+            // Lv1の艦娘をグレー色にする
+            if ("1".equals(text[7])) {
+                item.setForeground(SWTResourceManager.getColor(SWT.COLOR_DARK_GRAY));
+            }
 
             item.setText(text);
             return item;
@@ -146,7 +150,8 @@ public final class CreateReportLogic {
      * @return ヘッダー
      */
     public static String[] getBattleResultHeader() {
-        return new String[] { "", "Time", "Map", "Node", "Rank", "Enemy Fleet", "Drop Type", "Ship Name" };
+        return new String[] { "", "日付", "海域", "マス", "ボス", "ランク",
+                "艦隊行動", "味方陣形", "敵陣形", "敵艦隊", "ドロップ艦種", "ドロップ艦娘" };
     }
 
     /**
@@ -157,11 +162,25 @@ public final class CreateReportLogic {
         List<BattleResultDto> results = GlobalContext.getBattleResultList();
         List<Object[]> body = new ArrayList<Object[]>();
 
+        SimpleDateFormat format = new SimpleDateFormat(AppConstants.DATE_FORMAT);
+
         for (int i = 0; i < results.size(); i++) {
             BattleResultDto item = results.get(i);
-            body.add(new Object[] { Integer.toString(i + 1),
-                    new SimpleDateFormat(AppConstants.DATE_FORMAT).format(item.getBattleDate()), item.getQuestName(),
-                    item.getMapCellNo(), item.getRank(), item.getEnemyName(), item.getDropType(), item.getDropName() });
+            BattleDto battle = item.getBattle();
+
+            body.add(new Object[] {
+                    Integer.toString(i + 1),
+                    format.format(item.getBattleDate()),
+                    item.getQuestName(),
+                    item.getMapCellNo(),
+                    item.isBoss() ? "ボス" : "",
+                    item.getRank(),
+                    battle.getIntercept(),
+                    battle.getFriendFormation(),
+                    battle.getEnemyFormation(),
+                    item.getEnemyName(),
+                    item.getDropType(),
+                    item.getDropName() });
         }
         return toListStringArray(body);
     }
@@ -172,19 +191,22 @@ public final class CreateReportLogic {
      * @return ヘッダー
      */
     public static String[] getBattleResultStoreHeader() {
-        return new String[] { "", "Date", "Map", "Node", "Rank", "Enemy Fleet", "Drop Type", "Ship Name",
-                "Ship1", "Ship1HP",
-                "Ship2", "Ship2HP",
-                "Ship3", "Ship3HP",
-                "Ship4", "Ship4HP",
-                "Ship5", "Ship5HP",
-                "Ship6", "Ship6HP",
-                "Enemy1", "Enemy1 HP",
-                "Enemy2", "Enemy2 HP",
-                "Enemy3", "Enemy3 HP",
-                "Enemy4", "Enemy4 HP",
-                "Enemy5", "Enemy5 HP",
-                "Enemy6", "Enemy6 HP" };
+        return new String[] { "", "日付", "海域", "マス", "ボス", "ランク",
+                "艦隊行動", "味方陣形", "敵陣形",
+                "敵艦隊",
+                "ドロップ艦種", "ドロップ艦娘",
+                "味方艦1", "味方艦1HP",
+                "味方艦2", "味方艦2HP",
+                "味方艦3", "味方艦3HP",
+                "味方艦4", "味方艦4HP",
+                "味方艦5", "味方艦5HP",
+                "味方艦6", "味方艦6HP",
+                "敵艦1", "敵艦1HP",
+                "敵艦2", "敵艦2HP",
+                "敵艦3", "敵艦3HP",
+                "敵艦4", "敵艦4HP",
+                "敵艦5", "敵艦5HP",
+                "敵艦6", "敵艦6HP" };
     }
 
     /**
@@ -196,9 +218,14 @@ public final class CreateReportLogic {
     public static List<String[]> getBattleResultStoreBody(List<BattleResultDto> results) {
         List<Object[]> body = new ArrayList<Object[]>();
 
+        SimpleDateFormat format = new SimpleDateFormat(AppConstants.DATE_FORMAT);
+
         for (int i = 0; i < results.size(); i++) {
             BattleResultDto item = results.get(i);
             BattleDto battle = item.getBattleDto();
+            if (battle == null) {
+                continue;
+            }
             String[] friend = new String[6];
             String[] friendHp = new String[6];
             String[] enemy = new String[6];
@@ -209,39 +236,56 @@ public final class CreateReportLogic {
             Arrays.fill(enemy, "");
             Arrays.fill(enemyHp, "");
 
-            if (battle != null) {
-                List<DockDto> docks = battle.getFriends();
-                if (docks != null) {
-                    DockDto dock = docks.get(0);
-                    List<ShipDto> friendships = dock.getShips();
-                    int[] fnowhps = battle.getNowFriendHp();
-                    int[] fmaxhps = battle.getMaxFriendHp();
-                    for (int j = 0; j < friendships.size(); j++) {
-                        ShipDto ship = friendships.get(j);
-                        friend[j] = ship.getName() + "(Lv" + ship.getLv() + ")";
-                        friendHp[j] = fnowhps[j] + "/" + fmaxhps[j];
+            List<DockDto> docks = battle.getFriends();
+            if (docks != null) {
+                DockDto dock = docks.get(0);
+                List<ShipDto> friendships = dock.getShips();
+                int[] fnowhps = battle.getNowFriendHp();
+                int[] fmaxhps = battle.getMaxFriendHp();
+                for (int j = 0; j < friendships.size(); j++) {
+                    ShipDto ship = friendships.get(j);
+                    friend[j] = ship.getName() + "(Lv" + ship.getLv() + ")";
+                    friendHp[j] = fnowhps[j] + "/" + fmaxhps[j];
+                }
+                List<ShipInfoDto> enemyships = battle.getEnemy();
+                int[] enowhps = battle.getNowEnemyHp();
+                int[] emaxhps = battle.getMaxEnemyHp();
+                for (int j = 0; j < enemyships.size(); j++) {
+                    ShipInfoDto ship = enemyships.get(j);
+                    if (!StringUtils.isEmpty(ship.getFlagship())) {
+                        enemy[j] = ship.getName() + "(" + ship.getFlagship() + ")";
+                    } else {
+                        enemy[j] = ship.getName();
                     }
-                    List<ShipInfoDto> enemyships = battle.getEnemy();
-                    int[] enowhps = battle.getNowEnemyHp();
-                    int[] emaxhps = battle.getMaxEnemyHp();
-                    for (int j = 0; j < enemyships.size(); j++) {
-                        ShipInfoDto ship = enemyships.get(j);
-                        if (!StringUtils.isEmpty(ship.getFlagship())) {
-                            enemy[j] = ship.getName() + "(" + ship.getFlagship() + ")";
-                        } else {
-                            enemy[j] = ship.getName();
-                        }
-                        enemyHp[j] = enowhps[j] + "/" + emaxhps[j];
-                    }
+                    enemyHp[j] = enowhps[j] + "/" + emaxhps[j];
                 }
             }
 
-            body.add(new Object[] { Integer.toString(i + 1),
-                    new SimpleDateFormat(AppConstants.DATE_FORMAT).format(item.getBattleDate()), item.getQuestName(),
-                    item.getMapCellNo(), item.getRank(), item.getEnemyName(), item.getDropType(), item.getDropName(),
-                    friend[0], friendHp[0], friend[1], friendHp[1], friend[2], friendHp[2], friend[3], friendHp[3],
-                    friend[4], friendHp[4], friend[5], friendHp[5], enemy[0], enemyHp[0], enemy[1], enemyHp[1],
-                    enemy[2], enemyHp[2], enemy[3], enemyHp[3], enemy[4], enemyHp[4], enemy[5], enemyHp[5] });
+            body.add(new Object[] {
+                    Integer.toString(i + 1),
+                    format.format(item.getBattleDate()),
+                    item.getQuestName(),
+                    item.getMapCellNo(),
+                    item.isBoss() ? "ボス" : "",
+                    item.getRank(),
+                    battle.getIntercept(),
+                    battle.getFriendFormation(),
+                    battle.getEnemyFormation(),
+                    item.getEnemyName(),
+                    item.getDropType(),
+                    item.getDropName(),
+                    friend[0], friendHp[0],
+                    friend[1], friendHp[1],
+                    friend[2], friendHp[2],
+                    friend[3], friendHp[3],
+                    friend[4], friendHp[4],
+                    friend[5], friendHp[5],
+                    enemy[0], enemyHp[0],
+                    enemy[1], enemyHp[1],
+                    enemy[2], enemyHp[2],
+                    enemy[3], enemyHp[3],
+                    enemy[4], enemyHp[4],
+                    enemy[5], enemyHp[5] });
         }
         return toListStringArray(body);
     }
@@ -440,6 +484,7 @@ public final class CreateReportLogic {
                         raisou += item.getRaig();
                         taiku += item.getTyku();
                         soukou += item.getSouk();
+                        kaihi += item.getHouk();
                         taisen += item.getTais();
                         sakuteki += item.getSaku();
                         lucky += item.getLuck();
@@ -878,7 +923,7 @@ public final class CreateReportLogic {
         try {
             List<BattleResultDto> dtoList = Collections.singletonList(dto);
 
-            File report = getStoreFile("Drop Log.csv", "Drop Log2.csv");
+            File report = getStoreFile(AppConstants.LOG_BATTLE_RESULT, AppConstants.LOG_BATTLE_RESULT_ALT);
 
             CreateReportLogic.writeCsvStripFirstColumn(report,
                     CreateReportLogic.getBattleResultStoreHeader(),
@@ -897,7 +942,7 @@ public final class CreateReportLogic {
         try {
             List<GetShipDto> dtoList = Collections.singletonList(dto);
 
-            File report = getStoreFile("Build Log.csv", "Build Log2.csv");
+            File report = getStoreFile(AppConstants.LOG_CREATE_SHIP, AppConstants.LOG_CREATE_SHIP_ALT);
 
             CreateReportLogic.writeCsvStripFirstColumn(report,
                     CreateReportLogic.getCreateShipHeader(),
@@ -916,7 +961,7 @@ public final class CreateReportLogic {
         try {
             List<CreateItemDto> dtoList = Collections.singletonList(dto);
 
-            File report = getStoreFile("Craft Log.csv", "Craft Log2.csv");
+            File report = getStoreFile(AppConstants.LOG_CREATE_ITEM, AppConstants.LOG_CREATE_ITEM_ALT);
 
             CreateReportLogic.writeCsvStripFirstColumn(report,
                     CreateReportLogic.getCreateItemHeader(),
@@ -935,7 +980,7 @@ public final class CreateReportLogic {
         try {
             List<MissionResultDto> dtoList = Collections.singletonList(dto);
 
-            File report = getStoreFile("Expedition Log.csv", "Expedition Log2.csv");
+            File report = getStoreFile(AppConstants.LOG_MISSION, AppConstants.LOG_MISSION_ALT);
 
             CreateReportLogic.writeCsvStripFirstColumn(report,
                     CreateReportLogic.getCreateMissionResultHeader(),
@@ -954,7 +999,7 @@ public final class CreateReportLogic {
         try {
             List<MaterialDto> dtoList = Collections.singletonList(material);
 
-            File report = getStoreFile("Material Log.csv", "Material Log2.csv");
+            File report = getStoreFile(AppConstants.LOG_RESOURCE, AppConstants.LOG_RESOURCE_ALT);
 
             CreateReportLogic.writeCsvStripFirstColumn(report,
                     CreateReportLogic.getMaterialHeader(),

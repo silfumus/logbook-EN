@@ -43,6 +43,7 @@ public class ItemType {
             this.put(27, "Flare");
             this.put(28, "Command Facility");
             this.put(29, "Maintenance Crew");
+            this.put(30, "高射装置");
         }
     };
 
