@@ -10,7 +10,7 @@ How to install and use logbook? [See the wiki](http://github.com/silfumus/logboo
 * [@sanae_hirotaka](https://twitter.com/sanae_hirotaka) - Original author
 
 ## Downloads
-All builds can be found in the releases section.
+All builds can be found in the [releases] (https://github.com/silfumus/logbook-EN/releases) section.
 
 #### A ship/item/quest is missing a translation!
 Please report them on [GitHub](https://github.com/silfumus/logbook-EN/issues) or complain on /jp/.
