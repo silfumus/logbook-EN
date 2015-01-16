@@ -338,7 +338,7 @@ public final class ApplicationMain {
         new MenuItem(cmdmenu, SWT.SEPARATOR);
         // 終了
         final MenuItem dispose = new MenuItem(cmdmenu, SWT.NONE);
-        dispose.setText("&Close");
+        dispose.setText("Exit (&C)");
         dispose.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent e) {
@@ -363,7 +363,7 @@ public final class ApplicationMain {
         });
         // コマンド-出撃統計
         MenuItem battleCounter = new MenuItem(etcmenu, SWT.NONE);
-        battleCounter.setText("出撃統計(&A)\tCtrl+A");
+        battleCounter.setText("B&attle Statistic\tCtrl+A");
         battleCounter.setAccelerator(SWT.CTRL + 'A');
         battleCounter.addSelectionListener(new SelectionAdapter() {
             @Override

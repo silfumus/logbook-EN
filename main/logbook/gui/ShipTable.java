@@ -113,7 +113,7 @@ public final class ShipTable extends AbstractTableDialog {
         }
 
         MenuItem addGroupCascade = new MenuItem(this.tablemenu, SWT.CASCADE);
-        addGroupCascade.setText("Add to the group (&A)");
+        addGroupCascade.setText("&Add to the group");
         Menu addGroupMenu = new Menu(addGroupCascade);
         addGroupCascade.setMenu(addGroupMenu);
         for (ShipGroupBean groupBean : groups) {

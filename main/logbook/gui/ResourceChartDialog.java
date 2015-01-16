@@ -135,7 +135,7 @@ public final class ResourceChartDialog extends Dialog {
         this.shell.setMenuBar(this.menubar);
 
         MenuItem fileroot = new MenuItem(this.menubar, SWT.CASCADE);
-        fileroot.setText("File");
+        fileroot.setText("&File");
         this.filemenu = new Menu(fileroot);
         fileroot.setMenu(this.filemenu);
 

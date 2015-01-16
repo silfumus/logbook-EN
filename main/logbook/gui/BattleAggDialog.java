@@ -103,7 +103,7 @@ public class BattleAggDialog extends Dialog {
         this.tree.setHeaderVisible(true);
         // メニューバーのメニュー
         MenuItem operoot = new MenuItem(this.menubar, SWT.CASCADE);
-        operoot.setText("操作");
+        operoot.setText("&Action");
         this.opemenu = new Menu(operoot);
         operoot.setMenu(this.opemenu);
         MenuItem reload = new MenuItem(this.opemenu, SWT.NONE);

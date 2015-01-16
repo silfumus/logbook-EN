@@ -77,7 +77,7 @@ public final class BathwaterTableDialog extends AbstractTableDialog {
     @Override
     protected String[] getTableHeader() {
         return new String[] { "", "ID", "Fleet", "Morale", "Name", "Lv", "HP", "Time", "Fuel", "Steel", "Status",
-                "Per 1 HP" };
+                "Per HP" };
     }
 
     @Override

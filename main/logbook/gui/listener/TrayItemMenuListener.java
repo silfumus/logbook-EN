@@ -57,54 +57,54 @@ public final class TrayItemMenuListener implements MenuDetectListener {
 
         // 所有装備一覧
         MenuItem itemlist = new MenuItem(this.menu, SWT.NONE);
-        itemlist.setText("所有装備一覧(&I) (" + itemCount + "/" + itemMax + ")");
+        itemlist.setText("Equipment (&E) (" + itemCount + "/" + itemMax + ")");
         itemlist.addSelectionListener(new ItemListReportAdapter(this.shell));
         // 所有艦娘一覧
         MenuItem shiplist = new MenuItem(this.menu, SWT.NONE);
-        shiplist.setText("所有艦娘一覧(&S) (" + shipCount + "/" + shipMax + ")");
+        shiplist.setText("Ships (&S) (" + shipCount + "/" + shipMax + ")");
         shiplist.addSelectionListener(new ShipListReportAdapter(this.shell));
         new MenuItem(this.menu, SWT.SEPARATOR);
 
         // 報告書
         MenuItem reportItem = new MenuItem(this.menu, SWT.CASCADE);
-        reportItem.setText("報告書(&R)");
+        reportItem.setText("Reports (&R)");
         Menu reportMenu = new Menu(reportItem);
         reportItem.setMenu(reportMenu);
         // 報告書-ドロップ報告書
         MenuItem drop = new MenuItem(reportMenu, SWT.NONE);
-        drop.setText("ドロップ報告書(&D)");
+        drop.setText("Drop Report (&D)");
         drop.addSelectionListener(new DropReportAdapter(this.shell));
         // 報告書-建造報告書
         MenuItem createship = new MenuItem(reportMenu, SWT.NONE);
-        createship.setText("建造報告書(&B)");
+        createship.setText("Build Report(&B)");
         createship.addSelectionListener(new CreateShipReportAdapter(this.shell));
         // 報告書-開発報告書
         MenuItem createitem = new MenuItem(reportMenu, SWT.NONE);
-        createitem.setText("開発報告書(&E)");
+        createitem.setText("Craft Report (&R)");
         createitem.addSelectionListener(new CreateItemReportAdapter(this.shell));
         // 報告書-遠征報告書
         MenuItem missionresult = new MenuItem(reportMenu, SWT.NONE);
-        missionresult.setText("遠征報告書(&T)");
+        missionresult.setText("Expedition Report (&X)");
         missionresult.addSelectionListener(new MissionResultReportAdapter(this.shell));
 
         // 統計
         MenuItem calcItem = new MenuItem(this.menu, SWT.CASCADE);
-        calcItem.setText("計算機(&C)");
+        calcItem.setText("Calculator (&C)");
         Menu calcMenu = new Menu(calcItem);
         calcItem.setMenu(calcMenu);
         // 経験値計算
         MenuItem calcexp = new MenuItem(calcMenu, SWT.NONE);
-        calcexp.setText("経験値計算機(&C)");
+        calcexp.setText("Exp Calc (&E)");
         calcexp.addSelectionListener(new CalcExpAdapter(this.shell));
 
         // 統計
         MenuItem statItem = new MenuItem(this.menu, SWT.CASCADE);
-        statItem.setText("統計(&A)");
+        statItem.setText("Statistics (&S)");
         Menu statMenu = new Menu(statItem);
         statItem.setMenu(statMenu);
         // 資材チャート
         MenuItem resourceChart = new MenuItem(statMenu, SWT.NONE);
-        resourceChart.setText("資材チャート(&R)");
+        resourceChart.setText("Resource Chart (&R)");
         resourceChart.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent e) {
@@ -113,7 +113,7 @@ public final class TrayItemMenuListener implements MenuDetectListener {
         });
         // 出撃統計
         MenuItem battleCounter = new MenuItem(statMenu, SWT.NONE);
-        battleCounter.setText("出撃統計(&A)");
+        battleCounter.setText("Battle Statistic (&A)");
         battleCounter.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent e) {
@@ -123,7 +123,7 @@ public final class TrayItemMenuListener implements MenuDetectListener {
         new MenuItem(this.menu, SWT.SEPARATOR);
         // 遠征
         MenuItem missionItem = new MenuItem(this.menu, SWT.CASCADE);
-        missionItem.setText("遠征(&M)");
+        missionItem.setText("Expedition (&E)");
         Menu missionMenu = new Menu(missionItem);
         missionItem.setMenu(missionMenu);
         DeckMissionDto[] missions = GlobalContext.getDeckMissions();
@@ -133,7 +133,7 @@ public final class TrayItemMenuListener implements MenuDetectListener {
                 String text = missionDto.getName() + " (" + missionDto.getMission() + ")";
                 long rest = getRest(Calendar.getInstance().getTime(), missionDto.getTime());
                 if (rest <= 0) {
-                    item.setText(text + "\tまもなく帰投します");
+                    item.setText(text + "\tDone");
                 } else {
                     item.setText(text + "\t" + TimeLogic.toDateRestString(rest));
                 }
@@ -141,7 +141,7 @@ public final class TrayItemMenuListener implements MenuDetectListener {
         }
         // 入渠
         MenuItem ndockItem = new MenuItem(this.menu, SWT.CASCADE);
-        ndockItem.setText("入渠(&M)");
+        ndockItem.setText("Repair Dock (&R)");
         Menu ndockMenu = new Menu(ndockItem);
         ndockItem.setMenu(ndockMenu);
         Map<Long, ShipDto> shipMap = GlobalContext.getShipMap();
@@ -153,7 +153,7 @@ public final class TrayItemMenuListener implements MenuDetectListener {
                 String text = ship.getName() + " (Lv" + ship.getLv() + ")";
                 long rest = getRest(Calendar.getInstance().getTime(), ndockDto.getNdocktime());
                 if (rest <= 0) {
-                    item.setText(text + "\tまもなくお風呂から上がります");
+                    item.setText(text + "\tDone");
                 } else {
                     item.setText(text + "\t" + TimeLogic.toDateRestString(rest));
                 }
@@ -163,11 +163,11 @@ public final class TrayItemMenuListener implements MenuDetectListener {
         new MenuItem(this.menu, SWT.SEPARATOR);
         // 設定
         MenuItem config = new MenuItem(this.menu, SWT.NONE);
-        config.setText("設定(&P)");
+        config.setText("Settings (S)");
         config.addSelectionListener(new ConfigDialogAdapter(this.shell));
         // 終了
         final MenuItem dispose = new MenuItem(this.menu, SWT.NONE);
-        dispose.setText("終了(&X)");
+        dispose.setText("Exit (&X)");
         dispose.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent e) {

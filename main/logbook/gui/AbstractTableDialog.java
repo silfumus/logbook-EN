@@ -118,12 +118,12 @@ public abstract class AbstractTableDialog extends Dialog {
         operoot.setMenu(this.opemenu);
 
         MenuItem reload = new MenuItem(this.opemenu, SWT.NONE);
-        reload.setText("Refresh\tF5");
+        reload.setText("&Refresh\tF5");
         reload.setAccelerator(SWT.F5);
         reload.addSelectionListener(new TableReloadAdapter());
 
         MenuItem cyclicReload = new MenuItem(this.opemenu, SWT.CHECK);
-        cyclicReload.setText("Refresh every 3s(&A)\tCtrl+F5");
+        cyclicReload.setText("Refresh every 3s (&A)\tCtrl+F5");
         cyclicReload.setAccelerator(SWT.CTRL + SWT.F5);
         cyclicReload.addSelectionListener(new CyclicReloadAdapter(cyclicReload));
 
