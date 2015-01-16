@@ -14,7 +14,7 @@ import org.eclipse.swt.graphics.RGB;
 public class AppConstants {
 
     /**　アプリケーション名 */
-    public static final String NAME = "航海日誌";
+    public static final String NAME = "logbook";
 
     /** バージョン */
     public static final String VERSION = "0.7.4";
@@ -116,7 +116,7 @@ public class AppConstants {
     public static final float EMPTY_SUPPLY = 0.33f;
 
     /** 文字コード(Shift_JIS) */
-    public static final Charset CHARSET = Charset.forName("MS932");
+    public static final Charset CHARSET = Charset.forName("UTF-8");
 
     /** アプリケーション設定ファイル  */
     public static final File APP_CONFIG_FILE = new File("./config/internal.xml");
@@ -227,32 +227,32 @@ public class AppConstants {
     public static final String MESSAGE_TOTAL_LV = "\nTotal Level: {0}";
 
     /** 海戦・ドロップ報告書.csv */
-    public static final String LOG_BATTLE_RESULT = "海戦・ドロップ報告書.csv";
+    public static final String LOG_BATTLE_RESULT = "Drop Log.csv";
 
     /** 海戦・ドロップ報告書_alternativefile.csv */
-    public static final String LOG_BATTLE_RESULT_ALT = "海戦・ドロップ報告書_alternativefile.csv";
+    public static final String LOG_BATTLE_RESULT_ALT = "Drop Log2.csv";
 
     /** 建造報告書.csv */
-    public static final String LOG_CREATE_SHIP = "建造報告書.csv";
+    public static final String LOG_CREATE_SHIP = "Build Log.csv";
 
     /** 建造報告書_alternativefile.csv */
-    public static final String LOG_CREATE_SHIP_ALT = "建造報告書_alternativefile.csv";
+    public static final String LOG_CREATE_SHIP_ALT = "Build Log2.csv";
 
     /** 開発報告書.csv */
-    public static final String LOG_CREATE_ITEM = "開発報告書.csv";
+    public static final String LOG_CREATE_ITEM = "Craft Log.csv";
 
     /** 開発報告書_alternativefile.csv */
-    public static final String LOG_CREATE_ITEM_ALT = "開発報告書_alternativefile.csv";
+    public static final String LOG_CREATE_ITEM_ALT = "Craft Log2.csv";
 
     /** 遠征報告書.csv */
-    public static final String LOG_MISSION = "遠征報告書.csv";
+    public static final String LOG_MISSION = "Expedition Log.csv";
 
     /** 遠征報告書.csv */
-    public static final String LOG_MISSION_ALT = "遠征報告書_alternativefile.csv";
+    public static final String LOG_MISSION_ALT = "Expedition Log2.csv";
 
     /** 資材ログ.csv */
-    public static final String LOG_RESOURCE = "資材ログ.csv";
+    public static final String LOG_RESOURCE = "Material Log.csv";
 
     /** 資材ログ_alternativefile.csv */
-    public static final String LOG_RESOURCE_ALT = "資材ログ_alternativefile.csv";
+    public static final String LOG_RESOURCE_ALT = "Material Log2.csv";
 }

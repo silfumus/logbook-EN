@@ -107,7 +107,7 @@ public class BattleAggDialog extends Dialog {
         this.opemenu = new Menu(operoot);
         operoot.setMenu(this.opemenu);
         MenuItem reload = new MenuItem(this.opemenu, SWT.NONE);
-        reload.setText("再読み込み(&R)\tF5");
+        reload.setText("&Refresh\tF5");
         reload.setAccelerator(SWT.F5);
         reload.addSelectionListener(new TableReloadAdapter());
         // テーブル右クリックメニュー
@@ -115,9 +115,9 @@ public class BattleAggDialog extends Dialog {
         this.tree.setMenu(this.tablemenu);
         MenuItem sendclipbord = new MenuItem(this.tablemenu, SWT.NONE);
         sendclipbord.addSelectionListener(new TreeToClipboardAdapter(this.header, this.tree));
-        sendclipbord.setText("クリップボードにコピー(&C)");
+        sendclipbord.setText("&Copy");
         MenuItem reloadtable = new MenuItem(this.tablemenu, SWT.NONE);
-        reloadtable.setText("再読み込み(&R)");
+        reloadtable.setText("&Refresh");
         reloadtable.addSelectionListener(new TableReloadAdapter());
 
         this.setTableHeader();
@@ -129,7 +129,7 @@ public class BattleAggDialog extends Dialog {
      * @return String
      */
     private String getTitle() {
-        return "出撃統計";
+        return "Battle Statistic";
     }
 
     /**
@@ -177,7 +177,7 @@ public class BattleAggDialog extends Dialog {
      * @return String[]
      */
     private String[] getTableHeader() {
-        return new String[] { "集計", "勝利合計", "S勝利", "A勝利", "B勝利", "C敗北", "D敗北" };
+        return new String[] { "Total", "Victory", "S-rank", "A-rank", "B-rank", "C-rank", "D-rank" };
     }
 
     /**
@@ -198,7 +198,7 @@ public class BattleAggDialog extends Dialog {
                     Integer.toString(total.getC()), Integer.toString(total.getD()) });
             // ボス
             TreeItem boss = new TreeItem(root, SWT.NONE);
-            boss.setText(new String[] { "ボス", Integer.toString(total.getBossWin()),
+            boss.setText(new String[] { "Boss", Integer.toString(total.getBossWin()),
                     Integer.toString(total.getBossS()), Integer.toString(total.getBossA()),
                     Integer.toString(total.getBossB()), Integer.toString(total.getBossC()),
                     Integer.toString(total.getBossD()) });
@@ -212,7 +212,7 @@ public class BattleAggDialog extends Dialog {
                         Integer.toString(area.getC()), Integer.toString(area.getD()) });
                 // ボス
                 TreeItem subBoss = new TreeItem(sub, SWT.NONE);
-                subBoss.setText(new String[] { "ボス", Integer.toString(area.getBossWin()),
+                subBoss.setText(new String[] { "Boss", Integer.toString(area.getBossWin()),
                         Integer.toString(area.getBossS()), Integer.toString(area.getBossA()),
                         Integer.toString(area.getBossB()), Integer.toString(area.getBossC()),
                         Integer.toString(area.getBossD()) });
@@ -270,7 +270,7 @@ public class BattleAggDialog extends Dialog {
                         // ランク
                         String rank = cols[4];
                         // ボス
-                        boolean isBoss = "ボス".equals(cols[3]);
+                        boolean isBoss = "Boss".equals(cols[3]);
 
                         // デイリー集計
                         this.agg(BattleAggUnit.DAILY, aggMap, today, Calendar.DAY_OF_YEAR, date, area, rank, isBoss);

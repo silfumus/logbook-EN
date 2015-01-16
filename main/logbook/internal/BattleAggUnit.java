@@ -5,19 +5,19 @@ package logbook.internal;
  */
 public enum BattleAggUnit {
     /** デイリー */
-    DAILY("デイリー"),
+    DAILY("Daily"),
 
     /** ウィークリー */
-    WEEKLY("ウィークリー"),
+    WEEKLY("Weekly"),
 
     /** マンスリー */
-    MONTHLY("マンスリー"),
+    MONTHLY("Monthly"),
 
     /** 先週 */
-    LAST_WEEK("先週"),
+    LAST_WEEK("Last Week"),
 
     /** 先月 */
-    LAST_MONTH("先月");
+    LAST_MONTH("Last Month");
 
     /** 名前 */
     private String name;

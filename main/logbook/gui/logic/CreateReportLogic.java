@@ -150,8 +150,8 @@ public final class CreateReportLogic {
      * @return ヘッダー
      */
     public static String[] getBattleResultHeader() {
-        return new String[] { "", "日付", "海域", "マス", "ボス", "ランク",
-                "艦隊行動", "味方陣形", "敵陣形", "敵艦隊", "ドロップ艦種", "ドロップ艦娘" };
+        return new String[] { "", "Time", "Map", "Node", "Boss", "Rank",
+                "Engagement", "Formation", "Enemy Formation", "Enemy Fleet", "Ship Type", "Ship Name" };
     }
 
     /**
@@ -173,7 +173,7 @@ public final class CreateReportLogic {
                     format.format(item.getBattleDate()),
                     item.getQuestName(),
                     item.getMapCellNo(),
-                    item.isBoss() ? "ボス" : "",
+                    item.isBoss() ? "Boss" : "",
                     item.getRank(),
                     battle.getIntercept(),
                     battle.getFriendFormation(),
@@ -356,7 +356,8 @@ public final class CreateReportLogic {
      * @return ヘッダー
      */
     public static String[] getItemListHeader() {
-        return new String[] { "", "Name", "Type", "Qty", "Firepower", "Accuracy", "Range", "Luck", "Evasion", "Bomber", "Torpedo", "LOS", "ASW", "AA", "Armor" };
+        return new String[] { "", "Name", "Type", "Qty", "Firepower", "Accuracy", "Range", "Luck", "Evasion", "Bomber",
+                "Torpedo", "LOS", "ASW", "AA", "Armor" };
     }
 
     /**
@@ -407,8 +408,10 @@ public final class CreateReportLogic {
      * @return ヘッダー
      */
     public static String[] getShipListHeader() {
-        return new String[] { "", "ID", "Fleet", "Name", "Type", "Morale", "Recovery", "Lv", "Next", "Exp", "Air Superiority", "Equipment 1", "Equipment 2",
-                "Equipment 3", "Equipment 4", "HP", "Firepower", "Torpedo", "AA", "Armor", "Evasion", "ASW", "LOS", "Luck" };
+        return new String[] { "", "ID", "Fleet", "Name", "Type", "Morale", "Recovery", "Lv", "Next", "Exp",
+                "Air Superiority", "Equipment 1", "Equipment 2",
+                "Equipment 3", "Equipment 4", "HP", "Firepower", "Torpedo", "AA", "Armor", "Evasion", "ASW", "LOS",
+                "Luck" };
     }
 
     /**

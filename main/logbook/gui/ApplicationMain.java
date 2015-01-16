@@ -221,7 +221,7 @@ public final class ApplicationMain {
             shellStyle |= SWT.ON_TOP;
         }
         this.shell = new Shell(shellStyle);
-        this.shell.setText(AppConstants.NAME + AppConstants.VERSION);
+        this.shell.setText(AppConstants.NAME + " " + AppConstants.VERSION);
         this.shell.setAlpha(AppConfig.get().getAlpha());
         GridLayout glShell = new GridLayout(1, false);
         glShell.horizontalSpacing = 1;
@@ -354,7 +354,7 @@ public final class ApplicationMain {
 
         // その他-資材チャート
         MenuItem resourceChart = new MenuItem(etcmenu, SWT.NONE);
-        resourceChart.setText("資材チャート(&R)");
+        resourceChart.setText("&Resource Chart");
         resourceChart.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent e) {
@@ -397,7 +397,7 @@ public final class ApplicationMain {
         config.addSelectionListener(new ConfigDialogAdapter(this.shell));
         // その他-バージョン情報
         MenuItem version = new MenuItem(etcmenu, SWT.NONE);
-        version.setText("バージョン情報(&V)");
+        version.setText("&Version");
         version.addSelectionListener(new HelpEventListener(this.shell));
 
         // シェルイベント
@@ -661,7 +661,7 @@ public final class ApplicationMain {
         TrayItem item = new TrayItem(tray, SWT.NONE);
         Image image = display.getSystemImage(SWT.ICON_INFORMATION);
         item.setImage(image);
-        item.setToolTipText(AppConstants.NAME + AppConstants.VERSION);
+        item.setToolTipText(AppConstants.NAME + " " + AppConstants.VERSION);
         item.addListener(SWT.Selection, new TraySelectionListener(this.shell));
         item.addMenuDetectListener(new TrayItemMenuListener(this.getShell()));
         return item;
