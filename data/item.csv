@@ -1,4 +1,4 @@
-20141010;JP-Name;TR-Name
+20150115;JP-Name;TR-Name
 1;12cm単装砲;12cm Naval Gun
 2;12.7cm連装砲;12.7cm Twin Gun Mount
 3;10cm連装高角砲;10cm Twin High-angle Mount
@@ -117,6 +117,13 @@
 116;一式徹甲弾;Type 1 AP Shell
 117;試製46cm連装砲;Prototype 46cm Twin Gun Mount
 118;紫雲;Shiun
+119;14cm連装砲;14cm Twin Gun Mount
+120;91式高射装置;Type 91 Anti-Aircraft Fire Director
+121;94式高射装置;Type 94 Anti-Aircraft Fire Director
+122;10cm連装高角砲+高射装置;10cm Twin HA Mount+AAFD
+123;SKC34 20.3cm連装砲;SKC34 20.3cm Twin Gun Mount
+124;FuMO25 レーダー;FuMO25 Radar
+125;61cm三連装(酸素)魚雷;61cm Triple Oxygen Torpedo Mount
 501;5inch単装砲;5inch Naval Gun
 502;5inch連装砲;5inch Twin Gun Mount
 503;3inch単装高角砲;3inch High-angle Mount
