@@ -157,7 +157,7 @@ public final class ShipFilterDialog extends Dialog {
         Group namegroup = new Group(composite, SWT.NONE);
         namegroup.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
         namegroup.setLayout(new RowLayout());
-        namegroup.setText("Search (Case-sensitive, Separate search term with space");
+        namegroup.setText("Search (Case-sensitive, Separate search term with space)");
 
         this.nametext = new Text(namegroup, SWT.BORDER);
         this.nametext.setLayoutData(new RowData(180, SWT.DEFAULT));

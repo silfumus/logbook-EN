@@ -141,9 +141,13 @@ public final class TrayItemMenuListener implements MenuDetectListener {
         }
         // 入渠
         MenuItem ndockItem = new MenuItem(this.menu, SWT.CASCADE);
-        ndockItem.setText("Repair Dock (&R)");
+        ndockItem.setText("Repair Dock (&D)");
         Menu ndockMenu = new Menu(ndockItem);
         ndockItem.setMenu(ndockMenu);
+        // Repair Queue
+        MenuItem bathwatertable = new MenuItem(ndockMenu, SWT.NONE);
+        bathwatertable.setText("Repair Queue (&R)");
+        bathwatertable.addSelectionListener(new BathwaterTableAdapter(this.shell));
         Map<Long, ShipDto> shipMap = GlobalContext.getShipMap();
         NdockDto[] ndocks = GlobalContext.getNdocks();
         for (NdockDto ndockDto : ndocks) {
@@ -160,6 +164,11 @@ public final class TrayItemMenuListener implements MenuDetectListener {
             }
         }
 
+        new MenuItem(this.menu, SWT.SEPARATOR);
+        // Quest List
+        MenuItem questlist = new MenuItem(this.menu, SWT.NONE);
+        questlist.setText("Quest List (&Q)");
+        questlist.addSelectionListener(new QuestTableAdapter(this.shell));
         new MenuItem(this.menu, SWT.SEPARATOR);
         // 設定
         MenuItem config = new MenuItem(this.menu, SWT.NONE);
