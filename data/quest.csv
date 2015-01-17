@@ -1,4 +1,4 @@
-20150116;titleJP;titleEN;detailJP;detailEN
+20150117;titleJP;titleEN;detailJP;detailEN
 101;はじめての「編成」！;First Formation;２隻以上の艦で構成される「艦隊」を編成せよ！;Have 2 ships in your main fleet.
 102;「駆逐隊」を編成せよ！;Form a Destroyer Division;駆逐艦４隻以上で構成される「駆逐隊」を編成せよ！;Have 4 DD in your main fleet.
 103;「水雷戦隊」を編成せよ！;Form a Torpedo Squadron;軽巡洋艦を旗艦とし、数隻の駆逐艦で構成される「水雷戦隊」を編成せよ！;Have a CL as a flagship and 5 DD in your main fleet.
@@ -79,7 +79,7 @@
 228;海上護衛戦;Weekly Sortie 5;有力な対潜能力を持つ海上護衛隊によって、可能な限り多くの敵潜水艦を撃滅せよ！;Sink 15 submarines.
 229;敵東方艦隊を撃滅せよ！;Weekly Sortie 6;西方海域に出撃し、敵東方艦隊の主力を捕捉、これを撃滅せよ！;Defeat 12 bosses in World 4.
 230;敵潜水艦を制圧せよ！;Daily Sortie 8;対潜能力の充実した艦隊で出撃、敵潜水艦狩りを実施せよ！;Sink 6 enemy submarines.
-231;「潜水艦隊」出撃せよ！;Deploy a Submarine Fleet;伊号潜水艦2隻からなる潜水艦隊でオリョール海の敵を撃滅せよ！;Deploy a fleet with 2 SS and 4 other ships. Score a victory against World 2-3 boss.
+231;「潜水艦隊」出撃せよ！;Monthly Sortie 2;伊号潜水艦2隻からなる潜水艦隊でオリョール海の敵を撃滅せよ！;Deploy a fleet with 2 SS and 4 other ships. Score a victory against World 2-3 boss.
 232;「航空水上打撃艦隊」出撃せよ！;Deploy a Naval Aviation Strike Fleet;航空戦艦2隻と航空巡洋艦2隻を基幹とする艦隊でカレー洋の制海権を握れ！;Deploy a fleet with 2 BBV, 2 CAV, and 2 other ships. Score a victory against World 4-2 boss.
 233;「第六戦隊」出撃せよ！;Deploy the 6th Cruiser Division;編成した「第六戦隊」をもって出撃し、オリョール海の敵を撃滅「完全勝利」せよ！;Deploy a fleet with Furutaka, Kako, Kinugasa, Aoba, and 2 other ships. Score an S rank against World 2-3 boss.
 239;「第八駆逐隊」出撃せよ！;Deploy the 8th Destroyer Division;編成した「第八駆逐隊」を含む艦隊で出撃し、オリョール海の敵を撃滅せよ！;Deploy a fleet with Asashio, Michishio, Ooshio, Arashio and 2 other ships. Score a victory against World 2-3 boss.
@@ -92,24 +92,24 @@
 246;二人でする初めての任務！;Your First Mission Together;強い絆を結んだ艦娘を旗艦とした第一艦隊でリランカ島へ出撃、敵中枢を撃滅せよ！;Deploy a fleet with a bonded ship of Lv.100 or more as flagship and score an S victory against World 4-3 boss.
 247;「航空戦艦」抜錨せよ！;Deploy a BBV fleet;航空戦艦2隻を基幹とする艦隊で、西方海域カスガダマ島の敵勢力を撃破せよ！;Have 2 BBV ships in your main fleet and score a victory against World 4-4 boss.
 248;「第三十駆逐隊」対潜哨戒！;30th Destroyer Division's Anti-Submarine Patrol;「第三十駆逐隊(第二次)」は直ちに抜錨！鎮守府正面の対潜哨戒を実施せよ！;Deploy Mutsuki, Yayoi, Uzuki, and Mochizuki to World 1-5.
-249;「第五戦隊」出撃せよ！;Deploy the 5th Fleet;「第五戦隊」は沖ノ島沖の戦闘哨戒を実施、敵艦隊主力を捕捉、これを撃滅せよ！;Deploy Myoukou, Nachi, Haguro, and 3 other ships. Score an S rank against World 2-5 boss.
+249;「第五戦隊」出撃せよ！;Monthly Sortie 1;「第五戦隊」は沖ノ島沖の戦闘哨戒を実施、敵艦隊主力を捕捉、これを撃滅せよ！;Deploy Myoukou, Nachi, Haguro, and 3 other ships. Score an S rank against World 2-5 boss.
 250;新編「第二航空戦隊」出撃せよ！;Deploy the 2nd Carrier Division;新編「二航戦」を基幹とした艦隊で、珊瑚諸島沖に出撃、敵機動部隊を撃滅せよ！;Deploy Hiryuu Kai2 as flagship, Souryuu, 2 DD, and 2 other ships. Score an S rank against World 5-2 boss.
 251;精鋭「第二航空戦隊」抜錨せよ！;Deploy the Elite 2nd Carrier Division;錬成を終え再編成「二航戦」を基幹とした艦隊で、敵リランカ島を空襲、破砕せよ！;Deploy Souryuu Kai2 as flagship, Hiryuu Kai2, 2 DD, and 2 other ships. Score an S rank against World 4-3 boss.
 252;戦艦「榛名」出撃せよ！;Deploy the Battleship Haruna!;第二次改装実施した「榛名」を基幹とした艦隊で「南方海域」へ進出、敵艦隊主力を撃滅せよ！;Deploy a fleet with Haruna Kai2 as flagship and 5 other ships. Score an S rank against World 5-1 boss.
 253;「第六〇一航空隊」出撃せよ！;Deploy the 601st Naval Air Group;雲龍型航空母艦「雲龍改」含む機動部隊で珊瑚島沖に出撃、敵機動部隊を撃滅せよ！;Deploy a fleet with Unryuu Kai as flagship and 5 other ships. Score an S rank against World 5-2 boss.
 254;「軽空母」戦隊、出撃せよ！;Deploy a CVL Squadron;軽空母1～2隻、軽巡1隻、駆逐艦3～4隻の艦隊でカムラン半島の敵を撃滅せよ！;Deploy a fleet with 1~2 CVL, 1 CL and 3~4 DD. Score an S victory against World 2-1 boss.
 255;「水雷戦隊」バシー島沖緊急展開;Bashi Islands Emergency Deployment;軽巡を旗艦とした水雷戦隊(軽巡最大2隻他駆逐艦)でバシー島沖の敵を撃滅せよ！;Deploy a fleet with 1~2 CL as flagship and 4~5 DD. Score a victory against World 2-2 boss and sink the boss/flagship.
-256;「潜水艦隊」出撃せよ！;Deploy a Submarine Fleet;潜水艦戦力を中核とした艦隊で中部海域哨戒線へ反復出撃、敵戦力を漸減せよ！;Score S rank against World 6-1 boss three times.
-257;「水雷戦隊」南西へ！;Deploy a Torpedo Squadron to Nansei Islands;軽巡旗艦の水雷戦隊(軽巡最大3隻他駆逐艦)を急派、南西諸島防衛線で敵を撃滅せよ！;Deploy a fleet with 1~3 CL as flagship and 3~5 DD. Score an S victory against World 1-4 boss.
+256;「潜水艦隊」出撃せよ！;Monthly Sortie 2;潜水艦戦力を中核とした艦隊で中部海域哨戒線へ反復出撃、敵戦力を漸減せよ！;Score S rank against World 6-1 boss three times.
+257;「水雷戦隊」南西へ！;Monthly Sortie 3;軽巡旗艦の水雷戦隊(軽巡最大3隻他駆逐艦)を急派、南西諸島防衛線で敵を撃滅せよ！;Deploy a fleet with 1~3 CL as flagship and 3~5 DD. Score an S victory against World 1-4 boss.
 258;「第二戦隊」抜錨！;Deploy the 2nd Battleship Division;「第二戦隊」を基幹とした艦隊でカレー洋に進出、反復出撃により敵海上兵力を撃滅せよ！;Deploy 4 ships from 2nd BatDiv and 2 other ships. Score S rank against World 4-2 boss two times.
-259;「水上打撃部隊」南方へ！;Deploy a Battleship Strike Fleet;戦艦3隻軽巡1隻他を基幹とした水上打撃部隊で南方海域へ進出、敵艦隊を撃滅せよ！;Deploy 3 (Non-fast) BB, 1 CL, and 2 other ships. Score an S rank against World 5-1 boss.
+259;「水上打撃部隊」南方へ！;Monthly Sortie 4;戦艦3隻軽巡1隻他を基幹とした水上打撃部隊で南方海域へ進出、敵艦隊を撃滅せよ！;Deploy 3 (Non-fast) BB, 1 CL, and 2 other ships. Score an S rank against World 5-1 boss.
 260;「戦艦部隊」北方海域に突入せよ！;Deploy the Battleship Fleet to Northern Waters;戦艦2隻と直援軽空母1隻(正規空母無し)基幹の艦隊で北方AL海域に突入、敵を撃滅せよ！;Deploy 2 BB, 1 CVL, and 3 other ships. Score an S rank against World 3-5 boss. Using more than 1CV, 3 BB, 2 CVL, and/or using BBV will fail the quest.
 261;海上輸送路の安全確保に努めよ！;Weekly Sortie 10;鎮守府正面の対潜哨戒を反復実施し、安全な海上輸送路を確保せよ！;Score at least A rank against World 1-5 boss three times.
 262;「西村艦隊」南方海域へ進出せよ！;Deploy the Nishimura Fleet to Southern Waters;「西村艦隊」を南方海域に進出させ、敵主力艦隊へ突入、これを撃滅せよ！;Deploy a fleet with Fusou, Yamashiro, Mogami, Michishio, Shigure, and 1 other ship. Score an S rank against World 5-1 boss.
 263;「第六戦隊」南西海域へ出撃せよ！;Deploy the 6th Squadron to the SW Waters;「古鷹」「加古」「青葉」「衣笠」を基幹とした「第六戦隊」で、沖ノ島沖の敵艦隊を撃滅せよ！;Deploy Furutaka, Kako, Aoba, Kinugasa, and 2 other ships. Score an S rank against World 2-5 boss.
-264;「空母機動部隊」西へ！;Deploy the Aircraft Carrier Task Force to the West;航空母艦2隻(随伴駆逐艦2隻)を基幹とする空母機動艦隊で、カレー洋の敵艦隊を撃滅せよ！;Deploy a fleet with 2 CV, 2 DD and 2 other ships. Score an S rank against World 4-2 boss.
-265;海上護衛強化月間;Monthly Escort Duty;鎮守府正面海域の対潜哨戒を強化し、敵潜水艦を制圧、安全な海上輸送体制を確立せよ！;Score at least A rank against World 1-5 boss ten times.
-266;「水上反撃部隊」突入せよ！;Deploy the Counterattack Squadron;駆逐艦を旗艦とした重巡1隻軽巡1隻駆逐艦4隻からなる水上挺身部隊、沖ノ島沖に突入せよ！;Deploy a fleet with 1 CA, 1 CL, and 4 DD to World 2-5.
+264;「空母機動部隊」西へ！;Monthly Sortie 6;航空母艦2隻(随伴駆逐艦2隻)を基幹とする空母機動艦隊で、カレー洋の敵艦隊を撃滅せよ！;Deploy a fleet with 2 CV, 2 DD and 2 other ships. Score an S rank against World 4-2 boss.
+265;海上護衛強化月間;Monthly Sortie 5;鎮守府正面海域の対潜哨戒を強化し、敵潜水艦を制圧、安全な海上輸送体制を確立せよ！;Score at least A rank against World 1-5 boss ten times.
+266;「水上反撃部隊」突入せよ！;Monthly Sortie 7;駆逐艦を旗艦とした重巡1隻軽巡1隻駆逐艦4隻からなる水上挺身部隊、沖ノ島沖に突入せよ！;Deploy a fleet with 1 CA, 1 CL, and 4 DD to World 2-5.
 267;「第十一駆逐隊」出撃せよ！;Deploy the 11th Destroyer Division;「第十一駆逐隊」を含む艦隊で出撃し、オリョール海の敵を撃破せよ！;Deploy Fubuki, Shirayuki, Hatsuyuki, Murakumo, and 2 other ships. Score a victory against World 2-3 boss.
 268;「第十一駆逐隊」対潜哨戒！;11th Destroyer Division's Anti-Submarine Patrol;「第十一駆逐隊」を含む艦隊で鎮守府正面へ展開、対潜哨戒を実施せよ！;Deploy Fubuki, Shirayuki, Hatsuyuki, and Murakumo. Score a victory against World 1-5 boss.
 269;「第二一駆逐隊」出撃せよ！;Deploy the 21st Destroyer Division;「第二一駆逐隊」を含む艦隊で出撃し、北方海域モーレイ海の敵を撃滅せよ！;Deploy Hatsuharu, Nenohi, Wakaba, Hatsushimo and 2 other ships. Score an S rank against World 3-1 boss.
