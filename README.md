@@ -12,5 +12,10 @@ How to install and use logbook? [See the wiki](http://github.com/silfumus/logboo
 ## Downloads
 All builds can be found in the [releases] (https://github.com/silfumus/logbook-EN/releases) section.
 
+#### How to Install
+1. Download [sanaechan's logbook] (http://kancolle.sanaechan.net/svn/logbook/trunk/dest/) for your platform (e.g: win-x86, macosx-x64) and unzip to a folder.
+2. Download [the English logbook] (https://github.com/silfumus/logbook-EN/releases) and unzip to the same folder.
+3. Run logbook.jar
+
 #### A ship/item/quest is missing a translation!
 Please report them on [GitHub](https://github.com/silfumus/logbook-EN/issues) or complain on /jp/.
