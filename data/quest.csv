@@ -1,4 +1,4 @@
-20150117;titleJP;titleEN;detailJP;detailEN
+20150119;titleJP;titleEN;detailJP;detailEN
 101;はじめての「編成」！;First Formation;２隻以上の艦で構成される「艦隊」を編成せよ！;Have 2 ships in your main fleet.
 102;「駆逐隊」を編成せよ！;Form a Destroyer Division;駆逐艦４隻以上で構成される「駆逐隊」を編成せよ！;Have 4 DD in your main fleet.
 103;「水雷戦隊」を編成せよ！;Form a Torpedo Squadron;軽巡洋艦を旗艦とし、数隻の駆逐艦で構成される「水雷戦隊」を編成せよ！;Have a CL as a flagship and 5 DD in your main fleet.
@@ -101,7 +101,7 @@
 255;「水雷戦隊」バシー島沖緊急展開;Bashi Islands Emergency Deployment;軽巡を旗艦とした水雷戦隊(軽巡最大2隻他駆逐艦)でバシー島沖の敵を撃滅せよ！;Deploy a fleet with 1~2 CL as flagship and 4~5 DD. Score a victory against World 2-2 boss and sink the boss/flagship.
 256;「潜水艦隊」出撃せよ！;Monthly Sortie 2;潜水艦戦力を中核とした艦隊で中部海域哨戒線へ反復出撃、敵戦力を漸減せよ！;Score S rank against World 6-1 boss three times.
 257;「水雷戦隊」南西へ！;Monthly Sortie 3;軽巡旗艦の水雷戦隊(軽巡最大3隻他駆逐艦)を急派、南西諸島防衛線で敵を撃滅せよ！;Deploy a fleet with 1~3 CL as flagship and 3~5 DD. Score an S victory against World 1-4 boss.
-258;「第二戦隊」抜錨！;Deploy the 2nd Battleship Division;「第二戦隊」を基幹とした艦隊でカレー洋に進出、反復出撃により敵海上兵力を撃滅せよ！;Deploy 4 ships from 2nd BatDiv and 2 other ships. Score S rank against World 4-2 boss two times.
+258;「第二戦隊」抜錨！;Deploy the 2nd Battleship Division;「第二戦隊」を基幹とした艦隊でカレー洋に進出、反復出撃により敵海上兵力を撃滅せよ！;Deploy 2 Fusou-class, 2 Nagato-class, and 2 other ships. Score S rank against World 4-2 boss two times.
 259;「水上打撃部隊」南方へ！;Monthly Sortie 4;戦艦3隻軽巡1隻他を基幹とした水上打撃部隊で南方海域へ進出、敵艦隊を撃滅せよ！;Deploy 3 (Non-fast) BB, 1 CL, and 2 other ships. Score an S rank against World 5-1 boss.
 260;「戦艦部隊」北方海域に突入せよ！;Deploy the Battleship Fleet to Northern Waters;戦艦2隻と直援軽空母1隻(正規空母無し)基幹の艦隊で北方AL海域に突入、敵を撃滅せよ！;Deploy 2 BB, 1 CVL, and 3 other ships. Score an S rank against World 3-5 boss. Using more than 1CV, 3 BB, 2 CVL, and/or using BBV will fail the quest.
 261;海上輸送路の安全確保に努めよ！;Weekly Sortie 10;鎮守府正面の対潜哨戒を反復実施し、安全な海上輸送路を確保せよ！;Score at least A rank against World 1-5 boss three times.
