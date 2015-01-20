@@ -119,6 +119,9 @@ public final class GlobalContext {
     /** 出撃中か */
     private static boolean[] isSortie = new boolean[4];
 
+    /** 出撃(START)か */
+    private static boolean isStart;
+
     /** 今いるマップ上のマスNo */
     private static int mapCellNo;
 
@@ -697,7 +700,7 @@ public final class GlobalContext {
         try {
             if (battle != null) {
                 JsonObject apidata = data.getJsonObject().getJsonObject("api_data");
-                BattleResultDto dto = new BattleResultDto(apidata, mapCellNo, mapBossCellNo, eventId, battle);
+                BattleResultDto dto = new BattleResultDto(apidata, mapCellNo, mapBossCellNo, eventId, isStart, battle);
                 battleResultList.add(dto);
                 CreateReportLogic.storeBattleResultReport(dto);
 
@@ -705,6 +708,9 @@ public final class GlobalContext {
                     battleResultList.remove(0);
                 }
             }
+            addConsole("Battle information updated");
+            // 出撃を更新
+            isStart = false;
             addConsole("Battle information updated");
         } catch (Exception e) {
             LOG.warn("Battle information update failed", e);
@@ -1328,6 +1334,8 @@ public final class GlobalContext {
             if (combined) {
                 isSortie[1] = true;
             }
+            // 出撃を更新
+            isStart = true;
 
             JsonObject obj = data.getJsonObject().getJsonObject("api_data");
 

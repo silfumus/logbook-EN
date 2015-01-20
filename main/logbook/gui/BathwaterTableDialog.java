@@ -1,8 +1,10 @@
 package logbook.gui;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -76,8 +78,7 @@ public final class BathwaterTableDialog extends AbstractTableDialog {
 
     @Override
     protected String[] getTableHeader() {
-        return new String[] { "", "ID", "Fleet", "Morale", "Name", "Lv", "HP", "Time", "Fuel", "Steel", "Status",
-                "Per HP" };
+        return new String[] { "", "ID", "Fleet", "Morale", "Name", "Lv", "HP", "Time", "今から", "Fuel", "Steel", "Status", "Per HP" };
     }
 
     @Override
@@ -104,6 +105,8 @@ public final class BathwaterTableDialog extends AbstractTableDialog {
             }
         });
 
+        SimpleDateFormat format = new SimpleDateFormat(AppConstants.DATE_SHORT_FORMAT);
+
         List<String[]> body = new ArrayList<String[]>();
         for (int i = 0; i < ships.size(); i++) {
             ShipDto ship = ships.get(i);
@@ -129,11 +132,19 @@ public final class BathwaterTableDialog extends AbstractTableDialog {
                     / (float) (ship.getMaxhp() - ship.getNowhp()) / 1000));
             // 整形
             body.add(new String[] {
-                    Integer.toString(i + 1), Long.toString(ship.getId()), ship.getFleetid(),
-                    Long.toString(ship.getCond()), ship.getName(), Long.toString(ship.getLv()),
+                    Integer.toString(i + 1),
+                    Long.toString(ship.getId()),
+                    ship.getFleetid(),
+                    Long.toString(ship.getCond()),
+                    ship.getName(),
+                    Long.toString(ship.getLv()),
                     Long.toString(ship.getNowhp()) + "/" + Long.toString(ship.getMaxhp()),
-                    TimeLogic.toDateRestString(ship.getDocktime() / 1000), Long.toString(ship.getDockfuel()),
-                    Long.toString(ship.getDockmetal()), status, time
+                    TimeLogic.toDateRestString(ship.getDocktime() / 1000),
+                    format.format(new Date(System.currentTimeMillis() + ship.getDocktime())),
+                    Long.toString(ship.getDockfuel()),
+                    Long.toString(ship.getDockmetal()),
+                    status,
+                    time
             });
         }
         this.body = body;
