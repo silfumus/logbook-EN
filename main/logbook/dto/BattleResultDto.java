@@ -7,10 +7,10 @@ import java.util.List;
 
 import javax.json.JsonObject;
 
-import org.apache.commons.lang3.StringUtils;
-
 import logbook.internal.MapNames;
 import logbook.internal.Ship;
+
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * 海戦とドロップした艦娘を表します
@@ -141,10 +141,10 @@ public final class BattleResultDto extends AbstractDto {
         if (this.isStart() || this.isBoss()) {
             List<String> list = new ArrayList<>();
             if (this.isStart()) {
-                list.add("出撃");
+                list.add("Sortie");
             }
             if (this.isBoss()) {
-                list.add("ボス");
+                list.add("Boss");
             }
             return StringUtils.join(list, "&");
         }

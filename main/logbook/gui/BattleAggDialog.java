@@ -278,7 +278,7 @@ public class BattleAggDialog extends Dialog {
                         // ランク
                         String rank = cols[4];
                         // 出撃
-                        boolean isStart = StringUtils.indexOf(cols[3], "出撃") > -1;
+                        boolean isStart = StringUtils.indexOf(cols[3], "Sortie") > -1;
                         // ボス
                         boolean isBoss = StringUtils.indexOf(cols[3], "Boss") > -1;
 

@@ -229,7 +229,7 @@ public final class ConfigDialog extends Dialog {
 
         final Button resetWindowLocation = new Button(compositeSystem, SWT.CHECK);
         resetWindowLocation.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false, 3, 1));
-        resetWindowLocation.setText("サブウインドウの位置とサイズをリセット");
+        resetWindowLocation.setText("Reset subwindows position and size");
 
         // 艦隊タブ タブ
         Composite compositeFleetTab = new Composite(this.composite, SWT.NONE);
@@ -639,8 +639,8 @@ public final class ConfigDialog extends Dialog {
                         map.clear();
                     }
                     MessageBox box = new MessageBox(ConfigDialog.this.shell, SWT.ICON_INFORMATION | SWT.OK);
-                    box.setText("設定");
-                    box.setMessage("サブウインドウの位置とサイズがリセットされました");
+                    box.setText("Settings");
+                    box.setMessage("Subwindows position and size has been reset.");
                     box.open();
                 }
                 // fleettab
