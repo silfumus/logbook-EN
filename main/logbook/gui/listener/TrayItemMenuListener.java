@@ -99,7 +99,7 @@ public final class TrayItemMenuListener implements MenuDetectListener {
 
         // 統計
         MenuItem statItem = new MenuItem(this.menu, SWT.CASCADE);
-        statItem.setText("Statistics (&S)");
+        statItem.setText("Statistics (&T)");
         Menu statMenu = new Menu(statItem);
         statItem.setMenu(statMenu);
         // 資材チャート
