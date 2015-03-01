@@ -268,7 +268,6 @@ public final class CreateReportLogic {
                     format.format(item.getBattleDate()),
                     item.getQuestName(),
                     item.getMapCellNo(),
-                    item.isBoss() ? "Boss" : "",
                     item.getBossText(),
                     item.getRank(),
                     battle.getIntercept(),

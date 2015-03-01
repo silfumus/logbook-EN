@@ -118,12 +118,16 @@
 117;試製46cm連装砲;Prototype 46cm Twin Gun Mount
 118;紫雲;Shiun
 119;14cm連装砲;14cm Twin Gun Mount
-120;91式高射装置;Type 91 Anti-Aircraft Fire Director
-121;94式高射装置;Type 94 Anti-Aircraft Fire Director
+120;91式高射装置;Type 91 AAFD
+121;94式高射装置;Type 94 AAFD
 122;10cm連装高角砲+高射装置;10cm Twin HA Mount+AAFD
 123;SKC34 20.3cm連装砲;SKC34 20.3cm Twin Gun Mount
 124;FuMO25 レーダー;FuMO25 Radar
 125;61cm三連装(酸素)魚雷;61cm Triple Oxygen Torpedo Mount
+126;WG42 (Wurfgerät 42);WG42 (Wurfgerät 42)
+127;試製FaT仕様九五式酸素魚雷改;Prototype FaT Type 95 Oxygen Torpedo Kai
+128;試製51cm連装砲;Prototype 51cm Twin Gun Mount
+129;熟練見張員;Skilled Lookouts
 501;5inch単装砲;5inch Naval Gun
 502;5inch連装砲;5inch Twin Gun Mount
 503;3inch単装高角砲;3inch High-angle Mount
