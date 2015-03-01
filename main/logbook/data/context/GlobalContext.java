@@ -703,10 +703,6 @@ public final class GlobalContext {
                 BattleResultDto dto = new BattleResultDto(apidata, mapCellNo, mapBossCellNo, eventId, isStart, battle);
                 battleResultList.add(dto);
                 CreateReportLogic.storeBattleResultReport(dto);
-
-                for (int i = 0; i < (battleResultList.size() - AppConstants.MAX_LOG_SIZE); i++) {
-                    battleResultList.remove(0);
-                }
             }
             addConsole("Battle information updated");
             // 出撃を更新
@@ -852,9 +848,6 @@ public final class GlobalContext {
             }
             CreateReportLogic.storeCreateItemReport(createitem);
 
-            for (int i = 0; i < (createItemList.size() - AppConstants.MAX_LOG_SIZE); i++) {
-                createItemList.remove(0);
-            }
             addConsole("Craft information updated");
         } catch (Exception e) {
             LOG.warn("Craft information update failed", e);
@@ -1213,9 +1206,6 @@ public final class GlobalContext {
             CreateReportLogic.storeCreateMissionReport(result);
             missionResultList.add(result);
 
-            for (int i = 0; i < (missionResultList.size() - AppConstants.MAX_LOG_SIZE); i++) {
-                missionResultList.remove(0);
-            }
             addConsole("Expedition result info updated");
         } catch (Exception e) {
             LOG.warn("Expedition result info update failed", e);

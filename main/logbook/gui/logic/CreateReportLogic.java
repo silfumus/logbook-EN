@@ -119,6 +119,8 @@ public final class CreateReportLogic {
                 item.setForeground(SWTResourceManager.getColor(AppConstants.COND_RED_COLOR));
             } else if (cond <= AppConstants.COND_ORANGE) {
                 item.setForeground(SWTResourceManager.getColor(AppConstants.COND_ORANGE_COLOR));
+            } else if ((cond >= AppConstants.COND_DARK_GREEN) && (cond < AppConstants.COND_GREEN)) {
+                item.setForeground(SWTResourceManager.getColor(AppConstants.COND_DARK_GREEN_COLOR));
             } else if (cond >= AppConstants.COND_GREEN) {
                 item.setForeground(SWTResourceManager.getColor(AppConstants.COND_GREEN_COLOR));
             }
@@ -410,9 +412,10 @@ public final class CreateReportLogic {
      */
     public static String[] getShipListHeader() {
         return new String[] { "", "ID", "Fleet", "Name", "Type", "Morale", "Recovery", "Lv", "Next", "Exp",
-                "Air Superiority", "Equipment 1", "Equipment 2",
+                "Fighter Power", "Equipment 1", "Equipment 2",
                 "Equipment 3", "Equipment 4", "HP", "Firepower", "Torpedo", "AA", "Armor", "Evasion", "ASW", "LOS",
-                "Luck" };
+                "Luck",
+                "Eq Accuracy", "Shelling AP", "Torpedo AP", "ASW AP", "Night Battle AP" };
     }
 
     /**
@@ -461,7 +464,12 @@ public final class CreateReportLogic {
                         ship.getKaihi(),
                         ship.getTaisen(),
                         ship.getSakuteki(),
-                        ship.getLucky()
+                        ship.getLucky(),
+                        ship.getAccuracy(),
+                        ship.getHougekiPower(),
+                        ship.getRaigekiPower(),
+                        ship.getTaisenPower(),
+                        ship.getYasenPower()
                 });
             } else {
                 // 成長の余地
@@ -518,7 +526,12 @@ public final class CreateReportLogic {
                         kaihi,
                         taisen,
                         sakuteki,
-                        lucky
+                        lucky,
+                        ship.getAccuracy(),
+                        ship.getHougekiPower(),
+                        ship.getRaigekiPower(),
+                        ship.getTaisenPower(),
+                        ship.getYasenPower()
                 });
             }
         }
@@ -866,6 +879,11 @@ public final class CreateReportLogic {
         }
         if (!filter.submarineTender) {
             if ("AS".equals(ship.getType())) {
+                return false;
+            }
+        }
+        if (!filter.trainingShip) {
+            if ("CT".equals(ship.getType())) {
                 return false;
             }
         }
