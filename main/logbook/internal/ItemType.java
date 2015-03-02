@@ -45,6 +45,7 @@ public class ItemType {
             this.put(29, "Maintenance Crew");
             this.put(30, "AA Equipment");
             this.put(31, "Ground Equipment");
+            this.put(32, "Ship Crew");
         }
     };
 
