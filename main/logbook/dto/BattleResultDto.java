@@ -71,12 +71,18 @@ public final class BattleResultDto extends AbstractDto {
         this.start = isStart;
         this.boss = (mapCellNo == mapBossCellNo) || (eventId == 5);
         this.enemyName = object.getJsonObject("api_enemy_info").getString("api_deck_name");
-        this.dropFlag = object.containsKey("api_get_ship");
+        this.dropFlag = object.containsKey("api_get_ship") || object.containsKey("api_get_useitem");
         if (this.dropFlag) {
-            String id = object.getJsonObject("api_get_ship").getJsonNumber("api_ship_id").toString();
-            ShipInfoDto intname = Ship.get(id);
-            this.dropType = intname.getType();
-            this.dropName = intname.getName();
+            if (object.containsKey("api_get_useitem")
+                    && (object.getJsonObject("api_get_useitem").getJsonNumber("api_useitem_id").equals(62))) {
+                this.dropType = "Item";
+                this.dropName = "Hishimochi";
+            } else {
+                String id = object.getJsonObject("api_get_ship").getJsonNumber("api_ship_id").toString();
+                ShipInfoDto intname = Ship.get(id);
+                this.dropType = intname.getType();
+                this.dropName = intname.getName();
+            }
         } else {
             this.dropType = "";
             this.dropName = "";
