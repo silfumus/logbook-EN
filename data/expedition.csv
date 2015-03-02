@@ -1,4 +1,4 @@
-20140809;Expedition;JP-NAME
+20150302;Expedition;JP-NAME
 1;Expedition 1;練習航海
 2;Expedition 2;長距離練習航海
 3;Expedition 3;警備任務
@@ -22,7 +22,6 @@
 21;Expedition 21;北方鼠輸送作戦
 22;Expedition 22;艦隊演習
 23;Expedition 23;航空戦艦運用演習
-24;<UNKNOWN>;24
 25;Expedition 25;通商破壊作戦
 26;Expedition 26;敵母港空襲作戦
 27;Expedition 27;潜水艦通商破壊作戦
@@ -30,7 +29,7 @@
 29;Expedition 29;潜水艦派遣演習
 30;Expedition 30;潜水艦派遣作戦
 31;Expedition 31;海外艦との接触
-32;<UNKNOWN>;24
+32;Training Cruise;遠洋練習航海
 33;Vanguard Support;前衛支援任務
 34;Decisive Battle Support;艦隊決戦支援任務
 35;Expedition 35;ＭＯ作戦
@@ -38,76 +37,5 @@
 37;Expedition 37;東京急行
 38;Expedition 38;東京急行(弐)
 39;Expedition 39;遠洋潜水艦作戦
-40;<UNKNOWN>;40
-41;<UNKNOWN>;41
-42;<UNKNOWN>;42
-43;<UNKNOWN>;43
-44;<UNKNOWN>;44
-45;<UNKNOWN>;45
-46;<UNKNOWN>;46
-47;<UNKNOWN>;47
-48;<UNKNOWN>;48
-49;<UNKNOWN>;49
-50;<UNKNOWN>;50
-51;<UNKNOWN>;51
-52;<UNKNOWN>;52
-53;<UNKNOWN>;53
-54;<UNKNOWN>;54
-55;<UNKNOWN>;55
-56;<UNKNOWN>;56
-57;<UNKNOWN>;57
-58;<UNKNOWN>;58
-59;<UNKNOWN>;59
-60;<UNKNOWN>;60
-61;<UNKNOWN>;61
-62;<UNKNOWN>;62
-63;<UNKNOWN>;63
-64;<UNKNOWN>;64
-65;<UNKNOWN>;65
-66;<UNKNOWN>;66
-67;<UNKNOWN>;67
-68;<UNKNOWN>;68
-69;<UNKNOWN>;69
-70;<UNKNOWN>;70
-71;<UNKNOWN>;71
-72;<UNKNOWN>;72
-73;<UNKNOWN>;73
-74;<UNKNOWN>;74
-75;<UNKNOWN>;75
-76;<UNKNOWN>;76
-77;<UNKNOWN>;77
-78;<UNKNOWN>;78
-79;<UNKNOWN>;79
-80;<UNKNOWN>;80
-81;<UNKNOWN>;81
-82;<UNKNOWN>;82
-83;<UNKNOWN>;83
-84;<UNKNOWN>;84
-85;<UNKNOWN>;85
-86;<UNKNOWN>;86
-87;<UNKNOWN>;87
-88;<UNKNOWN>;88
-89;<UNKNOWN>;89
-90;<UNKNOWN>;90
-91;<UNKNOWN>;91
-92;<UNKNOWN>;92
-93;<UNKNOWN>;93
-94;<UNKNOWN>;94
-95;<UNKNOWN>;95
-96;<UNKNOWN>;96
-97;<UNKNOWN>;97
-98;<UNKNOWN>;98
-99;<UNKNOWN>;99
-100;<UNKNOWN>;100
-101;<UNKNOWN>;101
-102;<UNKNOWN>;102
-103;<UNKNOWN>;103
-104;<UNKNOWN>;104
-105;<UNKNOWN>;105
-106;<UNKNOWN>;106
-107;<UNKNOWN>;107
-108;<UNKNOWN>;108
 109;Vanguard Support;前衛支援任務
 110;Decisive Battle Support;艦隊決戦支援任務
-125;Vanguard Support;前衛支援任務
-126;Decisive Battle Support;艦隊決戦支援任務
