@@ -411,10 +411,10 @@ public final class CreateReportLogic {
      */
     public static String[] getShipListHeader() {
         return new String[] { "", "ID", "Fleet", "Name", "Type", "Morale", "Recovery", "Lv", "Next", "Exp",
-                "Fighter Power", "Equipment 1", "Equipment 2",
+                "FP", "Equipment 1", "Equipment 2",
                 "Equipment 3", "Equipment 4", "HP", "Firepower", "Torpedo", "AA", "Armor", "Evasion", "ASW", "LOS",
                 "Luck",
-                "Eq Accuracy", "Shelling AP", "Torpedo AP", "ASW AP", "Night Battle AP" };
+                "Accuracy", "Shelling AP", "Torpedo AP", "ASW AP", "Night AP" };
     }
 
     /**

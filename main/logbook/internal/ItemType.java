@@ -23,7 +23,7 @@ public class ItemType {
             this.put(7, "Dive Bomber");
             this.put(8, "Torpedo Bomber");
             this.put(9, "Recon Plane");
-            this.put(10, "Recon Seaplane");
+            this.put(10, "Seaplane");
             this.put(11, "RADAR");
             this.put(12, "AA Ammo");
             this.put(13, "AP Ammo");
@@ -38,7 +38,7 @@ public class ItemType {
             this.put(22, "Liaison Airplane");
             this.put(23, "Additional Armor");
             this.put(24, "Searchlight");
-            this.put(25, "Transport Support");
+            this.put(25, "Supply");
             this.put(26, "Facility");
             this.put(27, "Flare");
             this.put(28, "Command Facility");

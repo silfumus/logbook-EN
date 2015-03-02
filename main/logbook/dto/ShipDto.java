@@ -215,8 +215,8 @@ public final class ShipDto extends AbstractDto {
         if (this.cond < 49) {
             this.time.add(Calendar.MINUTE, Math.max(49 - (int) this.cond, 3));
         }
-        this.isCarrier = "水上機母艦".equals(this.type) || "軽空母".equals(this.type) || "正規空母".equals(this.type)
-                || "装甲空母".equals(this.type);
+        this.isCarrier = "AV".equals(this.type) || "CVL".equals(this.type) || "CV".equals(this.type)
+                || "CVB".equals(this.type);
     }
 
     /**

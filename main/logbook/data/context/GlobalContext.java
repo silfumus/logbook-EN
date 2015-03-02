@@ -487,7 +487,7 @@ public final class GlobalContext {
             // ファイルパス
             File file = new File(FilenameUtils.concat(AppConfig.get().getStoreJsonPath(), fname));
 
-            FileUtils.write(file, data.getJsonObject().toString());
+            FileUtils.write(file, data.getJsonObject().toString(), "UTF-8");
         } catch (IOException e) {
             LOG.warn("Failed to save the JSON object", e);
             LOG.warn(data);
@@ -525,7 +525,7 @@ public final class GlobalContext {
                         }
                     }
                 }
-                addConsole("Supplies has been updated");
+                addConsole("Ships have been resupplied");
             }
         } catch (Exception e) {
             LOG.warn("Failed to update supplies.", e);
@@ -606,12 +606,12 @@ public final class GlobalContext {
                 // 基本情報を更新する
                 JsonObject apiBasic = apidata.getJsonObject("api_basic");
                 doBasicSub(apiBasic);
-                addConsole("Updated HQ");
+                addConsole("Admiral info updated");
 
                 // 保有資材を更新する
                 JsonArray apiMaterial = apidata.getJsonArray("api_material");
                 doMaterialSub(apiMaterial);
-                addConsole("Updated materials");
+                addConsole("Resource info updated");
 
                 // 保有艦娘を更新する
                 JsonArray apiShip = apidata.getJsonArray("api_ship");
@@ -626,7 +626,7 @@ public final class GlobalContext {
                 // 入渠の状態を更新する
                 JsonArray apiNdock = apidata.getJsonArray("api_ndock");
                 doNdockSub(apiNdock);
-                addConsole("Updated dock information");
+                addConsole("Dock info updated");
 
                 // 遠征の状態を更新する
                 deckMissions = new DeckMissionDto[] { DeckMissionDto.EMPTY, DeckMissionDto.EMPTY, DeckMissionDto.EMPTY };
@@ -655,7 +655,7 @@ public final class GlobalContext {
                     }
                     deckMissions[i - 1] = new DeckMissionDto(name, mission, time, fleetid, ships);
                 }
-                addConsole("Expeditions updated");
+                addConsole("Expedition status updated");
 
                 // 連合艦隊を更新する
                 combined = false;
@@ -685,7 +685,7 @@ public final class GlobalContext {
             JsonObject apidata = data.getJsonObject().getJsonObject("api_data");
             battle = new BattleDto(apidata);
 
-            addConsole("Battle information updated");
+            addConsole("Battle info received");
         } catch (Exception e) {
             LOG.warn("Battle information update failed", e);
             LOG.warn(data);
@@ -704,10 +704,9 @@ public final class GlobalContext {
                 battleResultList.add(dto);
                 CreateReportLogic.storeBattleResultReport(dto);
             }
-            addConsole("Battle information updated");
             // 出撃を更新
             isStart = false;
-            addConsole("Battle information updated");
+            addConsole("Battle result received");
         } catch (Exception e) {
             LOG.warn("Battle information update failed", e);
             LOG.warn(data);
@@ -735,7 +734,7 @@ public final class GlobalContext {
             getShipResource.put(kdockid, resource);
             KdockConfig.store(kdockid, resource);
 
-            addConsole("Construction information updated");
+            addConsole("Ship construction started");
         } catch (Exception e) {
             LOG.warn("Construction information update failed", e);
             LOG.warn(data);
@@ -765,7 +764,7 @@ public final class GlobalContext {
                     KdockConfig.store(lastBuildKdock, resource);
                 }
             }
-            addConsole("Construction information updated");
+            addConsole("Construction status received");
         } catch (Exception e) {
             LOG.warn("Construction information update failed", e);
             LOG.warn(data);
@@ -810,7 +809,7 @@ public final class GlobalContext {
             getShipResource.remove(dock);
             KdockConfig.remove(dock);
 
-            addConsole("Construction information updated");
+            addConsole("Construction result received");
         } catch (Exception e) {
             LOG.warn("Construction information update failed", e);
             LOG.warn(data);
@@ -848,7 +847,7 @@ public final class GlobalContext {
             }
             CreateReportLogic.storeCreateItemReport(createitem);
 
-            addConsole("Craft information updated");
+            addConsole("Crafting result received");
         } catch (Exception e) {
             LOG.warn("Craft information update failed", e);
             LOG.warn(data);
@@ -1029,7 +1028,7 @@ public final class GlobalContext {
                 shipMap.remove(ship.getId());
             }
 
-            addConsole("Ship dismantle updated");
+            addConsole("Ship scrapped");
         } catch (Exception e) {
             LOG.warn("Failed to update ship dismantle", e);
             LOG.warn(data);
@@ -1047,7 +1046,7 @@ public final class GlobalContext {
                 Long item = Long.parseLong(itemid);
                 itemMap.remove(item);
             }
-            addConsole("Destroyed equipment updated");
+            addConsole("Equipment scrapped");
         } catch (Exception e) {
             LOG.warn("Failed to update destroyed equipment", e);
             LOG.warn(data);
@@ -1090,7 +1089,7 @@ public final class GlobalContext {
             JsonObject apidata = data.getJsonObject().getJsonObject("api_data");
             doBasicSub(apidata);
 
-            addConsole("Updated HQ");
+            addConsole("Admiral info updated");
         } catch (Exception e) {
             LOG.warn("Failed to update HQ", e);
             LOG.warn(data);
@@ -1122,7 +1121,7 @@ public final class GlobalContext {
 
             doMaterialSub(apidata);
 
-            addConsole("Materials updated");
+            addConsole("Resource info updated");
         } catch (Exception e) {
             LOG.warn("Failed to update materials", e);
             LOG.warn(data);
@@ -1206,7 +1205,7 @@ public final class GlobalContext {
             CreateReportLogic.storeCreateMissionReport(result);
             missionResultList.add(result);
 
-            addConsole("Expedition result info updated");
+            addConsole("Expedition result recieved");
         } catch (Exception e) {
             LOG.warn("Expedition result info update failed", e);
             LOG.warn(data);
@@ -1283,7 +1282,7 @@ public final class GlobalContext {
                     }
                 }
             }
-            addConsole("Quest list updated");
+            addConsole("Quest info updated");
         } catch (Exception e) {
             LOG.warn("Failed to update quest data", e);
             LOG.warn(data);
@@ -1333,7 +1332,7 @@ public final class GlobalContext {
             mapBossCellNo = obj.getJsonNumber("api_bosscell_no").intValue();
             eventId = obj.getJsonNumber("api_event_id").intValue();
 
-            addConsole("Sortie data updated");
+            addConsole("Sortie progress updated");
         } catch (Exception e) {
             LOG.warn("Failed to update sortie data", e);
             LOG.warn(data);

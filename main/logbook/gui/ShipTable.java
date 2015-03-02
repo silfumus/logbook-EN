@@ -58,7 +58,7 @@ public final class ShipTable extends AbstractTableDialog {
         // メニューバーに追加する
         // フィルターメニュー
         final MenuItem filter = new MenuItem(this.opemenu, SWT.PUSH);
-        filter.setText("&Filter\tCtrl+F");
+        filter.setText("&Filter...\tCtrl+F");
         filter.setAccelerator(SWT.CTRL + 'F');
         filter.addSelectionListener(new SelectionAdapter() {
             @Override
