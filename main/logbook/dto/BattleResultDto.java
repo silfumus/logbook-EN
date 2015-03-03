@@ -74,7 +74,7 @@ public final class BattleResultDto extends AbstractDto {
         this.dropFlag = object.containsKey("api_get_ship") || object.containsKey("api_get_useitem");
         if (this.dropFlag) {
             if (object.containsKey("api_get_useitem")
-                    && (object.getJsonObject("api_get_useitem").getJsonNumber("api_useitem_id").equals(62))) {
+                    && (object.getJsonObject("api_get_useitem").getJsonNumber("api_useitem_id").intValue() == 62)) {
                 this.dropType = "Item";
                 this.dropName = "Hishimochi";
             } else {

@@ -212,7 +212,7 @@ public class Ship {
             this.put("193", new ShipInfoDto("Ashigara Kai2", "CA", "Ashigara", 0, 75, 45));
             this.put("194", new ShipInfoDto("Haguro Kai2", "CA", "Haguro", 0, 75, 45));
             this.put("195", new ShipInfoDto("Ayanami Kai2", "DD", "Ayanami", 0, 20, 15));
-            this.put("196", new ShipInfoDto("Hiryuu　Kai2", "CV", "Hiryuu", 0, 75, 70));
+            this.put("196", new ShipInfoDto("Hiryuu Kai2", "CV", "Hiryuu", 0, 75, 70));
             this.put("197", new ShipInfoDto("Souryuu Kai2", "CV", "Souryuu", 0, 75, 70));
             this.put("198", ShipInfoDto.EMPTY);
             this.put("199", ShipInfoDto.EMPTY);

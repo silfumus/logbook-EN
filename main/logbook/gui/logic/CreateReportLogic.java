@@ -153,7 +153,7 @@ public final class CreateReportLogic {
      */
     public static String[] getBattleResultHeader() {
         return new String[] { "", "Time", "Map", "Node", "Boss", "Rank",
-                "Engagement", "Formation", "Enemy Formation", "Enemy Fleet", "Ship Type", "Ship Name" };
+                "Engagement", "Formation", "Enemy Formation", "Enemy Fleet", "Type", "Name" };
     }
 
     /**
@@ -196,7 +196,7 @@ public final class CreateReportLogic {
         return new String[] { "", "Time", "Map", "Node", "Boss", "Rank",
                 "Engagement", "Formation", "Enemy Formation",
                 "Enemy Fleet",
-                "Ship Type", "Ship Name",
+                "Type", "Name",
                 "Ship1", "Ship1HP",
                 "Ship2", "Ship2HP",
                 "Ship3", "Ship3HP",
